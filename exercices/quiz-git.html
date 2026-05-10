@@ -10,7 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-<script>(function(){var t=localStorage.getItem('ppni-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+    <script>
+      (function () {
+        var t = localStorage.getItem("ppni-theme") || "dark";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
     <link rel="stylesheet" href="../css/shared.css" />
     <style>
       .flashcard-scene {
@@ -203,516 +208,674 @@
         align-items: center;
         gap: 5px;
       }
-      .stat-dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
+      .flashcard-back.result-knew {
+        background: linear-gradient(135deg, #d5f5e3, #a9dfbf);
+        border-color: #1e8449;
+      }
+      .flashcard-back.result-didnt {
+        background: linear-gradient(135deg, #fadbd8, #f1948a);
+        border-color: #c0392b;
+        color: #7b241c;
+      }
+      .flashcard-back.result-knew h3,
+      .flashcard-back.result-didnt h3 {
+        color: inherit;
+      }
+      .btn-eval-active {
+        outline: 3px solid #fff;
+        outline-offset: 2px;
+        transform: scale(1.08);
+      }
+      .btn-eval-inactive {
+        opacity: 0.3;
       }
     </style>
   </head>
   <body>
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-brand">
-        <div class="brand-logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/></svg></div>
+        <div class="brand-logo">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" />
+          </svg>
+        </div>
         <span class="brand-text">PPNI 2026</span>
       </div>
       <nav class="sidebar-nav">
         <a href="../index.html" class="nav-item">
-          <span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+          <span class="nav-icon"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" /></svg
+          ></span>
           <span>Accueil</span>
         </a>
         <a href="../planning.html" class="nav-item">
-          <span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+          <span class="nav-icon"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" /></svg
+          ></span>
           <span>Planning</span>
         </a>
         <a href="../previsionnel.html" class="nav-item">
-          <span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></span>
+          <span class="nav-icon"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="18" y1="20" x2="18" y2="10" />
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="14" />
+              <line x1="2" y1="20" x2="22" y2="20" /></svg
+          ></span>
           <span>Pr&#233;visionnel</span>
         </a>
         <a href="../previsionnel_stagiaire.html" class="nav-item">
-          <span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          <span class="nav-icon"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg
+          ></span>
           <span>Stagiaires</span>
         </a>
         <a href="../ressources/index.html" class="nav-item">
-          <span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+          <span class="nav-icon"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+              <path
+                d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+              /></svg
+          ></span>
           <span>Ressources</span>
         </a>
         <a href="index.html" class="nav-item active">
-          <span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span>
+          <span class="nav-icon"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+              />
+              <path
+                d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+              /></svg
+          ></span>
           <span>Exercices</span>
         </a>
       </nav>
       <div class="sidebar-footer">
-        <button class="theme-toggle" onclick="toggleTheme()" title="Changer le th&#232;me">
+        <button
+          class="theme-toggle"
+          onclick="toggleTheme()"
+          title="Changer le th&#232;me"
+        >
           <span class="theme-icon">&#127769;</span>
         </button>
         <span class="sidebar-version">v2026</span>
       </div>
     </aside>
     <main class="main-content">
-    <div class="sidebar-overlay" onclick="closeSidebar()"></div>
-    <header class="mobile-topbar">
-      <button class="hamburger" onclick="toggleSidebar()" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
-      <span class="mobile-brand">PPNI 2026</span>
-    </header>
+      <div class="sidebar-overlay" onclick="closeSidebar()"></div>
+      <header class="mobile-topbar">
+        <button class="hamburger" onclick="toggleSidebar()" aria-label="Menu">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+        <span class="mobile-brand">PPNI 2026</span>
+      </header>
 
-    <div class="page-wrapper">
-      <div class="doc-header">
-        <h1>🐙 Flashcards Git — Révision interactive</h1>
-        <div class="meta">
-          15 cartes · Clique pour retourner · Auto-évaluation · S2 GitHub
-        </div>
-      </div>
-
-      <div class="section-box">
-        <div class="falc-intro">
-          <strong>📋 Comment ça marche ?</strong>
-          Lis la commande sur la carte bleue → essaie de te rappeler ce qu'elle
-          fait → clique pour retourner et voir la réponse → dis honnêtement si
-          tu savais ou non. Les cartes que tu ne connaissais pas reviendront
-          plus souvent.
-        </div>
-      </div>
-
-      <div class="section-box">
-        <!-- Progression -->
-        <div
-          id="card-counter"
-          style="
-            text-align: center;
-            font-size: 12px;
-            color: #888;
-            margin-bottom: 12px;
-          "
-        >
-          Carte 1 sur 15
-        </div>
-        <div class="progress-cards" id="progress-dots"></div>
-        <div class="stat-row">
-          <div class="stat">
-            <div class="stat-dot" style="background: #27ae60"></div>
-            <span id="stat-knew">0 su(es)</span>
-          </div>
-          <div class="stat">
-            <div class="stat-dot" style="background: #e74c3c"></div>
-            <span id="stat-didnt">0 à revoir</span>
-          </div>
-          <div class="stat">
-            <div class="stat-dot" style="background: #e0e0e0"></div>
-            <span id="stat-remain">15 restant(es)</span>
+      <div class="page-wrapper">
+        <div class="doc-header">
+          <h1>🐙 Flashcards Git — Révision interactive</h1>
+          <div class="meta">
+            15 cartes · Clique pour retourner · Auto-évaluation · S2 GitHub
           </div>
         </div>
 
-        <!-- Flashcard -->
-        <div style="margin-top: 20px">
-          <div class="flashcard-scene" onclick="flipCard()">
-            <div class="flashcard" id="flashcard">
-              <div class="flashcard-face flashcard-front">
-                <code id="card-command">git status</code>
-                <div
-                  id="card-category"
-                  style="font-size: 11px; opacity: 0.7; margin-bottom: 8px"
-                ></div>
-                <div class="hint">👆 Clique pour voir la réponse</div>
-              </div>
-              <div class="flashcard-face flashcard-back">
-                <h3 id="card-title"></h3>
-                <p id="card-desc"></p>
-                <p id="card-example" class="example"></p>
-              </div>
+        <div class="section-box">
+          <div class="falc-intro">
+            <strong>📋 Comment ça marche ?</strong>
+            Lis la commande sur la carte bleue → essaie de te rappeler ce
+            qu'elle fait → clique pour retourner et voir la réponse → dis
+            honnêtement si tu savais ou non. Les cartes que tu ne connaissais
+            pas reviendront plus souvent.
+          </div>
+        </div>
+
+        <div class="section-box">
+          <!-- Progression -->
+          <div
+            id="card-counter"
+            style="
+              text-align: center;
+              font-size: 12px;
+              color: #888;
+              margin-bottom: 12px;
+            "
+          >
+            Carte 1 sur 15
+          </div>
+          <div class="progress-cards" id="progress-dots"></div>
+          <div class="stat-row">
+            <div class="stat">
+              <div class="stat-dot" style="background: #27ae60"></div>
+              <span id="stat-knew">0 su(es)</span>
+            </div>
+            <div class="stat">
+              <div class="stat-dot" style="background: #e74c3c"></div>
+              <span id="stat-didnt">0 à revoir</span>
+            </div>
+            <div class="stat">
+              <div class="stat-dot" style="background: #e0e0e0"></div>
+              <span id="stat-remain">15 restant(es)</span>
             </div>
           </div>
 
-          <!-- Auto-évaluation (visible après flip) -->
-          <div class="self-eval" id="self-eval">
-            <span style="font-size: 12px; color: #555; align-self: center"
-              >Est-ce que tu savais ?</span
-            >
-            <button id="btn-knew" class="btn-knew" onclick="evaluate(true)">
-              ✅ Oui, je savais
-            </button>
-            <button id="btn-didnt" class="btn-didnt" onclick="evaluate(false)">
-              ❌ Pas encore
-            </button>
+          <!-- Flashcard -->
+          <div style="margin-top: 20px">
+            <div class="flashcard-scene" onclick="flipCard()">
+              <div class="flashcard" id="flashcard">
+                <div class="flashcard-face flashcard-front">
+                  <code id="card-command">git status</code>
+                  <div
+                    id="card-category"
+                    style="font-size: 11px; opacity: 0.7; margin-bottom: 8px"
+                  ></div>
+                  <div class="hint">👆 Clique pour voir la réponse</div>
+                </div>
+                <div class="flashcard-face flashcard-back">
+                  <h3 id="card-title"></h3>
+                  <p id="card-desc"></p>
+                  <p id="card-example" class="example"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Auto-évaluation (visible après flip) -->
+            <div class="self-eval" id="self-eval">
+              <span style="font-size: 12px; color: #555; align-self: center"
+                >Est-ce que tu savais ?</span
+              >
+              <button id="btn-knew" class="btn-knew" onclick="evaluate(true)">
+                ✅ Oui, je savais
+              </button>
+              <button
+                id="btn-didnt"
+                class="btn-didnt"
+                onclick="evaluate(false)"
+              >
+                ❌ Pas encore
+              </button>
+            </div>
+
+            <!-- Navigation -->
+            <div class="card-controls" style="margin-top: 20px">
+              <button
+                class="btn-nav btn-prev"
+                id="btn-prev"
+                onclick="prevCard()"
+                disabled
+              >
+                ← Précédente
+              </button>
+              <button class="btn-nav btn-flip" onclick="flipCard()">
+                ↺ Retourner
+              </button>
+              <button
+                class="btn-nav btn-next"
+                id="btn-next"
+                onclick="nextCard()"
+              >
+                Suivante →
+              </button>
+            </div>
           </div>
 
-          <!-- Navigation -->
-          <div class="card-controls" style="margin-top: 20px">
-            <button
-              class="btn-nav btn-prev"
-              id="btn-prev"
-              onclick="prevCard()"
-              disabled
+          <!-- Résultat final -->
+          <div
+            id="final-result"
+            style="
+              display: none;
+              text-align: center;
+              padding: 20px;
+              background: #d5f5e3;
+              border: 2px solid #27ae60;
+              border-radius: 12px;
+              margin-top: 20px;
+            "
+          >
+            <h2 style="color: #145a32; margin: 0 0 8px">
+              🏆 Session terminée !
+            </h2>
+            <p
+              id="final-text"
+              style="font-size: 13px; color: #333; margin: 0 0 16px"
+            ></p>
+            <div
+              style="
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                flex-wrap: wrap;
+              "
             >
-              ← Précédente
-            </button>
-            <button class="btn-nav btn-flip" onclick="flipCard()">
-              ↺ Retourner
-            </button>
-            <button
-              class="btn-nav btn-next"
-              id="btn-next"
-              onclick="nextCard()"
-            >
-              Suivante →
-            </button>
+              <button
+                onclick="restartCards()"
+                style="
+                  padding: 10px 22px;
+                  background: #1a3a5c;
+                  color: #fff;
+                  border: none;
+                  border-radius: 8px;
+                  font-size: 13px;
+                  font-weight: 700;
+                  cursor: pointer;
+                "
+              >
+                ↺ Tout recommencer
+              </button>
+              <button
+                id="btn-review-weak"
+                onclick="reviewWeak()"
+                style="
+                  display: none;
+                  padding: 10px 22px;
+                  background: #e74c3c;
+                  color: #fff;
+                  border: none;
+                  border-radius: 8px;
+                  font-size: 13px;
+                  font-weight: 700;
+                  cursor: pointer;
+                "
+              >
+                🔁 Revoir les non-maîtrisées
+              </button>
+            </div>
           </div>
         </div>
 
-        <!-- Résultat final -->
-        <div
-          id="final-result"
-          style="
-            display: none;
-            text-align: center;
-            padding: 20px;
-            background: #d5f5e3;
-            border: 2px solid #27ae60;
-            border-radius: 12px;
-            margin-top: 20px;
-          "
-        >
-          <h2 style="color: #145a32; margin: 0 0 8px">🏆 Session terminée !</h2>
-          <p
-            id="final-text"
-            style="font-size: 13px; color: #333; margin: 0 0 16px"
-          ></p>
-          <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-            <button
-              onclick="restartCards()"
-              style="
-                padding: 10px 22px;
-                background: #1a3a5c;
-                color: #fff;
-                border: none;
-                border-radius: 8px;
-                font-size: 13px;
-                font-weight: 700;
-                cursor: pointer;
-              "
-            >
-              ↺ Tout recommencer
-            </button>
-            <button
-              id="btn-review-weak"
-              onclick="reviewWeak()"
-              style="
-                display: none;
-                padding: 10px 22px;
-                background: #e74c3c;
-                color: #fff;
-                border: none;
-                border-radius: 8px;
-                font-size: 13px;
-                font-weight: 700;
-                cursor: pointer;
-              "
-            >
-              🔁 Revoir les non-maîtrisées
-            </button>
-          </div>
+        <div class="footer">
+          Flashcards Git · S2 GitHub · PPNI 2026 &nbsp;|&nbsp;
+          <a href="index.html" style="color: inherit">← Retour aux exercices</a>
         </div>
       </div>
 
-      <div class="footer">
-        Flashcards Git · S2 GitHub · PPNI 2026 &nbsp;|&nbsp;
-        <a href="index.html" style="color: inherit">← Retour aux exercices</a>
-      </div>
-    </div>
+      <script>
+        const cards = [
+          {
+            cmd: "git init",
+            cat: "Base",
+            title: "Initialiser un dépôt Git",
+            desc: "Crée un nouveau dépôt Git vide dans le dossier courant. À faire une seule fois au début d'un projet.",
+            example:
+              'Exemple : dans ton dossier "mon-projet/", tu lances git init → le dossier devient un repo Git.',
+          },
+          {
+            cmd: "git clone [url]",
+            cat: "Remote",
+            title: "Copier un repo existant",
+            desc: "Télécharge un repo depuis GitHub (ou tout autre serveur) vers ton ordinateur, avec tout l'historique.",
+            example:
+              "Exemple : git clone https://github.com/toi/ppni-cybersecurite.git",
+          },
+          {
+            cmd: "git status",
+            cat: "Base",
+            title: "Voir l'état du repo",
+            desc: "Affiche les fichiers modifiés, les fichiers prêts à committer (staged) et ceux non suivis (untracked).",
+            example:
+              "Conseil : lance git status avant chaque commit pour vérifier ce qui va être sauvegardé.",
+          },
+          {
+            cmd: "git add .",
+            cat: "Base",
+            title: "Préparer tous les fichiers",
+            desc: 'Ajoute tous les fichiers modifiés dans la "staging area" — la zone de préparation avant le commit.',
+            example:
+              'Le point (.) signifie "tout le répertoire courant". Tu peux aussi faire git add README.md pour un seul fichier.',
+          },
+          {
+            cmd: 'git commit -m "message"',
+            cat: "Base",
+            title: "Sauvegarder un instantané",
+            desc: "Crée un point de sauvegarde permanent avec un message descriptif. L'historique Git garde tous les commits.",
+            example:
+              'Exemple : git commit -m "Ajouter section bonnes pratiques cybersécurité"',
+          },
+          {
+            cmd: "git push",
+            cat: "Remote",
+            title: "Envoyer vers GitHub",
+            desc: "Envoie les commits locaux vers le dépôt distant (GitHub). Rend ton travail visible en ligne.",
+            example:
+              "Conseil : pusher régulièrement = sauvegarde en ligne de ton travail, accessible depuis n'importe où.",
+          },
+          {
+            cmd: "git pull",
+            cat: "Remote",
+            title: "Récupérer les changements",
+            desc: "Télécharge et intègre les dernières modifications depuis le dépôt distant. À faire avant de commencer à travailler en équipe.",
+            example:
+              "Équivalent de : git fetch + git merge en une seule commande.",
+          },
+          {
+            cmd: "git log --oneline",
+            cat: "Base",
+            title: "Voir l'historique compact",
+            desc: "Affiche la liste des commits : identifiant court + message. Chaque ligne est un point de sauvegarde.",
+            example:
+              "Exemple de sortie : a3f8c12 Ajouter README · 8bc2901 Initial commit",
+          },
+          {
+            cmd: "git branch",
+            cat: "Branches",
+            title: "Lister les branches",
+            desc: "Affiche toutes les branches locales. La branche active est marquée d'un astérisque (*).",
+            example: "Exemple : * main — amelioration-readme",
+          },
+          {
+            cmd: "git checkout -b [nom]",
+            cat: "Branches",
+            title: "Créer + basculer sur une branche",
+            desc: "Crée une nouvelle branche et se positionne dessus immédiatement. Raccourci de git branch + git checkout.",
+            example:
+              "Exemple : git checkout -b amelioration-readme — crée et bascule sur la branche.",
+          },
+          {
+            cmd: "git checkout [branche]",
+            cat: "Branches",
+            title: "Basculer sur une branche",
+            desc: "Change de branche de travail. Les fichiers dans ton éditeur reflètent l'état de la branche choisie.",
+            example:
+              "Exemple : git checkout main — pour retourner sur la branche principale.",
+          },
+          {
+            cmd: "git merge [branche]",
+            cat: "Branches",
+            title: "Fusionner une branche",
+            desc: "Intègre les commits d'une autre branche dans la branche courante. Utilisé pour valider une fonctionnalité.",
+            example:
+              "Depuis main : git merge amelioration-readme — fusionne le travail dans main.",
+          },
+          {
+            cmd: "git diff",
+            cat: "Base",
+            title: "Voir les modifications",
+            desc: "Affiche exactement ce qui a changé dans les fichiers (lignes ajoutées en vert, supprimées en rouge).",
+            example:
+              "Astuce : git diff --staged pour voir les fichiers déjà ajoutés avec git add.",
+          },
+          {
+            cmd: "git remote -v",
+            cat: "Remote",
+            title: "Voir les dépôts distants",
+            desc: "Liste les connexions distantes configurées (origin = GitHub). Affiche les URLs de fetch et push.",
+            example:
+              "Utile pour vérifier que ton repo local est bien connecté au bon repo GitHub.",
+          },
+          {
+            cmd: "git stash",
+            cat: "Avancé",
+            title: "Mettre de côté des changements",
+            desc: "Sauvegarde temporairement les modifications en cours sans committer, pour pouvoir changer de branche proprement.",
+            example:
+              "git stash → changer de branche → git stash pop pour récupérer les modifications.",
+          },
+        ];
 
-    <script>
-      const cards = [
-        {
-          cmd: "git init",
-          cat: "Base",
-          title: "Initialiser un dépôt Git",
-          desc: "Crée un nouveau dépôt Git vide dans le dossier courant. À faire une seule fois au début d'un projet.",
-          example:
-            'Exemple : dans ton dossier "mon-projet/", tu lances git init → le dossier devient un repo Git.',
-        },
-        {
-          cmd: "git clone [url]",
-          cat: "Remote",
-          title: "Copier un repo existant",
-          desc: "Télécharge un repo depuis GitHub (ou tout autre serveur) vers ton ordinateur, avec tout l'historique.",
-          example:
-            "Exemple : git clone https://github.com/toi/ppni-cybersecurite.git",
-        },
-        {
-          cmd: "git status",
-          cat: "Base",
-          title: "Voir l'état du repo",
-          desc: "Affiche les fichiers modifiés, les fichiers prêts à committer (staged) et ceux non suivis (untracked).",
-          example:
-            "Conseil : lance git status avant chaque commit pour vérifier ce qui va être sauvegardé.",
-        },
-        {
-          cmd: "git add .",
-          cat: "Base",
-          title: "Préparer tous les fichiers",
-          desc: 'Ajoute tous les fichiers modifiés dans la "staging area" — la zone de préparation avant le commit.',
-          example:
-            'Le point (.) signifie "tout le répertoire courant". Tu peux aussi faire git add README.md pour un seul fichier.',
-        },
-        {
-          cmd: 'git commit -m "message"',
-          cat: "Base",
-          title: "Sauvegarder un instantané",
-          desc: "Crée un point de sauvegarde permanent avec un message descriptif. L'historique Git garde tous les commits.",
-          example:
-            'Exemple : git commit -m "Ajouter section bonnes pratiques cybersécurité"',
-        },
-        {
-          cmd: "git push",
-          cat: "Remote",
-          title: "Envoyer vers GitHub",
-          desc: "Envoie les commits locaux vers le dépôt distant (GitHub). Rend ton travail visible en ligne.",
-          example:
-            "Conseil : pusher régulièrement = sauvegarde en ligne de ton travail, accessible depuis n'importe où.",
-        },
-        {
-          cmd: "git pull",
-          cat: "Remote",
-          title: "Récupérer les changements",
-          desc: "Télécharge et intègre les dernières modifications depuis le dépôt distant. À faire avant de commencer à travailler en équipe.",
-          example:
-            "Équivalent de : git fetch + git merge en une seule commande.",
-        },
-        {
-          cmd: "git log --oneline",
-          cat: "Base",
-          title: "Voir l'historique compact",
-          desc: "Affiche la liste des commits : identifiant court + message. Chaque ligne est un point de sauvegarde.",
-          example:
-            "Exemple de sortie : a3f8c12 Ajouter README · 8bc2901 Initial commit",
-        },
-        {
-          cmd: "git branch",
-          cat: "Branches",
-          title: "Lister les branches",
-          desc: "Affiche toutes les branches locales. La branche active est marquée d'un astérisque (*).",
-          example: "Exemple : * main — amelioration-readme",
-        },
-        {
-          cmd: "git checkout -b [nom]",
-          cat: "Branches",
-          title: "Créer + basculer sur une branche",
-          desc: "Crée une nouvelle branche et se positionne dessus immédiatement. Raccourci de git branch + git checkout.",
-          example:
-            "Exemple : git checkout -b amelioration-readme — crée et bascule sur la branche.",
-        },
-        {
-          cmd: "git checkout [branche]",
-          cat: "Branches",
-          title: "Basculer sur une branche",
-          desc: "Change de branche de travail. Les fichiers dans ton éditeur reflètent l'état de la branche choisie.",
-          example:
-            "Exemple : git checkout main — pour retourner sur la branche principale.",
-        },
-        {
-          cmd: "git merge [branche]",
-          cat: "Branches",
-          title: "Fusionner une branche",
-          desc: "Intègre les commits d'une autre branche dans la branche courante. Utilisé pour valider une fonctionnalité.",
-          example:
-            "Depuis main : git merge amelioration-readme — fusionne le travail dans main.",
-        },
-        {
-          cmd: "git diff",
-          cat: "Base",
-          title: "Voir les modifications",
-          desc: "Affiche exactement ce qui a changé dans les fichiers (lignes ajoutées en vert, supprimées en rouge).",
-          example:
-            "Astuce : git diff --staged pour voir les fichiers déjà ajoutés avec git add.",
-        },
-        {
-          cmd: "git remote -v",
-          cat: "Remote",
-          title: "Voir les dépôts distants",
-          desc: "Liste les connexions distantes configurées (origin = GitHub). Affiche les URLs de fetch et push.",
-          example:
-            "Utile pour vérifier que ton repo local est bien connecté au bon repo GitHub.",
-        },
-        {
-          cmd: "git stash",
-          cat: "Avancé",
-          title: "Mettre de côté des changements",
-          desc: "Sauvegarde temporairement les modifications en cours sans committer, pour pouvoir changer de branche proprement.",
-          example:
-            "git stash → changer de branche → git stash pop pour récupérer les modifications.",
-        },
-      ];
+        let currentIndex = 0;
+        let isFlipped = false;
+        let evaluations = new Array(cards.length).fill(null); // null = pas encore évalué, true = su, false = pas su
 
-      let currentIndex = 0;
-      let isFlipped = false;
-      let evaluations = new Array(cards.length).fill(null); // null = pas encore évalué, true = su, false = pas su
+        function buildDots() {
+          const container = document.getElementById("progress-dots");
+          container.innerHTML = "";
+          cards.forEach((_, i) => {
+            const dot = document.createElement("div");
+            dot.className =
+              "progress-dot" +
+              (i === currentIndex ? " current" : "") +
+              (evaluations[i] === true
+                ? " knew"
+                : evaluations[i] === false
+                  ? " didnt"
+                  : evaluations[i] === "seen"
+                    ? " seen"
+                    : "");
+            container.appendChild(dot);
+          });
+        }
 
-      function buildDots() {
-        const container = document.getElementById("progress-dots");
-        container.innerHTML = "";
-        cards.forEach((_, i) => {
-          const dot = document.createElement("div");
-          dot.className =
-            "progress-dot" +
-            (i === currentIndex ? " current" : "") +
-            (evaluations[i] === true
-              ? " knew"
-              : evaluations[i] === false
-                ? " didnt"
-                : evaluations[i] === "seen"
-                  ? " seen"
-                  : "");
-          container.appendChild(dot);
-        });
-      }
+        function updateStats() {
+          const knew = evaluations.filter((e) => e === true).length;
+          const didnt = evaluations.filter((e) => e === false).length;
+          const remain = evaluations.filter(
+            (e) => e === null || e === "seen",
+          ).length;
+          document.getElementById("stat-knew").textContent = knew + " su(es)";
+          document.getElementById("stat-didnt").textContent =
+            didnt + " à revoir";
+          document.getElementById("stat-remain").textContent =
+            remain + " restant(es)";
+        }
 
-      function updateStats() {
-        const knew = evaluations.filter((e) => e === true).length;
-        const didnt = evaluations.filter((e) => e === false).length;
-        const remain = evaluations.filter((e) => e === null || e === "seen").length;
-        document.getElementById("stat-knew").textContent = knew + " su(es)";
-        document.getElementById("stat-didnt").textContent = didnt + " à revoir";
-        document.getElementById("stat-remain").textContent =
-          remain + " restant(es)";
-      }
+        function showCard(idx) {
+          const card = cards[idx];
+          document.getElementById("card-command").textContent = card.cmd;
+          document.getElementById("card-category").textContent = card.cat;
+          document.getElementById("card-title").textContent = card.title;
+          document.getElementById("card-desc").textContent = card.desc;
+          document.getElementById("card-example").textContent = card.example;
+          document.getElementById("card-counter").textContent =
+            "Carte " + (idx + 1) + " sur " + cards.length;
 
-      function showCard(idx) {
-        const card = cards[idx];
-        document.getElementById("card-command").textContent = card.cmd;
-        document.getElementById("card-category").textContent = card.cat;
-        document.getElementById("card-title").textContent = card.title;
-        document.getElementById("card-desc").textContent = card.desc;
-        document.getElementById("card-example").textContent = card.example;
-        document.getElementById("card-counter").textContent =
-          "Carte " + (idx + 1) + " sur " + cards.length;
+          // Reset flip
+          isFlipped = false;
+          const fc = document.getElementById("flashcard");
+          fc.classList.remove("flipped");
+          // Reset result color on back face
+          document.querySelector(".flashcard-back").classList.remove("result-knew", "result-didnt");
+          document.getElementById("self-eval").classList.remove("visible");
 
-        // Reset flip
-        isFlipped = false;
-        document.getElementById("flashcard").classList.remove("flipped");
-        document.getElementById("self-eval").classList.remove("visible");
+          // Reset eval buttons
+          const bKnew = document.getElementById("btn-knew");
+          const bDidnt = document.getElementById("btn-didnt");
+          bKnew.disabled = false;
+          bKnew.classList.remove("btn-eval-active", "btn-eval-inactive");
+          bDidnt.disabled = false;
+          bDidnt.classList.remove("btn-eval-active", "btn-eval-inactive");
 
-        // Reset eval buttons
-        document.getElementById("btn-knew").disabled = false;
-        document.getElementById("btn-knew").style.opacity = "1";
-        document.getElementById("btn-didnt").disabled = false;
-        document.getElementById("btn-didnt").style.opacity = "1";
+          // Nav buttons
+          document.getElementById("btn-prev").disabled = idx === 0;
+          document.getElementById("btn-next").disabled = idx === cards.length - 1;
 
-        // Nav buttons
-        document.getElementById("btn-prev").disabled = idx === 0;
-        document.getElementById("btn-next").disabled = idx === cards.length - 1;
-
-        buildDots();
-        updateStats();
-      }
-
-      function flipCard() {
-        isFlipped = !isFlipped;
-        document
-          .getElementById("flashcard")
-          .classList.toggle("flipped", isFlipped);
-        if (isFlipped) {
-          document.getElementById("self-eval").classList.add("visible");
-          if (evaluations[currentIndex] === null)
-            evaluations[currentIndex] = "seen";
           buildDots();
           updateStats();
-        } else {
-          document.getElementById("self-eval").classList.remove("visible");
         }
-      }
 
-      function evaluate(knew) {
-        evaluations[currentIndex] = knew;
+        function flipCard() {
+          isFlipped = !isFlipped;
+          document
+            .getElementById("flashcard")
+            .classList.toggle("flipped", isFlipped);
+          if (isFlipped) {
+            document.getElementById("self-eval").classList.add("visible");
+            if (evaluations[currentIndex] === null)
+              evaluations[currentIndex] = "seen";
+            buildDots();
+            updateStats();
+          } else {
+            document.getElementById("self-eval").classList.remove("visible");
+          }
+        }
 
-        // Feedback visuel immédiat sur les boutons
-        const bKnew = document.getElementById("btn-knew");
-        const bDidnt = document.getElementById("btn-didnt");
-        bKnew.disabled = true;
-        bDidnt.disabled = true;
-        bKnew.style.opacity = knew ? "1" : "0.35";
-        bDidnt.style.opacity = knew ? "0.35" : "1";
+        function evaluate(knew) {
+          evaluations[currentIndex] = knew;
 
-        buildDots();
-        updateStats();
+          // Changer la couleur du dos de la carte
+          const back = document.querySelector(".flashcard-back");
+          back.classList.remove("result-knew", "result-didnt");
+          back.classList.add(knew ? "result-knew" : "result-didnt");
 
-        // Sauvegarder en localStorage
-        const nbEval = evaluations.filter((e) => e === true || e === false).length;
-        localStorage.setItem("ppni_quiz_git_score", nbEval + "/" + cards.length);
+          // Feedback visuel sur les boutons
+          const bKnew = document.getElementById("btn-knew");
+          const bDidnt = document.getElementById("btn-didnt");
+          bKnew.disabled = true;
+          bDidnt.disabled = true;
+          bKnew.classList.remove("btn-eval-active", "btn-eval-inactive");
+          bDidnt.classList.remove("btn-eval-active", "btn-eval-inactive");
+          bKnew.classList.add(knew ? "btn-eval-active" : "btn-eval-inactive");
+          bDidnt.classList.add(knew ? "btn-eval-inactive" : "btn-eval-active");
 
-        // Auto-avance après 700ms
-        const done = evaluations.every((e) => e === true || e === false);
-        setTimeout(() => {
-          if (done) {
-            showFinalResult();
-          } else if (currentIndex < cards.length - 1) {
+          buildDots();
+          updateStats();
+
+          localStorage.setItem("ppni_quiz_git_score",
+            evaluations.filter((e) => e === true || e === false).length + "/" + cards.length);
+
+          // Bilan final si toutes les cartes ont été évaluées
+          const done = evaluations.every((e) => e === true || e === false);
+          if (done) setTimeout(showFinalResult, 500);
+        }
+
+        function nextCard() {
+          if (currentIndex < cards.length - 1) {
             currentIndex++;
             showCard(currentIndex);
           }
-        }, 700);
-      }
+        }
 
-      function nextCard() {
-        if (currentIndex < cards.length - 1) {
-          currentIndex++;
+        function prevCard() {
+          if (currentIndex > 0) {
+            currentIndex--;
+            showCard(currentIndex);
+          }
+        }
+
+        function showFinalResult() {
+          const knew = evaluations.filter((e) => e === true).length;
+          const pct = Math.round((knew / cards.length) * 100);
+          document.getElementById("final-result").style.display = "block";
+          document.getElementById("final-text").textContent =
+            "Tu as su " +
+            knew +
+            " cartes sur " +
+            cards.length +
+            " (" +
+            pct +
+            "%). " +
+            (pct >= 80
+              ? "Excellent niveau ! Tu maîtrises bien le flux Git."
+              : pct >= 50
+                ? "Bon début. Recommence en te concentrant sur les cartes en rouge."
+                : "Continue de pratiquer — lance git status dans un terminal et observe le résultat.");
+          // Afficher le bouton "revoir les non-maîtrisées" si nécessaire
+          const toReview = evaluations.filter((e) => e === false).length;
+          document.getElementById("btn-review-weak").style.display =
+            toReview > 0 ? "inline-block" : "none";
+
+          document
+            .getElementById("final-result")
+            .scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+
+        function restartCards() {
+          currentIndex = 0;
+          evaluations = new Array(cards.length).fill(null);
+          document.getElementById("final-result").style.display = "none";
+          document.getElementById("btn-review-weak").style.display = "none";
+          showCard(0);
+        }
+
+        function reviewWeak() {
+          // Remettre à null uniquement les cartes non maîtrisées
+          evaluations = evaluations.map((e) => (e === false ? null : e));
+          document.getElementById("final-result").style.display = "none";
+          // Aller à la première carte non maîtrisée
+          const first = evaluations.findIndex((e) => e === null);
+          currentIndex = first >= 0 ? first : 0;
           showCard(currentIndex);
         }
-      }
 
-      function prevCard() {
-        if (currentIndex > 0) {
-          currentIndex--;
-          showCard(currentIndex);
-        }
-      }
-
-      function showFinalResult() {
-        const knew = evaluations.filter((e) => e === true).length;
-        const pct = Math.round((knew / cards.length) * 100);
-        document.getElementById("final-result").style.display = "block";
-        document.getElementById("final-text").textContent =
-          "Tu as su " +
-          knew +
-          " cartes sur " +
-          cards.length +
-          " (" +
-          pct +
-          "%). " +
-          (pct >= 80
-            ? "Excellent niveau ! Tu maîtrises bien le flux Git."
-            : pct >= 50
-              ? "Bon début. Recommence en te concentrant sur les cartes en rouge."
-              : "Continue de pratiquer — lance git status dans un terminal et observe le résultat.");
-        // Afficher le bouton "revoir les non-maîtrisées" si nécessaire
-        const toReview = evaluations.filter((e) => e === false).length;
-        document.getElementById("btn-review-weak").style.display =
-          toReview > 0 ? "inline-block" : "none";
-
-        document
-          .getElementById("final-result")
-          .scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-
-      function restartCards() {
-        currentIndex = 0;
-        evaluations = new Array(cards.length).fill(null);
-        document.getElementById("final-result").style.display = "none";
-        document.getElementById("btn-review-weak").style.display = "none";
+        // Init
         showCard(0);
-      }
-
-      function reviewWeak() {
-        // Remettre à null uniquement les cartes non maîtrisées
-        evaluations = evaluations.map((e) => (e === false ? null : e));
-        document.getElementById("final-result").style.display = "none";
-        // Aller à la première carte non maîtrisée
-        const first = evaluations.findIndex((e) => e === null);
-        currentIndex = first >= 0 ? first : 0;
-        showCard(currentIndex);
-      }
-
-      // Init
-      showCard(0);
-    </script>
+      </script>
     </main>
     <script src="../js/app.js"></script>
   </body>
