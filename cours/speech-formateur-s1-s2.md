@@ -47,19 +47,27 @@
 
 ### ⏰ 09h20 – 09h50 · Quiz de positionnement individuel
 
-⚙️ **ATELIER — Distribuer le quiz papier (ou ouvrir le formulaire en ligne) :**
+⚙️ **ATELIER — Ouvrir le quiz interactif en ligne :**
 
-10 questions simples. Exemples :
+> URL : `exercices/quiz-positionnement.html`
 
-1. Avez-vous le même mot de passe sur plusieurs sites ? (oui / non / je sais pas)
-2. Avez-vous déjà reçu un e-mail qui vous semblait suspect ?
-3. Savez-vous ce qu'est un "commit" en informatique ?
-4. Avez-vous un compte GitHub ?
-5. Que faites-vous quand votre logiciel vous demande une mise à jour ?
+30 questions réparties en 3 sections — durée estimée **15 minutes** :
+
+- **Section A (Q1-Q10)** — Habitudes numériques : comportements actuels face aux mots de passe, Wi-Fi, mises à jour, phishing. Pas de bonne/mauvaise réponse — c'est un diagnostic de profil.
+- **Section B (Q11-Q20)** — Cybersécurité & menaces : phishing, ransomware, MFA, VPN, passphrase… QCM à 4 options.
+- **Section C (Q21-Q30)** — Git & GitHub : commit, push, branche, README, Markdown… QCM à 4 options.
+
+À la fin, chaque stagiaire voit un bilan par section avec conseils personnalisés. Les résultats sont sauvegardés localement (localStorage), rien n'est envoyé en ligne.
 
 💬 **FORMATEUR :**
 
 > "Ce quiz ne donne pas de notes. Il me sert juste à savoir où vous en êtes aujourd'hui pour qu'on adapte le rythme. Répondez honnêtement — y compris 'je ne sais pas', c'est la meilleure réponse si c'est la vraie."
+
+💬 **FORMATEUR (après que les stagiaires ont fini) :**
+
+> "Regardez votre bilan. Pas de surprise si vous avez 0 en Git — c'est fait pour ça. Ce qui m'intéresse, c'est la section A : vos habitudes. C'est là qu'on va le plus progresser concrètement dès aujourd'hui."
+
+Parcourir les postes pendant le quiz (5 min) — repérer les niveaux extrêmes (très avancés, très débutants) pour ajuster les binômes de la journée.
 
 ---
 
