@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Référence Markdown — PPNI 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/shared.css" />
+    <style>
+      .md-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+      .md-table th { background: #2c6fad; color: #fff; padding: 10px 14px; text-align: left; font-size: 12px; }
+      .md-table td { padding: 10px 14px; border-bottom: 1px solid #e8eef7; vertical-align: middle; }
+      .md-table tr:hover td { background: #f5f8fc; }
+      .md-table code { background: #1e293b; color: #7dd3fc; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-family: 'Courier New', monospace; white-space: pre; display: inline-block; }
+      .md-table .rendu { font-size: 13px; }
+      .md-table .rendu h1 { font-size: 18px; margin: 0; }
+      .md-table .rendu h2 { font-size: 15px; margin: 0; }
+      .md-table .rendu h3 { font-size: 13px; margin: 0; }
+      .live-editor {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 12px;
+      }
+      .editor-pane {
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .editor-pane-header {
+        background: #1e293b;
+        color: #94a3b8;
+        padding: 8px 14px;
+        font-size: 11px;
+        font-weight: 600;
+        font-family: monospace;
+      }
+      .editor-pane textarea {
+        width: 100%;
+        min-height: 300px;
+        padding: 14px;
+        border: none;
+        font-family: 'Courier New', monospace;
+        font-size: 13px;
+        resize: vertical;
+        background: #0f172a;
+        color: #e2e8f0;
+        box-sizing: border-box;
+        line-height: 1.6;
+      }
+      .editor-pane iframe {
+        width: 100%;
+        min-height: 300px;
+        border: none;
+        background: #fff;
+        padding: 14px;
+        box-sizing: border-box;
+      }
+      .editor-pane-preview {
+        padding: 14px;
+        min-height: 300px;
+        background: #fff;
+        font-size: 13px;
+        line-height: 1.6;
+        overflow-y: auto;
+        max-height: 400px;
+      }
+      .editor-pane-preview h1 { font-size: 20px; color: #1a3a5c; border-bottom: 2px solid #e8eef7; padding-bottom: 6px; }
+      .editor-pane-preview h2 { font-size: 16px; color: #2c6fad; margin-top: 14px; }
+      .editor-pane-preview h3 { font-size: 14px; color: #444; }
+      .editor-pane-preview code { background: #f1f5f9; padding: 1px 6px; border-radius: 3px; font-size: 12px; }
+      .editor-pane-preview pre { background: #1e293b; color: #7dd3fc; padding: 12px; border-radius: 6px; overflow-x: auto; }
+      .editor-pane-preview blockquote { border-left: 4px solid #2c6fad; margin: 0; padding: 4px 12px; color: #555; background: #f5f8fc; }
+      .editor-pane-preview table { border-collapse: collapse; width: 100%; }
+      .editor-pane-preview th { background: #1a3a5c; color: #fff; padding: 6px 10px; }
+      .editor-pane-preview td { padding: 6px 10px; border: 1px solid #e0e0e0; }
+      .editor-pane-preview a { color: #2980b9; }
+      .editor-pane-preview img { max-width: 100%; }
+      @media (max-width: 700px) { .live-editor { grid-template-columns: 1fr; } }
+      @media print {
+        .topbar, .print-btn, nav, .live-editor { display: none !important; }
+        .page-wrapper { padding: 0 !important; }
+        .section-box { break-inside: avoid; border: 1px solid #ccc !important; box-shadow: none !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="topbar">
+      <span class="topbar-brand">PPNI 2026</span>
+      <a href="../index.html">🏠 Accueil</a>
+      <a href="../planning.html">📅 Planning</a>
+      <a href="../previsionnel.html">📊 Prévisionnel</a>
+      <a href="../previsionnel_stagiaire.html">🎓 Stagiaires</a>
+      <a href="index.html" class="active">📚 Ressources</a>
+      <a href="../exercices/index.html">✏️ Exercices</a>
+    </nav>
+
+    <div class="page-wrapper">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:10px;">
+        <div class="doc-header" style="flex:1;margin-bottom:0;">
+          <h1>📝 Référence Markdown</h1>
+          <div class="meta">S1-S2 · GitHub README · Syntaxe + rendu côte à côte · Éditeur live intégré</div>
+        </div>
+        <div style="display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap;">
+          <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:#e8eef7;color:#1a3a5c;border:1px solid #c5d3e8;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none;">← Ressources</a>
+          <button class="print-btn" onclick="window.print()">🖨️ Imprimer / PDF</button>
+        </div>
+      </div>
+
+      <!-- INTRO -->
+      <div class="section-box">
+        <div class="falc-intro">
+          <strong>💡 Markdown, c'est quoi ?</strong>
+          Markdown est un langage de mise en forme ultra-simple. Tu écris du texte avec des symboles (<code>#</code>, <code>**</code>, <code>-</code>) et GitHub le convertit automatiquement en HTML mis en forme.
+          C'est le format des fichiers <code>README.md</code>, de la documentation technique, et de nombreux outils de prise de notes (Notion, Obsidian...).
+        </div>
+      </div>
+
+      <!-- TABLE DE RÉFÉRENCE -->
+      <div class="section-box">
+        <h2>📖 Référence complète — Syntaxe → Rendu</h2>
+        <table class="md-table">
+          <thead>
+            <tr>
+              <th style="width:40%">Syntaxe Markdown</th>
+              <th>Rendu obtenu</th>
+              <th style="width:25%">Usage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code># Titre principal</code></td>
+              <td class="rendu"><h1>Titre principal</h1></td>
+              <td>1 seul par document, en haut</td>
+            </tr>
+            <tr>
+              <td><code>## Sous-titre</code></td>
+              <td class="rendu"><h2>Sous-titre</h2></td>
+              <td>Sections principales</td>
+            </tr>
+            <tr>
+              <td><code>### Sous-sous-titre</code></td>
+              <td class="rendu"><h3>Sous-sous-titre</h3></td>
+              <td>Sous-sections</td>
+            </tr>
+            <tr>
+              <td><code>**texte en gras**</code></td>
+              <td class="rendu"><strong>texte en gras</strong></td>
+              <td>Mettre en valeur un mot clé</td>
+            </tr>
+            <tr>
+              <td><code>*texte en italique*</code></td>
+              <td class="rendu"><em>texte en italique</em></td>
+              <td>Titre de livre, terme technique</td>
+            </tr>
+            <tr>
+              <td><code>~~texte barré~~</code></td>
+              <td class="rendu"><s>texte barré</s></td>
+              <td>Correction, chose annulée</td>
+            </tr>
+            <tr>
+              <td><code>`code inline`</code></td>
+              <td class="rendu"><code>code inline</code></td>
+              <td>Commande, nom de fichier, variable</td>
+            </tr>
+            <tr>
+              <td><code>- item 1<br>- item 2<br>- item 3</code></td>
+              <td class="rendu"><ul><li>item 1</li><li>item 2</li><li>item 3</li></ul></td>
+              <td>Liste non ordonnée (points)</td>
+            </tr>
+            <tr>
+              <td><code>1. premier<br>2. deuxième<br>3. troisième</code></td>
+              <td class="rendu"><ol><li>premier</li><li>deuxième</li><li>troisième</li></ol></td>
+              <td>Liste numérotée (étapes)</td>
+            </tr>
+            <tr>
+              <td><code>[texte du lien](https://url.com)</code></td>
+              <td class="rendu"><a href="#">texte du lien</a></td>
+              <td>Lien cliquable</td>
+            </tr>
+            <tr>
+              <td><code>![alt](https://url-image.png)</code></td>
+              <td class="rendu">🖼️ <em>(image affichée)</em></td>
+              <td>Insérer une image</td>
+            </tr>
+            <tr>
+              <td><code>&gt; Citation ou remarque</code></td>
+              <td class="rendu"><blockquote style="border-left:3px solid #2c6fad;padding:4px 10px;margin:0;background:#f5f8fc;color:#444;">Citation ou remarque</blockquote></td>
+              <td>Mettre une note en valeur</td>
+            </tr>
+            <tr>
+              <td><code>---</code></td>
+              <td class="rendu"><hr style="margin:4px 0;border-color:#e0e0e0;"/></td>
+              <td>Ligne de séparation</td>
+            </tr>
+            <tr>
+              <td><code>| Col1 | Col2 |<br>|------|------|<br>| A    | B    |</code></td>
+              <td class="rendu">
+                <table style="border-collapse:collapse;font-size:12px;">
+                  <tr><th style="background:#1a3a5c;color:#fff;padding:3px 8px;">Col1</th><th style="background:#1a3a5c;color:#fff;padding:3px 8px;">Col2</th></tr>
+                  <tr><td style="border:1px solid #ddd;padding:3px 8px;">A</td><td style="border:1px solid #ddd;padding:3px 8px;">B</td></tr>
+                </table>
+              </td>
+              <td>Tableau structuré</td>
+            </tr>
+            <tr>
+              <td><code>```<br>code bloc<br>```</code></td>
+              <td class="rendu"><pre style="background:#1e293b;color:#7dd3fc;padding:6px 10px;border-radius:4px;margin:0;font-size:11px;">code bloc</pre></td>
+              <td>Bloc de code multi-lignes</td>
+            </tr>
+            <tr>
+              <td><code>- [x] tâche faite<br>- [ ] à faire</code></td>
+              <td class="rendu">
+                <ul style="list-style:none;padding:0;margin:0;">
+                  <li>✅ tâche faite</li>
+                  <li>☐ à faire</li>
+                </ul>
+              </td>
+              <td>Checklist interactive (GitHub)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ÉDITEUR LIVE -->
+      <div class="section-box">
+        <h2>⚡ Éditeur Markdown live — Essaie ici !</h2>
+        <p style="font-size:12px;color:#555;margin-bottom:12px;">
+          Écris du Markdown à gauche → le rendu s'affiche automatiquement à droite.
+          <strong>Rien n'est envoyé nulle part</strong> — tout reste dans ton navigateur.
+        </p>
+        <div class="live-editor">
+          <div class="editor-pane">
+            <div class="editor-pane-header">✏️ Markdown (éditable)</div>
+            <textarea id="md-input" spellcheck="false">
+# Mon README PPNI
+
+## Qui suis-je ?
+Je suis en formation **PPNI 2026** à Auxilia.
+
+## Mes 3 bonnes pratiques cybersécurité
+
+1. Utiliser un **gestionnaire de mots de passe** (Bitwarden)
+2. Activer le **MFA** sur tous mes comptes importants
+3. Vérifier l'URL avant de cliquer sur un lien
+
+## Mon dépôt GitHub
+
+> Ce projet documente mon apprentissage du numérique.
+
+[Voir mon profil GitHub](https://github.com)
+
+---
+
+## Checklist S1-S2
+
+- [x] Compte GitHub créé
+- [x] README rédigé
+- [ ] 3 commits effectués
+            </textarea>
+          </div>
+          <div class="editor-pane">
+            <div class="editor-pane-header" style="background:#1a3a5c;">👁️ Rendu (aperçu)</div>
+            <div class="editor-pane-preview" id="md-preview"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STRUCTURE TYPE README -->
+      <div class="section-box">
+        <h2>📄 Structure type d'un bon README</h2>
+        <div class="module-grid" style="grid-template-columns:1fr;">
+          <div class="module-card pratique">
+            <span class="module-tag pratique">Modèle à copier-coller</span>
+            <h4>README.md pour le livrable S1-S2</h4>
+            <pre style="background:#0f172a;color:#e2e8f0;padding:14px;border-radius:6px;font-size:12px;overflow-x:auto;line-height:1.7;margin-top:10px;"># [Ton prénom] — PPNI 2026
+
+> Formation numérique & informatique · Auxilia · 11 mai → 31 octobre 2026
+
+## 👤 Qui suis-je ?
+Courte présentation : ton parcours, tes motivations, ce que tu cherches à apprendre.
+
+## 🔐 Mes 3 bonnes pratiques cybersécurité
+
+1. **Mots de passe forts** — j'utilise Bitwarden pour gérer des mots de passe uniques
+2. **Double authentification (MFA)** — activée sur GitHub et mes comptes Google
+3. **Vigilance phishing** — je vérifie toujours l'expéditeur et l'URL avant de cliquer
+
+## 🛠️ Compétences en cours d'acquisition
+
+| Domaine | Niveau | Statut |
+|---------|--------|--------|
+| Cybersécurité | Débutant | ✅ S1-S2 |
+| Git & GitHub | Débutant | ✅ S1-S2 |
+| Réseaux | - | ⏳ S3-S4 |
+
+## 📫 Contact
+- GitHub : [@tonpseudo](https://github.com/tonpseudo)
+- Formation : PPNI 2026 · Auxilia</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        Référence Markdown · S1-S2 GitHub · PPNI 2026 &nbsp;|&nbsp;
+        <a href="index.html" style="color:inherit;">← Retour aux ressources</a>
+      </div>
+    </div>
+
+    <!-- Convertisseur Markdown minimaliste (pas de dépendance externe) -->
+    <script>
+      const input = document.getElementById('md-input');
+      const preview = document.getElementById('md-preview');
+
+      function mdToHtml(md) {
+        return md
+          // Blocs de code (```...```)
+          .replace(/```([\s\S]*?)```/g, '<pre>$1</pre>')
+          // Code inline
+          .replace(/`([^`]+)`/g, '<code>$1</code>')
+          // Titres
+          .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+          .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+          .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+          // Gras
+          .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+          // Italique
+          .replace(/\*(.+?)\*/g, '<em>$1</em>')
+          // Barré
+          .replace(/~~(.+?)~~/g, '<s>$1</s>')
+          // Citation
+          .replace(/^&gt; (.+)$/gm, '<blockquote>$1</blockquote>')
+          .replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>')
+          // Checklist
+          .replace(/^- \[x\] (.+)$/gm, '<li>✅ $1</li>')
+          .replace(/^- \[ \] (.+)$/gm, '<li>☐ $1</li>')
+          // Listes à puces
+          .replace(/^- (.+)$/gm, '<li>$1</li>')
+          // Listes numérotées
+          .replace(/^\d+\. (.+)$/gm, '<li>$1</li>')
+          // Liens
+          .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+          // Séparateur
+          .replace(/^---$/gm, '<hr />')
+          // Tableaux simples
+          .replace(/^\|(.+)\|$/gm, (m, row) => {
+            if (row.replace(/[\s|-]/g, '') === '') return '';
+            const cells = row.split('|').map(c => c.trim());
+            return '<tr>' + cells.map(c => `<td>${c}</td>`).join('') + '</tr>';
+          })
+          // Paragraphes
+          .replace(/\n{2,}/g, '</p><p>')
+          .replace(/^(?!<[hlbpui])/gm, '');
+      }
+
+      function render() {
+        const raw = input.value;
+        let html = mdToHtml(raw);
+        // Wrap li en ul si besoin
+        html = html.replace(/(<li>[\s\S]+?<\/li>)+/g, m => `<ul>${m}</ul>`);
+        preview.innerHTML = html;
+      }
+
+      input.addEventListener('input', render);
+      render();
+    </script>
+  </body>
+</html>

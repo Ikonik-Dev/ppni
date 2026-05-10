@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fiche Phishing — PPNI 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/shared.css" />
+    <style>
+      .phishing-email {
+        background: #fff;
+        border: 2px solid #e74c3c;
+        border-radius: 10px;
+        padding: 20px 24px;
+        margin: 16px 0;
+        position: relative;
+        font-family: Arial, sans-serif;
+        font-size: 13px;
+        line-height: 1.6;
+      }
+      .email-header {
+        background: #f8f9fa;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 10px 14px;
+        border-radius: 8px 8px 0 0;
+        margin: -20px -24px 16px;
+        font-size: 12px;
+      }
+      .email-header div { margin: 3px 0; }
+      .email-header strong { color: #333; min-width: 60px; display: inline-block; }
+      .email-suspect { color: #e74c3c; font-weight: 600; }
+      .annot {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        background: #fff3cd;
+        border: 1px solid #ffc107;
+        border-radius: 4px;
+        padding: 2px 8px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #856404;
+        margin-left: 6px;
+        vertical-align: middle;
+        white-space: nowrap;
+      }
+      .annot-red { background: #f8d7da; border-color: #e74c3c; color: #721c24; }
+      .annot-orange { background: #fdebd0; border-color: #e67e22; color: #784212; }
+      .index-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        background: #e74c3c;
+        color: #fff;
+        border-radius: 50%;
+        font-size: 11px;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+      .indice-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 10px 0;
+        border-bottom: 1px solid #f0f0f0;
+      }
+      .indice-item:last-child { border-bottom: none; }
+      .indice-content h4 { margin: 0 0 3px; font-size: 13px; color: #1a3a5c; }
+      .indice-content p { margin: 0; font-size: 12px; color: #555; line-height: 1.5; }
+      .reflexe-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 12px;
+        margin-top: 12px;
+      }
+      .reflexe-card {
+        background: #d5f5e3;
+        border: 1px solid #27ae60;
+        border-radius: 8px;
+        padding: 14px;
+        font-size: 12px;
+      }
+      .reflexe-card h4 { margin: 0 0 6px; font-size: 13px; color: #145a32; }
+      .non-card {
+        background: #f8d7da;
+        border-color: #e74c3c;
+      }
+      .non-card h4 { color: #721c24; }
+      @media print {
+        .topbar, .print-btn, nav { display: none !important; }
+        .page-wrapper { padding: 0 !important; }
+        .section-box { break-inside: avoid; border: 1px solid #ccc !important; box-shadow: none !important; }
+        body { font-size: 11px; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="topbar">
+      <span class="topbar-brand">PPNI 2026</span>
+      <a href="../index.html">🏠 Accueil</a>
+      <a href="../planning.html">📅 Planning</a>
+      <a href="../previsionnel.html">📊 Prévisionnel</a>
+      <a href="../previsionnel_stagiaire.html">🎓 Stagiaires</a>
+      <a href="index.html" class="active">📚 Ressources</a>
+      <a href="../exercices/index.html">✏️ Exercices</a>
+    </nav>
+
+    <div class="page-wrapper">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:10px;">
+        <div class="doc-header" style="flex:1;margin-bottom:0;">
+          <h1>🎣 Fiche Phishing — Détecter un e-mail frauduleux</h1>
+          <div class="meta">S1-S2 · Cybersécurité · Supports imprimables</div>
+        </div>
+        <div style="display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap;">
+          <a href="index.html" style="display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:#e8eef7;color:#1a3a5c;border:1px solid #c5d3e8;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none;">← Ressources</a>
+          <button class="print-btn" onclick="window.print()">🖨️ Imprimer / PDF</button>
+        </div>
+      </div>
+
+      <!-- INTRO -->
+      <div class="section-box">
+        <div class="falc-intro">
+          <strong>💡 Le phishing, c'est quoi ?</strong><br />
+          C'est un e-mail qui se fait passer pour quelqu'un de confiance (ta banque, La Poste, Microsoft, l'administration)
+          pour te faire cliquer sur un lien piégé ou te faire saisir ton mot de passe sur un faux site.
+          <strong>90% des cyberattaques commencent par un e-mail.</strong>
+          Apprendre à les reconnaître, c'est la compétence numéro 1 en cybersécurité.
+        </div>
+      </div>
+
+      <!-- EXEMPLE ANNOTÉ -->
+      <div class="section-box">
+        <h2>📧 Exemple d'e-mail de phishing — Analysé</h2>
+        <p style="font-size:12px;color:#777;margin-bottom:12px;">Les numéros correspondent aux 10 indices à repérer (ci-dessous)</p>
+
+        <div class="phishing-email">
+          <div class="email-header">
+            <div><strong>De :</strong> <span class="email-suspect">service-client@amaz0n-securite.fr</span> <span class="annot annot-red">① Domaine suspect</span></div>
+            <div><strong>À :</strong> vous@email.com</div>
+            <div><strong>Objet :</strong> <span class="email-suspect">⚠️ URGENT — Votre compte sera suspendu dans 24h !</span> <span class="annot annot-red">② Urgence artificielle</span></div>
+            <div><strong>Date :</strong> 10 mai 2026, 02h43 <span class="annot annot-orange">③ Heure atypique</span></div>
+          </div>
+
+          <p>Chèr(e) client(e), <span class="annot annot-orange">④ Pas de prénom</span></p>
+
+          <p>Nous avons détecté une activité <strong>suspecte</strong> sur votre compte Amazon.
+          Pour des raisons de <strong>sécurité</strong>, votre accès sera <span class="email-suspect">définitivement bloqué</span>
+          si vous ne confirmez pas vos informations dans les <strong>24 heures.</strong></p>
+
+          <p>Cliquez sur le lien ci-dessous pour vérifier votre identité :</p>
+
+          <p>
+            <span class="email-suspect">→ http://amaz0n-verif.ru/confirm?id=8472</span>
+            <span class="annot annot-red">⑤ URL .ru / chiffre "0"</span>
+          </p>
+
+          <p>Si vous ne confirmez pas, votre compte et vos <strong>données bancaires</strong> seront suspendus.
+          <span class="annot annot-orange">⑥ Menace disproportionnée</span></p>
+
+          <p>Cordialement,<br />
+          Le Service Sécurité Amazon <span class="annot annot-orange">⑦ Signature vague</span><br />
+          <span style="font-size:11px;color:#999;">© 2024 Amazone Inc. Tous droit réservés.</span>
+          <span class="annot annot-red">⑧ Fautes + mauvaise année</span>
+          </p>
+        </div>
+
+        <div class="falc-intro" style="background:linear-gradient(135deg,#fdf2f2,#fff5f5);border-color:#e74c3c;">
+          <strong>🔍 Récapitulatif :</strong> cet e-mail contient <strong>8 indices visibles en 30 secondes</strong>.
+          Aucune entreprise sérieuse ne demande de confirmer un mot de passe par e-mail.
+        </div>
+      </div>
+
+      <!-- 10 INDICES -->
+      <div class="section-box">
+        <h2>🔟 Les 10 indices à repérer systématiquement</h2>
+
+        <div class="indice-item">
+          <span class="index-badge">1</span>
+          <div class="indice-content">
+            <h4>Le domaine de l'expéditeur est suspect</h4>
+            <p>Amazon écrit depuis @amazon.fr — pas depuis @amaz0n-securite.fr. Vérifier le domaine après le @, toujours.</p>
+          </div>
+        </div>
+        <div class="indice-item">
+          <span class="index-badge">2</span>
+          <div class="indice-content">
+            <h4>Un sentiment d'urgence artificiel</h4>
+            <p>"Compte suspendu dans 24h", "Action immédiate requise". L'urgence est créée pour vous empêcher de réfléchir.</p>
+          </div>
+        </div>
+        <div class="indice-item">
+          <span class="index-badge">3</span>
+          <div class="indice-content">
+            <h4>L'heure d'envoi est anormale</h4>
+            <p>Un e-mail envoyé à 2h43 du matin par un service client professionnel ? C'est automatisé par des pirates.</p>
+          </div>
+        </div>
+        <div class="indice-item">
+          <span class="index-badge">4</span>
+          <div class="indice-content">
+            <h4>Aucune personnalisation (pas de prénom)</h4>
+            <p>Votre banque vous appelle par votre nom. "Cher(e) client(e)" signifie que l'e-mail est envoyé à des milliers de personnes.</p>
+          </div>
+        </div>
+        <div class="indice-item">
+          <span class="index-badge">5</span>
+          <div class="indice-content">
+            <h4>L'URL du lien est différente du site officiel</h4>
+            <p>Avant de cliquer : passer la souris sur le lien et regarder l'URL affichée en bas du navigateur. ".ru", ".xyz", chiffres à la place de lettres = piège.</p>
+          </div>
+        </div>
+        <div class="indice-item">
+          <span class="index-badge">6</span>
+          <div class="indice-content">
+            <h4>La menace est disproportionnée</h4>
+            <p>"Vos données bancaires seront suspendues" — ça n'a aucun sens légalement. C'est une technique de peur.</p>
+          </div>
+        </div>
+        <div class="indice-item">
+          <span class="index-badge">7</span>
+          <div class="indice-content">
+            <h4>La signature est floue ou générique</h4>
+            <p>"Le Service Sécurité" sans nom, sans numéro de téléphone direct, sans adresse postale.</p>
+          </div>
+        </div>
+        <div class="indice-item">
+          <span class="index-badge">8</span>
+          <div class="indice-content">
+            <h4>Fautes d'orthographe et de grammaire</h4>
+            <p>"Tous droit réservés" au lieu de "Tous droits réservés". Les entreprises sérieuses relisent leurs e-mails.</p>
+          </div>
+        </div>
+        <div class="indice-item">
+          <span class="index-badge">9</span>
+          <div class="indice-content">
+            <h4>On vous demande de saisir un mot de passe ou des données bancaires</h4>
+            <p>Règle absolue : <strong>jamais une entreprise légitime ne demande votre mot de passe par e-mail.</strong></p>
+          </div>
+        </div>
+        <div class="indice-item">
+          <span class="index-badge">10</span>
+          <div class="indice-content">
+            <h4>Pièce jointe inattendue</h4>
+            <p>Une "facture", un "document important", un "scan" que vous n'attendiez pas. Ne pas ouvrir sans vérifier d'abord par téléphone auprès de l'expéditeur.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RÉFLEXES -->
+      <div class="section-box">
+        <h2>⚡ Quoi faire si vous recevez un e-mail suspect ?</h2>
+        <div class="reflexe-grid">
+          <div class="reflexe-card">
+            <h4>✅ Ne pas cliquer</h4>
+            <p>Même par curiosité. Un lien peut déclencher un téléchargement automatique.</p>
+          </div>
+          <div class="reflexe-card">
+            <h4>✅ Vérifier directement</h4>
+            <p>Aller sur le site officiel en tapant l'URL dans le navigateur (pas depuis l'e-mail).</p>
+          </div>
+          <div class="reflexe-card">
+            <h4>✅ Signaler</h4>
+            <p>Signaler le phishing sur <strong>cybermalveillance.gouv.fr</strong> ou à votre fournisseur de messagerie.</p>
+          </div>
+          <div class="reflexe-card non-card">
+            <h4>❌ Ne pas répondre</h4>
+            <p>Même pour dire que c'est un phishing. Ça confirmerait que l'adresse est active.</p>
+          </div>
+          <div class="reflexe-card non-card">
+            <h4>❌ Ne pas transférer</h4>
+            <p>Sauf à votre service informatique ou au formateur dans un cadre pédagogique.</p>
+          </div>
+          <div class="reflexe-card">
+            <h4>✅ Si vous avez cliqué</h4>
+            <p>Changer immédiatement votre mot de passe sur le site concerné et activer le MFA.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESSOURCES -->
+      <div class="section-box">
+        <h2>🔗 Pour aller plus loin</h2>
+        <div class="ressource-grid">
+          <div class="ressource-card">
+            <h4>Quiz interactif phishing</h4>
+            <p>Tester ses réflexes avec 10 vrais/faux e-mails dans l'application.</p>
+            <a href="../exercices/quiz-phishing.html" style="font-size:12px;color:#2980b9;font-weight:600;">Faire l'exercice →</a>
+          </div>
+          <div class="ressource-card">
+            <h4>cybermalveillance.gouv.fr</h4>
+            <p>Site officiel du gouvernement : diagnostic, signalement, conseils par situation.</p>
+            <a href="https://cybermalveillance.gouv.fr" target="_blank" rel="noopener" style="font-size:12px;color:#2980b9;font-weight:600;">Visiter →</a>
+          </div>
+          <div class="ressource-card">
+            <h4>Google Phishing Quiz</h4>
+            <p>Jeu interactif de Google : 8 e-mails réels à analyser, avec explications détaillées.</p>
+            <a href="https://phishingquiz.withgoogle.com" target="_blank" rel="noopener" style="font-size:12px;color:#2980b9;font-weight:600;">Jouer →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        Fiche Phishing · S1-S2 Cybersécurité · PPNI 2026 &nbsp;|&nbsp;
+        <a href="index.html" style="color:inherit;">← Retour aux ressources</a>
+      </div>
+    </div>
+  </body>
+</html>

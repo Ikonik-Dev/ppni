@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exercices — PPNI 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/shared.css" />
+    <style>
+      .exo-card {
+        background: #fff;
+        border: 1px solid var(--gray-border);
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow: var(--shadow-sm);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .exo-card h3 { margin: 0; font-size: 15px; color: #1a3a5c; }
+      .exo-card p { margin: 0; font-size: 12px; color: #666; line-height: 1.5; flex: 1; }
+      .exo-meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+      .exo-tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
+      .exo-tag.s1 { background: #e8eef7; color: #1a3a5c; }
+      .exo-tag.interactif { background: #d5f5e3; color: #145a32; }
+      .exo-tag.local { background: #fdebd0; color: #784212; }
+      .exo-tag.externe { background: #d6e9f8; color: #1a5276; }
+      .exo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+      .score-chip {
+        font-size: 11px;
+        font-weight: 700;
+        padding: 3px 10px;
+        border-radius: 20px;
+        background: #f0f0f0;
+        color: #555;
+      }
+      .score-chip.done { background: #d5f5e3; color: #145a32; }
+    </style>
+  </head>
+  <body>
+    <nav class="topbar">
+      <span class="topbar-brand">PPNI 2026</span>
+      <a href="../index.html">🏠 Accueil</a>
+      <a href="../planning.html">📅 Planning</a>
+      <a href="../previsionnel.html">📊 Prévisionnel</a>
+      <a href="../previsionnel_stagiaire.html">🎓 Stagiaires</a>
+      <a href="../ressources/index.html">📚 Ressources</a>
+      <a href="index.html" class="active">✏️ Exercices</a>
+    </nav>
+
+    <div class="page-wrapper">
+      <div class="doc-header">
+        <h1>✏️ Exercices interactifs</h1>
+        <div class="meta">Pratique · Résultats sauvegardés localement · Aucune inscription requise · PPNI 2026</div>
+      </div>
+
+      <div class="section-box">
+        <div class="falc-intro">
+          <strong>💡 Comment ça marche ?</strong>
+          Chaque exercice se fait directement dans le navigateur. Tes scores sont sauvegardés automatiquement
+          sur ton ordinateur (localStorage) — personne d'autre ne les voit. Tu peux recommencer autant de fois que tu veux.
+        </div>
+      </div>
+
+      <!-- S1-S2 -->
+      <div class="section-box">
+        <h2>🔐 S1-S2 — Cybersécurité & GitHub</h2>
+        <div class="exo-grid" id="grid-s1s2">
+
+          <div class="exo-card">
+            <div class="exo-meta">
+              <span class="exo-tag s1">S1</span>
+              <span class="exo-tag interactif">Interactif</span>
+              <span class="score-chip" id="chip-phishing">Non commencé</span>
+            </div>
+            <h3>🎣 Quiz Phishing — Vrai ou faux ?</h3>
+            <p>10 e-mails à analyser. Pour chacun : est-ce du phishing ou non ? Justifie ta réponse.
+            Score minimum recommandé : 7/10.</p>
+            <a href="quiz-phishing.html" style="display:inline-block;padding:9px 18px;background:#e74c3c;color:#fff;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;text-align:center;margin-top:4px;">Faire l'exercice →</a>
+          </div>
+
+          <div class="exo-card">
+            <div class="exo-meta">
+              <span class="exo-tag s1">S1</span>
+              <span class="exo-tag interactif">Interactif</span>
+              <span class="score-chip" id="chip-password">Non commencé</span>
+            </div>
+            <h3>🔑 Testeur de mot de passe</h3>
+            <p>Saisis un mot de passe et reçois une analyse en temps réel : force, temps de crack estimé, conseils.
+            Aucun mot de passe n'est enregistré ou envoyé.</p>
+            <a href="password-checker.html" style="display:inline-block;padding:9px 18px;background:#27ae60;color:#fff;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;text-align:center;margin-top:4px;">Faire l'exercice →</a>
+          </div>
+
+          <div class="exo-card">
+            <div class="exo-meta">
+              <span class="exo-tag s1">S2</span>
+              <span class="exo-tag interactif">Flashcards</span>
+              <span class="score-chip" id="chip-git">Non commencé</span>
+            </div>
+            <h3>🐙 Flashcards Git</h3>
+            <p>15 cartes : commande Git d'un côté, explication de l'autre. Auto-évalue tes réponses.
+            Idéal pour réviser avant un cours ou une PR.</p>
+            <a href="quiz-git.html" style="display:inline-block;padding:9px 18px;background:#8e44ad;color:#fff;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;text-align:center;margin-top:4px;">Faire l'exercice →</a>
+          </div>
+
+          <div class="exo-card">
+            <div class="exo-meta">
+              <span class="exo-tag externe">Externe</span>
+              <span class="exo-tag interactif">Recommandé</span>
+            </div>
+            <h3>🌿 Learn Git Branching</h3>
+            <p>Visualise les branches Git en temps réel dans un environnement interactif.
+            Commence par "Introduction Sequence". Interface disponible en français.</p>
+            <a href="https://learngitbranching.js.org/?locale=fr_FR" target="_blank" rel="noopener" style="display:inline-block;padding:9px 18px;background:#2980b9;color:#fff;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;text-align:center;margin-top:4px;">Ouvrir →</a>
+          </div>
+
+          <div class="exo-card">
+            <div class="exo-meta">
+              <span class="exo-tag externe">Externe</span>
+              <span class="exo-tag interactif">Google</span>
+            </div>
+            <h3>🎮 Phishing Quiz — Google</h3>
+            <p>8 vrais/faux e-mails à analyser, proposé par Google. Explications détaillées après chaque réponse.
+            Niveau légèrement plus avancé que notre quiz interne.</p>
+            <a href="https://phishingquiz.withgoogle.com" target="_blank" rel="noopener" style="display:inline-block;padding:9px 18px;background:#1a3a5c;color:#fff;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;text-align:center;margin-top:4px;">Ouvrir →</a>
+          </div>
+
+          <div class="exo-card">
+            <div class="exo-meta">
+              <span class="exo-tag externe">Externe</span>
+              <span class="exo-tag interactif">Officiel GitHub</span>
+            </div>
+            <h3>🏫 GitHub Skills</h3>
+            <p>Cours interactifs officiels directement dans un repo GitHub avec corrections automatiques.
+            Commencer par "Introduction to GitHub".</p>
+            <a href="https://skills.github.com" target="_blank" rel="noopener" style="display:inline-block;padding:9px 18px;background:#1a3a5c;color:#fff;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;text-align:center;margin-top:4px;">Ouvrir →</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- À VENIR -->
+      <div class="section-box">
+        <h2>⏳ Prochains exercices (S3-S8)</h2>
+        <div class="exo-grid">
+          <div class="exo-card" style="opacity:0.6;">
+            <div class="exo-meta"><span class="exo-tag s1">S3-S4</span></div>
+            <h3>🌐 Quiz Réseaux</h3>
+            <p>IP, DNS, HTTP, ports — comprendre comment Internet fonctionne. Disponible en S3.</p>
+            <span style="font-size:12px;color:#888;font-style:italic;">Disponible en S3</span>
+          </div>
+          <div class="exo-card" style="opacity:0.6;">
+            <div class="exo-meta"><span class="exo-tag s1">S5-S6</span></div>
+            <h3>🎨 Éditeur HTML/CSS live</h3>
+            <p>Éditeur intégré : code à gauche, rendu à droite. Exercices guidés progressifs.</p>
+            <span style="font-size:12px;color:#888;font-style:italic;">Disponible en S5</span>
+          </div>
+          <div class="exo-card" style="opacity:0.6;">
+            <div class="exo-meta"><span class="exo-tag s1">S7-S8</span></div>
+            <h3>⚡ Défi JavaScript</h3>
+            <p>Mini-challenges JS : fonctions, boucles, DOM. Corrections automatiques.</p>
+            <span style="font-size:12px;color:#888;font-style:italic;">Disponible en S7</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        Exercices interactifs · PPNI 2026 &nbsp;|&nbsp;
+        <a href="../index.html" style="color:inherit;">← Retour à l'accueil</a>
+      </div>
+    </div>
+
+    <script>
+      // Afficher les scores sauvegardés depuis les exercices
+      const phishingScore = localStorage.getItem('ppni_quiz_phishing_score');
+      const gitScore = localStorage.getItem('ppni_quiz_git_score');
+      const pwDone = localStorage.getItem('ppni_password_checker_done');
+
+      if (phishingScore !== null) {
+        const chip = document.getElementById('chip-phishing');
+        chip.textContent = 'Dernier score : ' + phishingScore + '/10';
+        chip.className = 'score-chip done';
+      }
+      if (gitScore !== null) {
+        const chip = document.getElementById('chip-git');
+        chip.textContent = 'Cartes révisées : ' + gitScore;
+        chip.className = 'score-chip done';
+      }
+      if (pwDone) {
+        const chip = document.getElementById('chip-password');
+        chip.textContent = 'Exercice fait ✓';
+        chip.className = 'score-chip done';
+      }
+    </script>
+  </body>
+</html>
