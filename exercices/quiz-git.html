@@ -328,10 +328,10 @@
             <span style="font-size: 12px; color: #555; align-self: center"
               >Est-ce que tu savais ?</span
             >
-            <button class="btn-knew" onclick="evaluate(true)">
+            <button id="btn-knew" class="btn-knew" onclick="evaluate(true)">
               ✅ Oui, je savais
             </button>
-            <button class="btn-didnt" onclick="evaluate(false)">
+            <button id="btn-didnt" class="btn-didnt" onclick="evaluate(false)">
               ❌ Pas encore
             </button>
           </div>
@@ -377,21 +377,40 @@
             id="final-text"
             style="font-size: 13px; color: #333; margin: 0 0 16px"
           ></p>
-          <button
-            onclick="restartCards()"
-            style="
-              padding: 10px 22px;
-              background: #1a3a5c;
-              color: #fff;
-              border: none;
-              border-radius: 8px;
-              font-size: 13px;
-              font-weight: 700;
-              cursor: pointer;
-            "
-          >
-            ↺ Recommencer
-          </button>
+          <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+            <button
+              onclick="restartCards()"
+              style="
+                padding: 10px 22px;
+                background: #1a3a5c;
+                color: #fff;
+                border: none;
+                border-radius: 8px;
+                font-size: 13px;
+                font-weight: 700;
+                cursor: pointer;
+              "
+            >
+              ↺ Tout recommencer
+            </button>
+            <button
+              id="btn-review-weak"
+              onclick="reviewWeak()"
+              style="
+                display: none;
+                padding: 10px 22px;
+                background: #e74c3c;
+                color: #fff;
+                border: none;
+                border-radius: 8px;
+                font-size: 13px;
+                font-weight: 700;
+                cursor: pointer;
+              "
+            >
+              🔁 Revoir les non-maîtrisées
+            </button>
+          </div>
         </div>
       </div>
 
@@ -572,6 +591,12 @@
         document.getElementById("flashcard").classList.remove("flipped");
         document.getElementById("self-eval").classList.remove("visible");
 
+        // Reset eval buttons
+        document.getElementById("btn-knew").disabled = false;
+        document.getElementById("btn-knew").style.opacity = "1";
+        document.getElementById("btn-didnt").disabled = false;
+        document.getElementById("btn-didnt").style.opacity = "1";
+
         // Nav buttons
         document.getElementById("btn-prev").disabled = idx === 0;
         document.getElementById("btn-next").disabled = idx === cards.length - 1;
@@ -598,20 +623,32 @@
 
       function evaluate(knew) {
         evaluations[currentIndex] = knew;
+
+        // Feedback visuel immédiat sur les boutons
+        const bKnew = document.getElementById("btn-knew");
+        const bDidnt = document.getElementById("btn-didnt");
+        bKnew.disabled = true;
+        bDidnt.disabled = true;
+        bKnew.style.opacity = knew ? "1" : "0.35";
+        bDidnt.style.opacity = knew ? "0.35" : "1";
+
         buildDots();
         updateStats();
 
         // Sauvegarder en localStorage
-        const total = evaluations.filter(
-          (e) => e !== null && e !== "seen",
-        ).length;
-        localStorage.setItem("ppni_quiz_git_score", total + " cartes");
+        const nbEval = evaluations.filter((e) => e === true || e === false).length;
+        localStorage.setItem("ppni_quiz_git_score", nbEval + "/" + cards.length);
 
-        // Toutes évaluées ? Afficher le bilan final
+        // Auto-avance après 700ms
         const done = evaluations.every((e) => e === true || e === false);
-        if (done) {
-          setTimeout(showFinalResult, 600);
-        }
+        setTimeout(() => {
+          if (done) {
+            showFinalResult();
+          } else if (currentIndex < cards.length - 1) {
+            currentIndex++;
+            showCard(currentIndex);
+          }
+        }, 700);
       }
 
       function nextCard() {
@@ -645,6 +682,11 @@
             : pct >= 50
               ? "Bon début. Recommence en te concentrant sur les cartes en rouge."
               : "Continue de pratiquer — lance git status dans un terminal et observe le résultat.");
+        // Afficher le bouton "revoir les non-maîtrisées" si nécessaire
+        const toReview = evaluations.filter((e) => e === false).length;
+        document.getElementById("btn-review-weak").style.display =
+          toReview > 0 ? "inline-block" : "none";
+
         document
           .getElementById("final-result")
           .scrollIntoView({ behavior: "smooth", block: "center" });
@@ -654,7 +696,18 @@
         currentIndex = 0;
         evaluations = new Array(cards.length).fill(null);
         document.getElementById("final-result").style.display = "none";
+        document.getElementById("btn-review-weak").style.display = "none";
         showCard(0);
+      }
+
+      function reviewWeak() {
+        // Remettre à null uniquement les cartes non maîtrisées
+        evaluations = evaluations.map((e) => (e === false ? null : e));
+        document.getElementById("final-result").style.display = "none";
+        // Aller à la première carte non maîtrisée
+        const first = evaluations.findIndex((e) => e === null);
+        currentIndex = first >= 0 ? first : 0;
+        showCard(currentIndex);
       }
 
       // Init
