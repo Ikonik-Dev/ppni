@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prévisionnel 2026 — Le Formateur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/shared.css" />
+  </head>
+  <body>
+    <nav class="topbar">
+      <span class="topbar-brand">PPNI 2026</span>
+      <a href="index.html">🏠 Accueil</a>
+      <a href="planning.html">📅 Planning</a>
+      <a href="previsionnel.html" class="active">📊 Prévisionnel</a>
+      <a href="previsionnel_stagiaire.html">🎓 Stagiaires</a>
+    </nav>
+
+    <div class="page-wrapper">
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 18px;
+          flex-wrap: wrap;
+          gap: 10px;
+        "
+      >
+        <div>
+          <h1
+            style="
+              font-size: 20px;
+              font-weight: 700;
+              color: var(--brand-dark);
+              margin-bottom: 4px;
+            "
+          >
+            📊 Prévisionnel d'activité 2026
+          </h1>
+          <p style="font-size: 12px; color: var(--text-muted)">
+            Le Formateur — Référent IA / Développeur / Formateur numérique
+            (PPNI) &nbsp;|&nbsp; 04/05/2026 → 31/12/2026 — Avenant n°2
+            &nbsp;|&nbsp; 35h/sem. &nbsp;|&nbsp; l'Établissement
+          </p>
+        </div>
+        <button class="print-btn" onclick="window.print()">
+          🖨️ Imprimer / PDF
+        </button>
+      </div>
+
+      <!-- ═══ RÉSUMÉ DES 3 AXES ═══ -->
+      <div class="axes-summary">
+        <div class="axe-card ppni">
+          <h3>🎓 AXE 1 — PPNI (Pédagogie &amp; Accompagnement)</h3>
+          <p>
+            <strong>10,5h/sem.</strong> — parcours PPNI sur 7 mois (mai →
+            novembre) : 7h face à face pédagogique socles numériques + 3,5h
+            accompagnement projet professionnel
+          </p>
+        </div>
+        <div class="axe-card ia">
+          <h3>🤖 AXE 2 — Référent IA</h3>
+          <p>
+            <strong>~10h/sem.</strong> — Module IA, ateliers salariés &amp;
+            stagiaires, guides FALC, veille, automatisation &amp; certification
+            IA
+          </p>
+        </div>
+        <div class="axe-card auxilium">
+          <h3>💻 AXE 3 — Développeur Auxilium</h3>
+          <p>
+            <strong>~11,5h/sem.</strong> — Plateforme numérique de gestion de
+            formation (suivi, parcours, contenus, évaluations)
+          </p>
+        </div>
+      </div>
+
+      <!-- ═══ GANTT ═══ -->
+      <div class="section-box">
+        <h2 class="gantt-title">
+          📊 Planification des activités — Mai → Décembre 2026 &nbsp;(🚩 =
+          jalons contractuels &nbsp;|&nbsp; 🏖️ = congés)
+        </h2>
+        <div class="gantt-scroll">
+          <table class="gantt">
+            <thead>
+              <tr>
+                <th class="label-col">Activité</th>
+                <th>Mai</th>
+                <th>Juin</th>
+                <th>Juil. 1-12</th>
+                <th class="conge-th">🏖️ 13-31/07</th>
+                <th>Août</th>
+                <th>Sept.</th>
+                <th>Oct.</th>
+                <th>Nov.</th>
+                <th>Déc. 1-23</th>
+                <th class="conge-th">🏖️ 24-31/12</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- ── AXE 1 : PPNI ── -->
+              <tr class="sec-hdr ppni-hdr">
+                <td colspan="11">
+                  🎓 AXE 1 — PPNI : Pédagogie &amp; Accompagnement — 7 mois (mai
+                  → novembre) — 10,5h/semaine — Lien : coordinateur PPNI
+                </td>
+              </tr>
+              <tr>
+                <td class="label">
+                  Face à face pédagogique — socles numériques
+                </td>
+                <td colspan="3" class="b-ppni">
+                  <span class="bt">7h/sem. — parcours PPNI mai → novembre</span>
+                </td>
+                <td class="conge"></td>
+                <td colspan="4" class="b-ppni"></td>
+                <td class="empty-m"></td>
+                <td class="conge"></td>
+              </tr>
+              <tr>
+                <td class="label">
+                  Accompagnement projet professionnel numérique
+                </td>
+                <td colspan="3" class="b-ppni-l">
+                  <span class="bt">3,5h/sem. — mai → novembre</span>
+                </td>
+                <td class="conge"></td>
+                <td colspan="4" class="b-ppni-l"></td>
+                <td class="empty-m"></td>
+                <td class="conge"></td>
+              </tr>
+              <tr>
+                <td class="label-sub">🚩 Bilan de compétences intermédiaire</td>
+                <td class="empty-m"></td>
+                <td class="empty-m"></td>
+                <td class="ms-ppni"><span class="bt">🚩 Bilan S1</span></td>
+                <td class="conge"></td>
+                <td class="empty-m"></td>
+                <td class="empty-m"></td>
+                <td class="ms-ppni"><span class="bt">🚩 Bilan S2</span></td>
+                <td class="empty-m"></td>
+                <td class="empty-m"></td>
+                <td class="conge"></td>
+              </tr>
+              <!-- ── AXE 2 : RÉFÉRENT IA ── -->
+              <tr class="sec-hdr ia-hdr">
+                <td colspan="11">
+                  🤖 AXE 2 — Référent IA — mai → décembre — ~10h/semaine —
+                  certification GAFAM + ateliers + module IA
+                </td>
+              </tr>
+              <tr>
+                <td class="label">
+                  Conception module IA pédagogique (FALC + numérique)
+                </td>
+                <td colspan="3" class="b-ia">
+                  <span class="bt">~4h/sem. — conception + rédaction</span>
+                </td>
+                <td class="conge"></td>
+                <td colspan="2" class="b-ia"></td>
+                <td class="empty-m"></td>
+                <td class="empty-m"></td>
+                <td class="empty-m"></td>
+                <td class="conge"></td>
+              </tr>
+              <tr>
+                <td class="label">
+                  Ateliers IA salariés (sensibilisation / pratique)
+                </td>
+                <td colspan="3" class="b-ia">
+                  <span class="bt">~2h/sem. — ateliers mensuels</span>
+                </td>
+                <td class="conge"></td>
+                <td colspan="4" class="b-ia"></td>
+                <td class="b-ia"></td>
+                <td class="conge"></td>
+              </tr>
+              <tr>
+                <td class="label">Ateliers IA stagiaires PPNI</td>
+                <td colspan="3" class="b-ia-l">
+                  <span class="bt">~1h/sem. — initiation IA par section</span>
+                </td>
+                <td class="conge"></td>
+                <td colspan="4" class="b-ia-l"></td>
+                <td class="empty-m"></td>
+                <td class="conge"></td>
+              </tr>
+              <tr>
+                <td class="label">
+                  Veille IA &amp; automatisation (N8N, outils)
+                </td>
+                <td colspan="3" class="b-ia">
+                  <span class="bt">~2h/sem. — veille continue</span>
+                </td>
+                <td class="conge"></td>
+                <td colspan="4" class="b-ia"></td>
+                <td class="b-ia"></td>
+                <td class="conge"></td>
+              </tr>
+              <tr>
+                <td class="label-sub">
+                  🚩 Certification IA (formation GAFAM reconnue)
+                </td>
+                <td class="empty-m"></td>
+                <td class="empty-m"></td>
+                <td class="empty-m"></td>
+                <td class="conge"></td>
+                <td class="empty-m"></td>
+                <td class="empty-m"></td>
+                <td class="empty-m"></td>
+                <td class="empty-m"></td>
+                <td class="ms-ia">
+                  <span class="bt">🚩 Certif. validée</span>
+                </td>
+                <td class="conge"></td>
+              </tr>
+              <!-- ── AXE 3 : AUXILIUM ── -->
+              <tr class="sec-hdr aux-hdr">
+                <td colspan="11">
+                  💻 AXE 3 — Développeur Auxilium — mai → décembre —
+                  ~11,5h/semaine — plateforme numérique de gestion de formation
+                </td>
+              </tr>
+              <tr>
+                <td class="label">
+                  Développement plateforme Auxilium (backend / frontend)
+                </td>
+                <td colspan="3" class="b-aux">
+                  <span class="bt">~6h/sem. — développement itératif</span>
+                </td>
+                <td class="conge"></td>
+                <td colspan="4" class="b-aux"></td>
+                <td class="b-aux"></td>
+                <td class="conge"></td>
+              </tr>
+              <tr>
+                <td class="label">
+                  Intégration contenus, quizz &amp; parcours pédagogiques
+                </td>
+                <td class="empty-m"></td>
+                <td colspan="2" class="b-aux-l">
+                  <span class="bt">~2h/sem. — intégration</span>
+                </td>
+                <td class="conge"></td>
+                <td colspan="4" class="b-aux-l"></td>
+                <td class="b-aux-l"></td>
+                <td class="conge"></td>
+              </tr>
+              <tr>
+                <td class="label">
+                  Documentation technique &amp; fonctionnelle
+                </td>
+                <td colspan="3" class="b-aux">
+                  <span class="bt">~2h/sem. — documentation continue</span>
+                </td>
+                <td class="conge"></td>
+                <td colspan="4" class="b-aux"></td>
+                <td class="b-aux"></td>
+                <td class="conge"></td>
+              </tr>
+              <tr>
+                <td class="label">
+                  Tests, recette &amp; versionnage (GitHub/GitLab)
+                </td>
+                <td colspan="3" class="b-aux">
+                  <span class="bt">~1,5h/sem. — tests continus</span>
+                </td>
+                <td class="conge"></td>
+                <td colspan="4" class="b-aux"></td>
+                <td class="b-aux"></td>
+                <td class="conge"></td>
+              </tr>
+              <tr>
+                <td class="label-sub">🚩 Mise en production Auxilium v1.0</td>
+                <td class="empty-m"></td>
+                <td class="empty-m"></td>
+                <td class="empty-m"></td>
+                <td class="conge"></td>
+                <td class="empty-m"></td>
+                <td class="empty-m"></td>
+                <td class="empty-m"></td>
+                <td class="empty-m"></td>
+                <td class="ms-aux"><span class="bt">🚩 v1.0 en prod.</span></td>
+                <td class="conge"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ═══ LIVRABLES ═══ -->
+      <div class="section-box break-before">
+        <h2 class="livrable-title">📦 Livrables par axe</h2>
+        <table class="lt">
+          <thead>
+            <tr>
+              <th style="width: 90px">Axe</th>
+              <th>Livrable</th>
+              <th style="width: 120px">Échéance</th>
+              <th style="width: 90px">Statut</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="axe-tag ppni">🎓 PPNI</span></td>
+              <td>
+                Supports de cours socles numériques (cybersécurité, bureautique,
+                réseau)
+              </td>
+              <td>Fin juin 2026</td>
+              <td class="dbadge planned">Planifié</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag ppni">🎓 PPNI</span></td>
+              <td>
+                Fiches d'accompagnement projet professionnel individuelles
+              </td>
+              <td>Mensuel</td>
+              <td class="dbadge planned">Planifié</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag ppni">🎓 PPNI</span></td>
+              <td>Bilans de compétences intermédiaires stagiaires (S1 + S2)</td>
+              <td>Juil. + Oct. 2026</td>
+              <td class="dbadge planned">Planifié</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag ppni">🎓 PPNI</span></td>
+              <td>Rapport d'activité pédagogique final</td>
+              <td>Fin nov. 2026</td>
+              <td class="dbadge planned">Planifié</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag ia">🤖 IA</span></td>
+              <td>
+                Module IA pédagogique complet (supports + activités +
+                évaluations)
+              </td>
+              <td>Fin août 2026</td>
+              <td class="dbadge planned">Planifié</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag ia">🤖 IA</span></td>
+              <td>Guide FALC IA pour stagiaires (accessibilité cognitive)</td>
+              <td>Fin juillet 2026</td>
+              <td class="dbadge planned">Planifié</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag ia">🤖 IA</span></td>
+              <td>Compte-rendus ateliers IA salariés (≥ 6 sessions)</td>
+              <td>Mensuel</td>
+              <td class="dbadge planned">Planifié</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag ia">🤖 IA</span></td>
+              <td>
+                Certification IA validée (formation GAFAM reconnue entreprise)
+              </td>
+              <td>Fin déc. 2026</td>
+              <td class="dbadge planned">Planifié</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag aux">💻 Auxilium</span></td>
+              <td>Architecture technique documentée + dépôt versionné</td>
+              <td>Fin mai 2026</td>
+              <td class="dbadge planned">Planifié</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag aux">💻 Auxilium</span></td>
+              <td>
+                Module suivi stagiaires opérationnel (création, parcours, éval.)
+              </td>
+              <td>Fin juillet 2026</td>
+              <td class="dbadge planned">Planifié</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag aux">💻 Auxilium</span></td>
+              <td>
+                Documentation fonctionnelle complète (utilisateur + admin)
+              </td>
+              <td>Fin oct. 2026</td>
+              <td class="dbadge planned">Planifié</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag aux">💻 Auxilium</span></td>
+              <td>
+                Auxilium v1.0 mis en production — transfert de compétences
+                validé
+              </td>
+              <td>31 déc. 2026</td>
+              <td class="dbadge planned">Planifié</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ═══ INDICATEURS CLÉS ═══ -->
+      <div class="section-box break-before">
+        <h2 class="kpi-title">📈 Indicateurs de performance (KPIs)</h2>
+        <table class="kt">
+          <thead>
+            <tr>
+              <th style="width: 90px">Axe</th>
+              <th>Indicateur</th>
+              <th style="width: 160px">Cible</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="axe-tag ppni">🎓 PPNI</span></td>
+              <td>
+                Volume hebdomadaire face à face pédagogique effectivement
+                réalisé
+              </td>
+              <td class="cible">7h/semaine</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag ppni">🎓 PPNI</span></td>
+              <td>Volume hebdomadaire accompagnement projet professionnel</td>
+              <td class="cible">3,5h/semaine</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag ppni">🎓 PPNI</span></td>
+              <td>
+                Taux de stagiaires ayant défini un projet professionnel en fin
+                de parcours
+              </td>
+              <td class="cible">≥ 80 % des stagiaires</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag ppni">🎓 PPNI</span></td>
+              <td>Taux de satisfaction stagiaires (évaluation à chaud)</td>
+              <td class="cible">≥ 80 % satisfaits</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag ia">🤖 IA</span></td>
+              <td>
+                Module IA livré complet et intégré au parcours pédagogique
+              </td>
+              <td class="cible">Livré avant fin août 2026</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag ia">🤖 IA</span></td>
+              <td>Taux de participation des salariés aux ateliers IA animés</td>
+              <td class="cible">≥ 70 % des effectifs concernés</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag ia">🤖 IA</span></td>
+              <td>Ateliers d'initiation IA réalisés auprès des stagiaires</td>
+              <td class="cible">≥ 1 atelier par section en cours</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag ia">🤖 IA</span></td>
+              <td>
+                Certification IA validée — formation reconnue en entreprise
+              </td>
+              <td class="cible">Validée avant fin 2026</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag aux">💻 Auxilium</span></td>
+              <td>
+                Jalons projet Auxilium atteints dans les délais (après
+                concertation)
+              </td>
+              <td class="cible">≥ 90 % des jalons</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag aux">💻 Auxilium</span></td>
+              <td>Développements versionnés sur dépôt GitHub/GitLab</td>
+              <td class="cible">100 % des développements</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag aux">💻 Auxilium</span></td>
+              <td>Fonctionnalités documentées (technique + fonctionnel)</td>
+              <td class="cible">100 % des fonctionnalités</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag aux">💻 Auxilium</span></td>
+              <td>
+                Capacité de reprise par un tiers validée en fin de mission
+              </td>
+              <td class="cible">Validée fin 2026 (audit)</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag aux">💻 Auxilium</span></td>
+              <td>Mise en production Auxilium v1.0</td>
+              <td class="cible">Au plus tard le 31/12/2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="footer">
+        Prévisionnel d'activité — Le Formateur — Mission 04/05/2026 → 31/12/2026
+        (avenant n°2) — 35h/semaine<br />
+        Document de travail — à valider avec la Direction (Directrice Adjointe,
+        Responsable pédagogique) et le coordinateur PPNI
+      </div>
+    </div>
+    <!-- /page-wrapper -->
+  </body>
+</html>

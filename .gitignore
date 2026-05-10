@@ -1,0 +1,6 @@
+# Local Netlify folder
+.netlify
+
+# Documents sensibles — ne pas publier
+fiche_mission*
+*.pdf

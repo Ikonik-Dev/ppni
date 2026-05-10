@@ -1,0 +1,1012 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prévisionnel PPNI 2026 — Stagiaires</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/shared.css" />
+  </head>
+  <body>
+    <nav class="topbar">
+      <span class="topbar-brand">PPNI 2026</span>
+      <a href="index.html">🏠 Accueil</a>
+      <a href="planning.html">📅 Planning</a>
+      <a href="previsionnel.html">📊 Prévisionnel</a>
+      <a href="previsionnel_stagiaire.html" class="active">🎓 Stagiaires</a>
+    </nav>
+
+    <div class="page-wrapper">
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 18px;
+          flex-wrap: wrap;
+          gap: 10px;
+        "
+      >
+        <div class="doc-header" style="flex: 1; margin-bottom: 0">
+          <h1>📅 Prévisionnel de Formation PPNI 2026</h1>
+          <div class="meta">
+            <strong>Parcours Préparatoire Numérique &amp; Informatique</strong>
+            &nbsp;|&nbsp; Période : 11 mai → 31 octobre 2026 — 20 semaines
+            effectives &nbsp;|&nbsp; 10,5h/semaine par stagiaire &nbsp;|&nbsp;
+            <strong
+              >LUNDI (9h-12h30 + 13h20-17h) + VENDREDI (9h-12h30 +
+              13h20-15h)</strong
+            >
+          </div>
+        </div>
+        <button
+          class="print-btn"
+          onclick="window.print()"
+          style="flex-shrink: 0; align-self: flex-start"
+        >
+          🖨️ Imprimer / PDF
+        </button>
+      </div>
+
+      <!-- ═══ RÉSUMÉ DES 3 PHASES ═══ -->
+      <div class="axes-summary">
+        <div class="axe-card phase1">
+          <h3>📚 PHASE 1 — Fondamentaux & Orientation</h3>
+          <p>
+            <strong>8 semaines (11 mai → 4 juillet)</strong> — Socles numériques
+            universels (cybersécurité, Git, réseau, HTML/CSS/JS, N8N, IA) +
+            découverte 3 domaines + orientation préliminaire
+          </p>
+        </div>
+        <div class="axe-card phase2-axe1">
+          <h3>💻 AXE 1 — Développement Web Symfony</h3>
+          <p>
+            <strong>12 semaines (1er août → fin octobre)</strong> — HTML/CSS/JS
+            avancé, Symfony complet (MVC, CRUD, sécurité, tests), Vue.js,
+            déploiement cloud, portfolio 3 projets réels
+          </p>
+        </div>
+        <div class="axe-card phase2-axe2">
+          <h3>🎯 AXE 2 — Marketing Digital + IA</h3>
+          <p>
+            <strong>12 semaines (1er août → fin octobre)</strong> — SEO/SEA,
+            Google Analytics, prompt engineering avancé, IA création/analyse,
+            marketing automation, N8N avancé, portfolio 2 campagnes mesurées
+          </p>
+        </div>
+      </div>
+
+      <!-- ═══ GANTT ═══ -->
+      <div class="section-box">
+        <h2>📊 Timeline Détaillée — Mai → Octobre 2026</h2>
+        <table class="gantt">
+          <thead>
+            <tr>
+              <th class="label-col">Activité / Semaine</th>
+              <th>S1</th>
+              <th>S2</th>
+              <th>S3</th>
+              <th>S4</th>
+              <th>S5</th>
+              <th>S6</th>
+              <th>S7</th>
+              <th>S8</th>
+              <th colspan="2" style="background: #f0f0f0; color: #999">
+                🏖️ CONGÉS ÉTÉ
+              </th>
+              <th>S9</th>
+              <th>S10</th>
+              <th>S11</th>
+              <th>S12</th>
+              <th>S13</th>
+              <th>S14</th>
+              <th>S15</th>
+              <th>S16</th>
+              <th>S17</th>
+              <th>S18</th>
+              <th>S19</th>
+              <th>S20</th>
+            </tr>
+            <tr style="font-size: 9px">
+              <th class="label-col"></th>
+              <th
+                colspan="8"
+                style="text-align: center; background: #c8e6c9; color: #1b5e20"
+              >
+                Mai-Juin-Juillet (8 sem.)
+              </th>
+              <th
+                colspan="2"
+                style="text-align: center; background: #f0f0f0; color: #999"
+              >
+                13/7-31/7
+              </th>
+              <th
+                colspan="12"
+                style="text-align: center; background: #bbdefb; color: #0d47a1"
+              >
+                AXE 1 : Août-Septembre-Octobre (12 sem.)
+              </th>
+              <th
+                colspan="12"
+                style="text-align: center; background: #ffe0b2; color: #bf360c"
+              >
+                AXE 2 : Août-Septembre-Octobre (12 sem.)
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- PHASE 1 -->
+            <tr class="sec-hdr phase1-hdr">
+              <td colspan="23">
+                🎓 PHASE 1 — Fondamentaux & Orientation (11 mai → 11 juillet)
+              </td>
+            </tr>
+            <tr>
+              <td class="label">Cybersécurité basics + GitHub</td>
+              <td colspan="2" class="phase1-cell gantt-clickable">
+                <a
+                  class="gantt-link"
+                  href="cours/s1-s2.html"
+                  title="Voir le cours S1-S2"
+                  ><span class="bt">S1-S2 ↗</span></a
+                >
+              </td>
+              <td class="empty-cell"></td>
+              <td class="empty-cell"></td>
+              <td class="empty-cell"></td>
+              <td class="empty-cell"></td>
+              <td class="empty-cell"></td>
+              <td class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td class="empty-cell"></td>
+              <td colspan="11" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Réseau + HTML/CSS/JS basics</td>
+              <td colspan="2" class="empty-cell"></td>
+              <td colspan="2" class="phase1-cell">
+                <span class="bt">S3-S4</span>
+              </td>
+              <td colspan="2" class="empty-cell"></td>
+              <td colspan="2" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td class="empty-cell"></td>
+              <td colspan="11" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Communication tech + N8N</td>
+              <td colspan="4" class="empty-cell"></td>
+              <td colspan="2" class="phase1-cell">
+                <span class="bt">S5-S6</span>
+              </td>
+              <td colspan="2" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td class="empty-cell"></td>
+              <td colspan="11" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Prompt engineering + Choix axe</td>
+              <td colspan="6" class="empty-cell"></td>
+              <td colspan="2" class="phase1-cell">
+                <span class="bt">S7-S8</span>
+              </td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td class="empty-cell"></td>
+              <td colspan="11" class="empty-cell"></td>
+            </tr>
+
+            <!-- AXE 1 - DÉVELOPPEMENT -->
+            <tr class="sec-hdr axe1-hdr">
+              <td colspan="23">
+                💻 AXE 1 — Développement Web Symfony (1er août → fin octobre, 14
+                sem.)
+              </td>
+            </tr>
+            <tr>
+              <td class="label">HTML/CSS sémantique</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="1" class="axe1-cell"><span class="bt">S9</span></td>
+              <td class="empty-cell"></td>
+              <td colspan="10" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">CSS avancé (Flexbox/Grid)</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="1" class="axe1-cell"><span class="bt">S9</span></td>
+              <td class="empty-cell"></td>
+              <td colspan="10" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Responsive design</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="1" class="axe1-cell"><span class="bt">S9</span></td>
+              <td class="empty-cell"></td>
+              <td colspan="10" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">JS DOM + Événements + API</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="2" class="axe1-cell"><span class="bt">S10</span></td>
+              <td colspan="9" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Symfony MVC (intro + contrôleurs)</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="2" class="axe1-cell"><span class="bt">S10</span></td>
+              <td colspan="9" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Symfony entités + Doctrine</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="3" class="axe1-cell"><span class="bt">S11</span></td>
+              <td colspan="8" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Symfony formulaires + validation</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="3" class="axe1-cell"><span class="bt">S11</span></td>
+              <td colspan="8" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Symfony templates + sécurité</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="4" class="axe1-cell"><span class="bt">S12</span></td>
+              <td colspan="7" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Tests unitaires (PHPUnit)</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="4" class="axe1-cell"><span class="bt">S12</span></td>
+              <td colspan="7" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Projet intermédiaire CRUD complet</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="8" class="axe1-cell">
+                <span class="bt">S13-S16</span>
+              </td>
+              <td colspan="3" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Vue.js / Frontend moderne</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="8" class="axe1-cell">
+                <span class="bt">S13-S16</span>
+              </td>
+              <td colspan="3" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Déploiement cloud (Heroku/Vercel)</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="8" class="axe1-cell">
+                <span class="bt">S13-S16</span>
+              </td>
+              <td colspan="3" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Projet final + portfolio</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="12" class="axe1-cell">
+                <span class="bt">S17-S20</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="label">Synthèse + CV + Entretien</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="12" class="axe1-cell">
+                <span class="bt">S19-S20</span>
+              </td>
+            </tr>
+
+            <!-- AXE 2 - MARKETING -->
+            <tr class="sec-hdr axe2-hdr">
+              <td colspan="23">
+                🎯 AXE 2 — Marketing Digital + IA (1er août → fin octobre, 14
+                sem.)
+              </td>
+            </tr>
+            <tr>
+              <td class="label">SEO on-page + keyword research</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="1" class="axe2-cell"><span class="bt">S9</span></td>
+              <td class="empty-cell"></td>
+              <td colspan="10" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Google Analytics 4</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="1" class="axe2-cell"><span class="bt">S9</span></td>
+              <td class="empty-cell"></td>
+              <td colspan="10" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Outils gratuits SEO</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="1" class="axe2-cell"><span class="bt">S9</span></td>
+              <td class="empty-cell"></td>
+              <td colspan="10" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Prompt engineering avancé</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="2" class="axe2-cell"><span class="bt">S10</span></td>
+              <td colspan="9" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">IA création contenu (texte, image)</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="2" class="axe2-cell"><span class="bt">S10</span></td>
+              <td colspan="9" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">IA analyse données marketing</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="3" class="axe2-cell"><span class="bt">S11</span></td>
+              <td colspan="8" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Mailchimp automation</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="3" class="axe2-cell"><span class="bt">S11</span></td>
+              <td colspan="8" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">N8N workflows marketing avancés</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="4" class="axe2-cell"><span class="bt">S12</span></td>
+              <td colspan="7" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Google Ads basics</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="4" class="axe2-cell"><span class="bt">S12</span></td>
+              <td colspan="7" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Campagne multicanal</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="8" class="axe2-cell">
+                <span class="bt">S13-S16</span>
+              </td>
+              <td colspan="3" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Rapport ROI + optimisation</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="8" class="axe2-cell">
+                <span class="bt">S13-S16</span>
+              </td>
+              <td colspan="3" class="empty-cell"></td>
+            </tr>
+            <tr>
+              <td class="label">Projet final 2 campagnes mesurées</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="12" class="axe2-cell">
+                <span class="bt">S17-S20</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="label">Portfolio marketing + CV + Entretien</td>
+              <td colspan="9" class="empty-cell"></td>
+              <td colspan="2" class="conge-cell"><span class="bt">🏖️</span></td>
+              <td colspan="12" class="axe2-cell">
+                <span class="bt">S19-S20</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ═══ LIVRABLES ═══ -->
+      <div class="section-box break-before">
+        <h2>🚩 Livrables Majeurs par Phase</h2>
+        <table class="lt">
+          <thead>
+            <tr>
+              <th style="width: 90px">Phase</th>
+              <th>Livrable</th>
+              <th style="width: 100px; text-align: center">Semaine</th>
+              <th style="width: 80px; text-align: center">Format</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="axe-tag phase1">Phase 1</span></td>
+              <td>1er commit GitHub + README cybersécurité</td>
+              <td style="text-align: center"><span class="dbadge">S2</span></td>
+              <td style="text-align: center">GitHub</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag phase1">Phase 1</span></td>
+              <td>Landing page HTML/CSS/JS responsive</td>
+              <td style="text-align: center"><span class="dbadge">S4</span></td>
+              <td style="text-align: center">GitHub</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag phase1">Phase 1</span></td>
+              <td>Workflow N8N + README (documentation)</td>
+              <td style="text-align: center"><span class="dbadge">S6</span></td>
+              <td style="text-align: center">GitHub + N8N</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag phase1">Phase 1</span></td>
+              <td>Questionnaire orientation (choix axe)</td>
+              <td style="text-align: center"><span class="dbadge">S8</span></td>
+              <td style="text-align: center">Document</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe1">AXE 1</span></td>
+              <td>Projet intermédiaire CRUD Symfony complet</td>
+              <td style="text-align: center">
+                <span class="dbadge">S16</span>
+              </td>
+              <td style="text-align: center">GitHub</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe1">AXE 1</span></td>
+              <td>Portfolio 3 projets Web (Symfony + Vue.js)</td>
+              <td style="text-align: center">
+                <span class="dbadge">S20</span>
+              </td>
+              <td style="text-align: center">GitHub</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe1">AXE 1</span></td>
+              <td>CV + Synthèse projet professionnel (3p)</td>
+              <td style="text-align: center">
+                <span class="dbadge">S20</span>
+              </td>
+              <td style="text-align: center">PDF</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe2">AXE 2</span></td>
+              <td>Campagne SEO test (site + analytics)</td>
+              <td style="text-align: center">
+                <span class="dbadge">S16</span>
+              </td>
+              <td style="text-align: center">GA4 + rapport</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe2">AXE 2</span></td>
+              <td>Portfolio 2 campagnes marketing mesurées</td>
+              <td style="text-align: center">
+                <span class="dbadge">S20</span>
+              </td>
+              <td style="text-align: center">PDF + liens</td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe2">AXE 2</span></td>
+              <td>CV Spécialiste Marketing/IA + Synthèse</td>
+              <td style="text-align: center">
+                <span class="dbadge">S20</span>
+              </td>
+              <td style="text-align: center">PDF</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ═══ COMPÉTENCES ACQUISES ═══ -->
+      <div class="section-box">
+        <h2>🎓 Compétences Acquises à l'Issu du Parcours</h2>
+        <table class="comp">
+          <thead>
+            <tr>
+              <th style="width: 100px">Phase</th>
+              <th>Compétence Technique</th>
+              <th style="width: 50px; text-align: center">Niveau</th>
+              <th style="width: 50px; text-align: center">Validé</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="axe-tag phase1">Phase 1</span></td>
+              <td>Cybersécurité de base (phishing, authentification, VPN)</td>
+              <td style="text-align: center">Fondamental</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag phase1">Phase 1</span></td>
+              <td>Git/GitHub (commit, push, pull, branches, collaboration)</td>
+              <td style="text-align: center">Intermédiaire</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag phase1">Phase 1</span></td>
+              <td>Réseau & Internet (IP, DNS, HTTP/HTTPS, VPN)</td>
+              <td style="text-align: center">Fondamental</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag phase1">Phase 1</span></td>
+              <td>HTML/CSS/JS basics (DOM, événements, API)</td>
+              <td style="text-align: center">Fondamental</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag phase1">Phase 1</span></td>
+              <td>N8N (no-code automation, workflows)</td>
+              <td style="text-align: center">Fondamental</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag phase1">Phase 1</span></td>
+              <td>Prompt engineering (ChatGPT, IA générative)</td>
+              <td style="text-align: center">Fondamental</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag phase1">Phase 1</span></td>
+              <td>Communication technique (README, pitch, documentation)</td>
+              <td style="text-align: center">Intermédiaire</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+
+            <tr style="background: #f0f0f0">
+              <td
+                colspan="4"
+                style="padding: 6px 10px; font-weight: 600; border: none"
+              >
+                <strong
+                  >AXE 1 — Développement Web (Stagiaires orientés Dev)</strong
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe1">AXE 1</span></td>
+              <td>HTML sémantique + CSS avancé (Flexbox/Grid)</td>
+              <td style="text-align: center">Avancé</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe1">AXE 1</span></td>
+              <td>JavaScript avancé (ES6, async/await, API fetch)</td>
+              <td style="text-align: center">Avancé</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe1">AXE 1</span></td>
+              <td>Symfony MVC complet (contrôleurs, entités, services)</td>
+              <td style="text-align: center">Avancé</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe1">AXE 1</span></td>
+              <td>Doctrine ORM (relations, migrations, CRUD)</td>
+              <td style="text-align: center">Avancé</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe1">AXE 1</span></td>
+              <td>Formulaires Symfony + validation + sécurité</td>
+              <td style="text-align: center">Intermédiaire</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe1">AXE 1</span></td>
+              <td>Vue.js (composants, état, routing)</td>
+              <td style="text-align: center">Intermédiaire</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe1">AXE 1</span></td>
+              <td>Tests unitaires (PHPUnit) + couverture</td>
+              <td style="text-align: center">Fondamental</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe1">AXE 1</span></td>
+              <td>Déploiement cloud (Heroku, Vercel, Docker basics)</td>
+              <td style="text-align: center">Fondamental</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+
+            <tr style="background: #f0f0f0">
+              <td
+                colspan="4"
+                style="padding: 6px 10px; font-weight: 600; border: none"
+              >
+                <strong
+                  >AXE 2 — Marketing Digital + IA (Stagiaires orientés
+                  Marketing/IA)</strong
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe2">AXE 2</span></td>
+              <td>SEO on-page + keyword research + Google Analytics 4</td>
+              <td style="text-align: center">Avancé</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe2">AXE 2</span></td>
+              <td>Prompt engineering avancé (ChatGPT, DALL-E, perplexity)</td>
+              <td style="text-align: center">Avancé</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe2">AXE 2</span></td>
+              <td>IA création contenu (texte, image, vidéo)</td>
+              <td style="text-align: center">Intermédiaire</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe2">AXE 2</span></td>
+              <td>IA analyse données marketing (ChatGPT, Claude, outils)</td>
+              <td style="text-align: center">Intermédiaire</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe2">AXE 2</span></td>
+              <td>Mailchimp + marketing automation (email campaigns)</td>
+              <td style="text-align: center">Intermédiaire</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe2">AXE 2</span></td>
+              <td>N8N workflows marketing avancés (intégrations API)</td>
+              <td style="text-align: center">Intermédiaire</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe2">AXE 2</span></td>
+              <td>Google Ads + SEA (campagnes payantes)</td>
+              <td style="text-align: center">Fondamental</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="axe-tag axe2">AXE 2</span></td>
+              <td>Campagnes multicanal + ROI measurement</td>
+              <td style="text-align: center">Avancé</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ═══ INDICATEURS DE SUIVI ═══ -->
+      <div class="section-box">
+        <h2>📈 Indicateurs de Suivi & Performance</h2>
+        <table class="lt">
+          <thead>
+            <tr>
+              <th>KPI (Objectif)</th>
+              <th style="text-align: center">Cible</th>
+              <th>Mesure</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Satisfaction stagiaires (questionnaire fin parcours)</td>
+              <td style="text-align: center"><strong>≥ 80%</strong></td>
+              <td>Questionnaire 10 questions (note 1-5)</td>
+            </tr>
+            <tr>
+              <td>Taux de stagiaires avec projet pro clair à l'issue</td>
+              <td style="text-align: center"><strong>100%</strong></td>
+              <td>Synthèse + entretien individuel (S20)</td>
+            </tr>
+            <tr>
+              <td>Completion portfolio (GitHub + CV)</td>
+              <td style="text-align: center"><strong>100%</strong></td>
+              <td>Validation formateur (livrable S20)</td>
+            </tr>
+            <tr>
+              <td>Taux d'orientation vers emploi/alternance</td>
+              <td style="text-align: center"><strong>≥ 70%</strong></td>
+              <td>Suivi 3 mois post-parcours</td>
+            </tr>
+            <tr>
+              <td>Taux de présence (assiduité)</td>
+              <td style="text-align: center"><strong>≥ 85%</strong></td>
+              <td>Feuilles d'émargement</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ═══ MÉTHODOLOGIE PÉDAGOGIQUE ═══ -->
+      <div class="section-box">
+        <h2>🎯 Méthodologie Pédagogique</h2>
+        <table class="lt">
+          <thead>
+            <tr>
+              <th style="width: 120px">Méthode</th>
+              <th>Détail</th>
+              <th style="width: 80px; text-align: center">Fréquence</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>SEPE</strong></td>
+              <td>
+                Situation (contexte) → Exploration (découverte) → Pratique
+                (hands-on) → Évaluation (mesure)
+              </td>
+              <td style="text-align: center">Chaque séance</td>
+            </tr>
+            <tr>
+              <td><strong>Projets itératifs</strong></td>
+              <td>
+                1 petit projet par semaine → portfolio progressif → 20 projets
+                en 7 mois
+              </td>
+              <td style="text-align: center">Hebdo</td>
+            </tr>
+            <tr>
+              <td><strong>Pair programming</strong></td>
+              <td>Travail en duo → feedback pairs → collaboration</td>
+              <td style="text-align: center">2x/sem</td>
+            </tr>
+            <tr>
+              <td><strong>Code review</strong></td>
+              <td>Formateur revue chaque PR → commentaires → améliorations</td>
+              <td style="text-align: center">Hebdo</td>
+            </tr>
+            <tr>
+              <td><strong>Pitch technique</strong></td>
+              <td>
+                Présentation 3min de chaque projet → feedback → communication
+                pro
+              </td>
+              <td style="text-align: center">Bi-hebdo</td>
+            </tr>
+            <tr>
+              <td><strong>Apprentissage adaptatif</strong></td>
+              <td>
+                Questionnaires orientation → parcours personnalisé → ajustements
+                mensuels
+              </td>
+              <td style="text-align: center">Mensuel</td>
+            </tr>
+            <tr>
+              <td><strong>Documentation progressive</strong></td>
+              <td>README → Vidéo → Slide → Synthèse écrite (4 niveaux)</td>
+              <td style="text-align: center">Hebdo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ═══ DIFFÉRENCIATION ═══ -->
+      <div class="section-box">
+        <h2>🚀 Différenciation vs Autres Formateurs</h2>
+        <table class="lt">
+          <thead>
+            <tr>
+              <th>Apport Unique</th>
+              <th>Bureautique</th>
+              <th>Mathématiques</th>
+              <th>Hardware</th>
+              <th>Le Formateur</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Portfolio GitHub</strong></td>
+              <td style="text-align: center">❌</td>
+              <td style="text-align: center">❌</td>
+              <td style="text-align: center">❌</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓ Cœur</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Développement Web réel (Symfony)</strong></td>
+              <td style="text-align: center">❌</td>
+              <td style="text-align: center">❌</td>
+              <td style="text-align: center">❌</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓ Cœur</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>IA professionnelle (ChatGPT, Prompt eng.)</strong>
+              </td>
+              <td style="text-align: center">❌</td>
+              <td style="text-align: center">❌</td>
+              <td style="text-align: center">❌</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓ Cœur</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>N8N (Automatisation no-code)</strong></td>
+              <td style="text-align: center">❌</td>
+              <td style="text-align: center">❌</td>
+              <td style="text-align: center">❌</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓ Cœur</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Marketing Digital & SEO</strong></td>
+              <td style="text-align: center">⚠️ Basique</td>
+              <td style="text-align: center">❌</td>
+              <td style="text-align: center">❌</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓ Avancé</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Orientation professionnelle claire</strong></td>
+              <td style="text-align: center">❌</td>
+              <td style="text-align: center">❌</td>
+              <td style="text-align: center">❌</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓ Cœur</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Projection métiers 2026</strong></td>
+              <td style="text-align: center">❌</td>
+              <td style="text-align: center">❌</td>
+              <td style="text-align: center">❌</td>
+              <td style="text-align: center">
+                <span class="comp-check">✓ Cœur</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ═══ CALENDRIER CLÉS ═══ -->
+      <div class="section-box">
+        <h2>📅 Calendrier des Points Clés</h2>
+        <table class="lt">
+          <thead>
+            <tr>
+              <th style="width: 100px">Date / Semaine</th>
+              <th>Étape Majeure</th>
+              <th>Action Stagiaire</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>11 mai - S1</strong></td>
+              <td>Démarrage PPNI</td>
+              <td>Accueil + Test positionnement + GitHub setup</td>
+            </tr>
+            <tr>
+              <td><strong>22 mai - S2</strong></td>
+              <td>1er Livrable</td>
+              <td>1er commit GitHub + README cybersécurité</td>
+            </tr>
+            <tr>
+              <td><strong>8 juin - S4</strong></td>
+              <td>Landing page</td>
+              <td>1er projet web (HTML/CSS/JS) sur GitHub</td>
+            </tr>
+            <tr>
+              <td><strong>Fin juin - S8</strong></td>
+              <td><strong>Entretien orientation</strong></td>
+              <td>Choix axe : Dev Web OU Marketing+IA (questionnaire)</td>
+            </tr>
+            <tr>
+              <td><strong>13/7 - 31/7</strong></td>
+              <td>Congés d'été</td>
+              <td>Projet personnel optionnel (refresher)</td>
+            </tr>
+            <tr>
+              <td><strong>1er août - S9</strong></td>
+              <td>Démarrage Phase 2</td>
+              <td>Fondamentaux spécialisés (Dev OU Marketing)</td>
+            </tr>
+            <tr>
+              <td><strong>Fin août - S12</strong></td>
+              <td>Projet intermédiaire</td>
+              <td>Portfolio intermediate push GitHub</td>
+            </tr>
+            <tr>
+              <td><strong>Fin septembre - S16</strong></td>
+              <td><strong>Point progression</strong></td>
+              <td>Validation 50% compétences spécialisées</td>
+            </tr>
+            <tr>
+              <td><strong>1er-31 octobre - S17-S20</strong></td>
+              <td>Projet final + Synthèse</td>
+              <td>Portfolio final (3 projets Dev OU 2 campagnes Marketing)</td>
+            </tr>
+            <tr>
+              <td><strong>Fin octobre - S20</strong></td>
+              <td><strong>Fin PPNI</strong></td>
+              <td>CV + Synthèse (3p) + Simulation entretien</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ═══ FOOTER ═══ -->
+      <div class="footer">
+        Prévisionnel de Formation PPNI 2026 — Stagiaires<br />
+        Parcours Préparatoire Numérique & Informatique<br />
+        11 mai → 31 octobre 2026 — 10,5h/semaine — LUNDI (9h-12h30 + 13h20-17h)
+        + VENDREDI (9h-12h30 + 13h20-15h)<br />
+        <strong
+          >Document pédagogique — À imprimer ou afficher pour les
+          stagiaires</strong
+        >
+      </div>
+    </div>
+    <!-- /page-wrapper -->
+  </body>
+</html>

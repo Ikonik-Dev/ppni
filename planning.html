@@ -1,0 +1,391 @@
+﻿<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Planning hebdomadaire — Le Formateur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/shared.css" />
+    <style>
+      /* planning specifics */
+      .planning-wrap {
+        background: white;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-md);
+        overflow: hidden;
+        margin-bottom: 18px;
+      }
+      .planning-wrap table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .planning-wrap th {
+        background: var(--brand-dark);
+        color: white;
+        padding: 11px 8px;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 600;
+        border: 1px solid #0d2540;
+      }
+      .planning-wrap td {
+        border: 1px solid #d1d5db;
+        padding: 10px 8px;
+        vertical-align: top;
+        font-size: 12px;
+        height: 72px;
+      }
+      .heure {
+        background: var(--brand-light);
+        font-weight: 700;
+        text-align: center;
+        width: 95px;
+        color: var(--brand-dark);
+        font-size: 11px;
+        vertical-align: middle;
+      }
+      .ppni {
+        background: var(--blue-light);
+        border-left: 4px solid var(--blue);
+      }
+      .auxilium {
+        background: var(--green-light);
+        border-left: 4px solid var(--green);
+      }
+      .ia {
+        background: var(--orange-light);
+        border-left: 4px solid var(--orange);
+      }
+      .pause {
+        background: #f4f4f4;
+        color: #888;
+        text-align: center;
+        font-style: italic;
+        vertical-align: middle;
+      }
+      .vide {
+        background: #fafafa;
+      }
+      .activite {
+        font-weight: 700;
+        display: block;
+        margin-bottom: 3px;
+        font-size: 12px;
+      }
+      .detail {
+        font-size: 11px;
+        color: #4b5563;
+      }
+
+      .legende {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-bottom: 18px;
+      }
+      .legende span {
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .legende .ppni {
+        border: none;
+      }
+      .legende .auxilium {
+        border: none;
+      }
+      .legende .ia {
+        border: none;
+      }
+
+      .recap {
+        background: white;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-md);
+        margin-bottom: 18px;
+        overflow: hidden;
+      }
+      .recap h2 {
+        background: var(--brand-dark);
+        color: white;
+        padding: 10px 18px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .recap table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .recap th {
+        background: #f5f5f5;
+        color: #333;
+        padding: 9px 12px;
+        font-size: 11px;
+        font-weight: 600;
+        border-bottom: 2px solid var(--brand-dark);
+        text-align: left;
+      }
+      .recap td {
+        padding: 8px 12px;
+        font-size: 11px;
+        border-bottom: 1px solid var(--gray-border);
+      }
+      .recap tr:nth-child(even) td {
+        background: #f9fafb;
+      }
+
+      @media print {
+        .planning-wrap th {
+          font-size: 11px;
+          padding: 6px 4px;
+        }
+        .planning-wrap td {
+          height: 50px;
+          font-size: 10px;
+          padding: 5px;
+        }
+        .heure {
+          width: 70px;
+          font-size: 10px;
+        }
+        .activite {
+          font-size: 10px;
+        }
+        .detail {
+          font-size: 9px;
+        }
+        .legende span {
+          font-size: 10px;
+          padding: 3px 9px;
+        }
+        .recap th,
+        .recap td {
+          font-size: 9px;
+          padding: 4px 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="topbar">
+      <span class="topbar-brand">PPNI 2026</span>
+      <a href="index.html">🏠 Accueil</a>
+      <a href="planning.html" class="active">📅 Planning</a>
+      <a href="previsionnel.html">📊 Prévisionnel</a>
+      <a href="previsionnel_stagiaire.html">🎓 Stagiaires</a>
+    </nav>
+
+    <div class="page-wrapper">
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 18px;
+          flex-wrap: wrap;
+          gap: 10px;
+        "
+      >
+        <div>
+          <h1
+            style="
+              font-size: 20px;
+              font-weight: 700;
+              color: var(--brand-dark);
+              margin-bottom: 4px;
+            "
+          >
+            📅 Planning hebdomadaire
+          </h1>
+          <p style="font-size: 12px; color: var(--text-muted)">
+            <strong>Le Formateur</strong> — Référent IA / Développeur /
+            Formateur numérique (PPNI)<br />Période : 04/05/2026 → 31/12/2026 —
+            35h hebdomadaires
+          </p>
+        </div>
+        <button class="print-btn" onclick="window.print()">
+          🖨️ Imprimer / PDF
+        </button>
+      </div>
+
+      <div class="planning-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Horaires</th>
+              <th>Lundi</th>
+              <th>Mardi</th>
+              <th>Mercredi</th>
+              <th>Jeudi</th>
+              <th>Vendredi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="heure">09h00 – 10h30</td>
+              <td class="ppni">
+                <span class="activite">🎓 PPNI</span
+                ><span class="detail"
+                  >Face à face pédagogique — Socles numériques</span
+                >
+              </td>
+              <td class="auxilium">
+                <span class="activite">💻 Auxilium</span
+                ><span class="detail">Développement plateforme</span>
+              </td>
+              <td class="ia">
+                <span class="activite">🤖 Référent IA</span
+                ><span class="detail">Conception module IA</span>
+              </td>
+              <td class="auxilium">
+                <span class="activite">💻 Auxilium</span
+                ><span class="detail">Intégration contenus / quizz</span>
+              </td>
+              <td class="ppni">
+                <span class="activite">💼 PPNI</span
+                ><span class="detail">Accompagnement projet pro</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="heure">10h30 – 12h30</td>
+              <td class="ppni">
+                <span class="activite">🎓 PPNI</span
+                ><span class="detail">Face à face pédagogique (suite)</span>
+              </td>
+              <td class="auxilium">
+                <span class="activite">💻 Auxilium</span
+                ><span class="detail">Développement (suite)</span>
+              </td>
+              <td class="ia">
+                <span class="activite">🤖 Référent IA</span
+                ><span class="detail">Conception module (suite)</span>
+              </td>
+              <td class="auxilium">
+                <span class="activite">💻 Auxilium</span
+                ><span class="detail">Documentation technique</span>
+              </td>
+              <td class="ppni">
+                <span class="activite">💼 PPNI</span
+                ><span class="detail">Accompagnement (suite)</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="heure">12h30 – 13h20</td>
+              <td class="pause" colspan="5">🍽️ Pause déjeuner</td>
+            </tr>
+            <tr>
+              <td class="heure">13h20 – 15h00</td>
+              <td class="ppni">
+                <span class="activite">🎓 PPNI</span
+                ><span class="detail">Face à face pédagogique</span>
+              </td>
+              <td class="auxilium">
+                <span class="activite">💻 Auxilium</span
+                ><span class="detail">Développement</span>
+              </td>
+              <td class="ia">
+                <span class="activite">🤖 Référent IA</span
+                ><span class="detail">Formation IA / certification GAFAM</span>
+              </td>
+              <td class="ia">
+                <span class="activite">🤖 Atelier IA salariés</span
+                ><span class="detail">Sensibilisation / formation interne</span>
+              </td>
+              <td class="auxilium">
+                <span class="activite">💻 Auxilium</span
+                ><span class="detail">Reporting / documentation</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="heure">15h00 – 17h00</td>
+              <td class="ppni">
+                <span class="activite">💼 PPNI</span
+                ><span class="detail">Accompagnement projet pro</span>
+              </td>
+              <td class="auxilium">
+                <span class="activite">💻 Auxilium</span
+                ><span class="detail">Documentation technique</span>
+              </td>
+              <td class="ia">
+                <span class="activite">🔍 Veille IA</span
+                ><span class="detail">Cas d'usage / automatisation</span>
+              </td>
+              <td class="ia">
+                <span class="activite">🤖 Atelier IA (suite)</span
+                ><span class="detail">ou préparation livrables</span>
+              </td>
+              <td class="vide">
+                <span class="detail" style="color: #aaa"
+                  >— Fin de journée 15h00 —</span
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="legende">
+        <span class="ppni">🎓 PPNI (10,5h)</span>
+        <span class="auxilium">💻 Auxilium (~11,5h)</span>
+        <span class="ia">🤖 Référent IA (~10h)</span>
+      </div>
+
+      <div class="recap">
+        <h2>📊 Récapitulatif hebdomadaire</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Axe</th>
+              <th>Volume</th>
+              <th>Objectif fiche de mission</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>🎓 PPNI — Face à face pédagogique</td>
+              <td>7h</td>
+              <td>✅ 7h</td>
+            </tr>
+            <tr>
+              <td>💼 PPNI — Accompagnement projet pro</td>
+              <td>3,5h</td>
+              <td>✅ 3,5h</td>
+            </tr>
+            <tr>
+              <td>🤖 Référent IA</td>
+              <td>~10h</td>
+              <td>✅ Conception, ateliers, guides, certification</td>
+            </tr>
+            <tr>
+              <td>🤖 Formation IA &amp; certification GAFAM</td>
+              <td>~2h</td>
+              <td>✅ Certification gratuite reconnue en entreprise</td>
+            </tr>
+            <tr>
+              <td>💻 Développement Auxilium</td>
+              <td>~11,5h</td>
+              <td>✅ Développement + doc</td>
+            </tr>
+            <tr>
+              <td><strong>TOTAL</strong></td>
+              <td><strong>~35h</strong></td>
+              <td>✅</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="footer">
+        Document de travail — à valider avec la Direction et le coordinateur
+        PPNI
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,3 @@
+# Documents sensibles — exclus du déploiement public
+fiche_mission*
+*.pdf
