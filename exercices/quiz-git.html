@@ -550,7 +550,7 @@
       function updateStats() {
         const knew = evaluations.filter((e) => e === true).length;
         const didnt = evaluations.filter((e) => e === false).length;
-        const remain = evaluations.filter((e) => e === null).length;
+        const remain = evaluations.filter((e) => e === null || e === "seen").length;
         document.getElementById("stat-knew").textContent = knew + " su(es)";
         document.getElementById("stat-didnt").textContent = didnt + " à revoir";
         document.getElementById("stat-remain").textContent =
@@ -590,6 +590,7 @@
           if (evaluations[currentIndex] === null)
             evaluations[currentIndex] = "seen";
           buildDots();
+          updateStats();
         } else {
           document.getElementById("self-eval").classList.remove("visible");
         }
