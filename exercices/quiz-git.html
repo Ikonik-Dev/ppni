@@ -6,7 +6,10 @@
     <title>Flashcards Git — PPNI 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../css/shared.css" />
     <style>
       .flashcard-scene {
@@ -22,9 +25,11 @@
         height: 100%;
         position: relative;
         transform-style: preserve-3d;
-        transition: transform 0.5s cubic-bezier(.4,0,.2,1);
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       }
-      .flashcard.flipped { transform: rotateY(180deg); }
+      .flashcard.flipped {
+        transform: rotateY(180deg);
+      }
       .flashcard-face {
         position: absolute;
         width: 100%;
@@ -42,31 +47,55 @@
       .flashcard-front {
         background: linear-gradient(135deg, #1a3a5c, #2c6fad);
         color: #fff;
-        box-shadow: 0 8px 32px rgba(26,58,92,0.25);
+        box-shadow: 0 8px 32px rgba(26, 58, 92, 0.25);
       }
       .flashcard-front code {
-        font-family: 'Courier New', monospace;
+        font-family: "Courier New", monospace;
         font-size: 22px;
         font-weight: 700;
         color: #7dd3fc;
-        background: rgba(0,0,0,0.3);
+        background: rgba(0, 0, 0, 0.3);
         padding: 10px 20px;
         border-radius: 8px;
         margin-bottom: 14px;
         display: block;
       }
-      .flashcard-front .hint { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 12px; }
+      .flashcard-front .hint {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.6);
+        margin-top: 12px;
+      }
       .flashcard-back {
         background: linear-gradient(135deg, #f0fdf4, #d5f5e3);
         color: #145a32;
-        box-shadow: 0 8px 32px rgba(39,174,96,0.15);
+        box-shadow: 0 8px 32px rgba(39, 174, 96, 0.15);
         transform: rotateY(180deg);
         border: 2px solid #27ae60;
       }
-      .flashcard-back h3 { font-size: 15px; color: #1a3a5c; margin: 0 0 10px; }
-      .flashcard-back p { font-size: 13px; color: #333; margin: 0 0 8px; line-height: 1.5; }
-      .flashcard-back code { background: #1e293b; color: #7dd3fc; padding: 2px 8px; border-radius: 4px; font-size: 12px; }
-      .flashcard-back .example { font-size: 11px; color: #666; font-style: italic; margin-top: 6px; }
+      .flashcard-back h3 {
+        font-size: 15px;
+        color: #1a3a5c;
+        margin: 0 0 10px;
+      }
+      .flashcard-back p {
+        font-size: 13px;
+        color: #333;
+        margin: 0 0 8px;
+        line-height: 1.5;
+      }
+      .flashcard-back code {
+        background: #1e293b;
+        color: #7dd3fc;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+      }
+      .flashcard-back .example {
+        font-size: 11px;
+        color: #666;
+        font-style: italic;
+        margin-top: 6px;
+      }
 
       .card-controls {
         display: flex;
@@ -85,10 +114,22 @@
         cursor: pointer;
         transition: opacity 0.15s;
       }
-      .btn-prev { background: #e8eef7; color: #1a3a5c; }
-      .btn-next { background: #1a3a5c; color: #fff; }
-      .btn-flip { background: #2c6fad; color: #fff; }
-      .btn-nav:disabled { opacity: 0.4; cursor: not-allowed; }
+      .btn-prev {
+        background: #e8eef7;
+        color: #1a3a5c;
+      }
+      .btn-next {
+        background: #1a3a5c;
+        color: #fff;
+      }
+      .btn-flip {
+        background: #2c6fad;
+        color: #fff;
+      }
+      .btn-nav:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
 
       .self-eval {
         display: none;
@@ -97,9 +138,29 @@
         flex-wrap: wrap;
         margin-top: 14px;
       }
-      .self-eval.visible { display: flex; }
-      .btn-knew { background: #27ae60; color: #fff; padding: 8px 18px; border: none; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; }
-      .btn-didnt { background: #e74c3c; color: #fff; padding: 8px 18px; border: none; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; }
+      .self-eval.visible {
+        display: flex;
+      }
+      .btn-knew {
+        background: #27ae60;
+        color: #fff;
+        padding: 8px 18px;
+        border: none;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .btn-didnt {
+        background: #e74c3c;
+        color: #fff;
+        padding: 8px 18px;
+        border: none;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+      }
 
       .progress-cards {
         display: flex;
@@ -115,10 +176,18 @@
         background: #e0e0e0;
         transition: background 0.3s;
       }
-      .progress-dot.seen { background: #2c6fad; }
-      .progress-dot.knew { background: #27ae60; }
-      .progress-dot.didnt { background: #e74c3c; }
-      .progress-dot.current { box-shadow: 0 0 0 2px #1a3a5c; }
+      .progress-dot.seen {
+        background: #2c6fad;
+      }
+      .progress-dot.knew {
+        background: #27ae60;
+      }
+      .progress-dot.didnt {
+        background: #e74c3c;
+      }
+      .progress-dot.current {
+        box-shadow: 0 0 0 2px #1a3a5c;
+      }
 
       .stat-row {
         display: flex;
@@ -128,8 +197,16 @@
         flex-wrap: wrap;
         font-size: 12px;
       }
-      .stat { display: flex; align-items: center; gap: 5px; }
-      .stat-dot { width: 10px; height: 10px; border-radius: 50%; }
+      .stat {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .stat-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
     </style>
   </head>
   <body>
@@ -146,34 +223,60 @@
     <div class="page-wrapper">
       <div class="doc-header">
         <h1>🐙 Flashcards Git — Révision interactive</h1>
-        <div class="meta">15 cartes · Clique pour retourner · Auto-évaluation · S2 GitHub</div>
+        <div class="meta">
+          15 cartes · Clique pour retourner · Auto-évaluation · S2 GitHub
+        </div>
       </div>
 
       <div class="section-box">
         <div class="falc-intro">
           <strong>📋 Comment ça marche ?</strong>
-          Lis la commande sur la carte bleue → essaie de te rappeler ce qu'elle fait → clique pour retourner et voir la réponse →
-          dis honnêtement si tu savais ou non. Les cartes que tu ne connaissais pas reviendront plus souvent.
+          Lis la commande sur la carte bleue → essaie de te rappeler ce qu'elle
+          fait → clique pour retourner et voir la réponse → dis honnêtement si
+          tu savais ou non. Les cartes que tu ne connaissais pas reviendront
+          plus souvent.
         </div>
       </div>
 
       <div class="section-box">
         <!-- Progression -->
-        <div id="card-counter" style="text-align:center;font-size:12px;color:#888;margin-bottom:12px;">Carte 1 sur 15</div>
+        <div
+          id="card-counter"
+          style="
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 12px;
+          "
+        >
+          Carte 1 sur 15
+        </div>
         <div class="progress-cards" id="progress-dots"></div>
         <div class="stat-row">
-          <div class="stat"><div class="stat-dot" style="background:#27ae60;"></div> <span id="stat-knew">0 su(es)</span></div>
-          <div class="stat"><div class="stat-dot" style="background:#e74c3c;"></div> <span id="stat-didnt">0 à revoir</span></div>
-          <div class="stat"><div class="stat-dot" style="background:#e0e0e0;"></div> <span id="stat-remain">15 restant(es)</span></div>
+          <div class="stat">
+            <div class="stat-dot" style="background: #27ae60"></div>
+            <span id="stat-knew">0 su(es)</span>
+          </div>
+          <div class="stat">
+            <div class="stat-dot" style="background: #e74c3c"></div>
+            <span id="stat-didnt">0 à revoir</span>
+          </div>
+          <div class="stat">
+            <div class="stat-dot" style="background: #e0e0e0"></div>
+            <span id="stat-remain">15 restant(es)</span>
+          </div>
         </div>
 
         <!-- Flashcard -->
-        <div style="margin-top:20px;">
+        <div style="margin-top: 20px">
           <div class="flashcard-scene" onclick="flipCard()">
             <div class="flashcard" id="flashcard">
               <div class="flashcard-face flashcard-front">
                 <code id="card-command">git status</code>
-                <div id="card-category" style="font-size:11px;opacity:0.7;margin-bottom:8px;"></div>
+                <div
+                  id="card-category"
+                  style="font-size: 11px; opacity: 0.7; margin-bottom: 8px"
+                ></div>
                 <div class="hint">👆 Clique pour voir la réponse</div>
               </div>
               <div class="flashcard-face flashcard-back">
@@ -186,50 +289,204 @@
 
           <!-- Auto-évaluation (visible après flip) -->
           <div class="self-eval" id="self-eval">
-            <span style="font-size:12px;color:#555;align-self:center;">Est-ce que tu savais ?</span>
-            <button class="btn-knew" onclick="evaluate(true)">✅ Oui, je savais</button>
-            <button class="btn-didnt" onclick="evaluate(false)">❌ Pas encore</button>
+            <span style="font-size: 12px; color: #555; align-self: center"
+              >Est-ce que tu savais ?</span
+            >
+            <button class="btn-knew" onclick="evaluate(true)">
+              ✅ Oui, je savais
+            </button>
+            <button class="btn-didnt" onclick="evaluate(false)">
+              ❌ Pas encore
+            </button>
           </div>
 
           <!-- Navigation -->
-          <div class="card-controls" style="margin-top:20px;">
-            <button class="btn-nav btn-prev" id="btn-prev" onclick="prevCard()" disabled>← Précédente</button>
-            <button class="btn-nav btn-flip" onclick="flipCard()">↺ Retourner</button>
-            <button class="btn-nav btn-next" id="btn-next" onclick="nextCard()" disabled>Suivante →</button>
+          <div class="card-controls" style="margin-top: 20px">
+            <button
+              class="btn-nav btn-prev"
+              id="btn-prev"
+              onclick="prevCard()"
+              disabled
+            >
+              ← Précédente
+            </button>
+            <button class="btn-nav btn-flip" onclick="flipCard()">
+              ↺ Retourner
+            </button>
+            <button
+              class="btn-nav btn-next"
+              id="btn-next"
+              onclick="nextCard()"
+              disabled
+            >
+              Suivante →
+            </button>
           </div>
         </div>
 
         <!-- Résultat final -->
-        <div id="final-result" style="display:none;text-align:center;padding:20px;background:#d5f5e3;border:2px solid #27ae60;border-radius:12px;margin-top:20px;">
-          <h2 style="color:#145a32;margin:0 0 8px;">🏆 Session terminée !</h2>
-          <p id="final-text" style="font-size:13px;color:#333;margin:0 0 16px;"></p>
-          <button onclick="restartCards()" style="padding:10px 22px;background:#1a3a5c;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;">↺ Recommencer</button>
+        <div
+          id="final-result"
+          style="
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background: #d5f5e3;
+            border: 2px solid #27ae60;
+            border-radius: 12px;
+            margin-top: 20px;
+          "
+        >
+          <h2 style="color: #145a32; margin: 0 0 8px">🏆 Session terminée !</h2>
+          <p
+            id="final-text"
+            style="font-size: 13px; color: #333; margin: 0 0 16px"
+          ></p>
+          <button
+            onclick="restartCards()"
+            style="
+              padding: 10px 22px;
+              background: #1a3a5c;
+              color: #fff;
+              border: none;
+              border-radius: 8px;
+              font-size: 13px;
+              font-weight: 700;
+              cursor: pointer;
+            "
+          >
+            ↺ Recommencer
+          </button>
         </div>
       </div>
 
       <div class="footer">
         Flashcards Git · S2 GitHub · PPNI 2026 &nbsp;|&nbsp;
-        <a href="index.html" style="color:inherit;">← Retour aux exercices</a>
+        <a href="index.html" style="color: inherit">← Retour aux exercices</a>
       </div>
     </div>
 
     <script>
       const cards = [
-        { cmd: 'git init', cat: 'Base', title: 'Initialiser un dépôt Git', desc: 'Crée un nouveau dépôt Git vide dans le dossier courant. À faire une seule fois au début d\'un projet.', example: 'Exemple : dans ton dossier "mon-projet/", tu lances git init → le dossier devient un repo Git.' },
-        { cmd: 'git clone [url]', cat: 'Remote', title: 'Copier un repo existant', desc: 'Télécharge un repo depuis GitHub (ou tout autre serveur) vers ton ordinateur, avec tout l\'historique.', example: 'Exemple : git clone https://github.com/toi/ppni-cybersecurite.git' },
-        { cmd: 'git status', cat: 'Base', title: 'Voir l\'état du repo', desc: 'Affiche les fichiers modifiés, les fichiers prêts à committer (staged) et ceux non suivis (untracked).', example: 'Conseil : lance git status avant chaque commit pour vérifier ce qui va être sauvegardé.' },
-        { cmd: 'git add .', cat: 'Base', title: 'Préparer tous les fichiers', desc: 'Ajoute tous les fichiers modifiés dans la "staging area" — la zone de préparation avant le commit.', example: 'Le point (.) signifie "tout le répertoire courant". Tu peux aussi faire git add README.md pour un seul fichier.' },
-        { cmd: 'git commit -m "message"', cat: 'Base', title: 'Sauvegarder un instantané', desc: 'Crée un point de sauvegarde permanent avec un message descriptif. L\'historique Git garde tous les commits.', example: 'Exemple : git commit -m "Ajouter section bonnes pratiques cybersécurité"' },
-        { cmd: 'git push', cat: 'Remote', title: 'Envoyer vers GitHub', desc: 'Envoie les commits locaux vers le dépôt distant (GitHub). Rend ton travail visible en ligne.', example: 'Conseil : pusher régulièrement = sauvegarde en ligne de ton travail, accessible depuis n\'importe où.' },
-        { cmd: 'git pull', cat: 'Remote', title: 'Récupérer les changements', desc: 'Télécharge et intègre les dernières modifications depuis le dépôt distant. À faire avant de commencer à travailler en équipe.', example: 'Équivalent de : git fetch + git merge en une seule commande.' },
-        { cmd: 'git log --oneline', cat: 'Base', title: 'Voir l\'historique compact', desc: 'Affiche la liste des commits : identifiant court + message. Chaque ligne est un point de sauvegarde.', example: 'Exemple de sortie : a3f8c12 Ajouter README · 8bc2901 Initial commit' },
-        { cmd: 'git branch', cat: 'Branches', title: 'Lister les branches', desc: 'Affiche toutes les branches locales. La branche active est marquée d\'un astérisque (*).', example: 'Exemple : * main — amelioration-readme' },
-        { cmd: 'git checkout -b [nom]', cat: 'Branches', title: 'Créer + basculer sur une branche', desc: 'Crée une nouvelle branche et se positionne dessus immédiatement. Raccourci de git branch + git checkout.', example: 'Exemple : git checkout -b amelioration-readme — crée et bascule sur la branche.' },
-        { cmd: 'git checkout [branche]', cat: 'Branches', title: 'Basculer sur une branche', desc: 'Change de branche de travail. Les fichiers dans ton éditeur reflètent l\'état de la branche choisie.', example: 'Exemple : git checkout main — pour retourner sur la branche principale.' },
-        { cmd: 'git merge [branche]', cat: 'Branches', title: 'Fusionner une branche', desc: 'Intègre les commits d\'une autre branche dans la branche courante. Utilisé pour valider une fonctionnalité.', example: 'Depuis main : git merge amelioration-readme — fusionne le travail dans main.' },
-        { cmd: 'git diff', cat: 'Base', title: 'Voir les modifications', desc: 'Affiche exactement ce qui a changé dans les fichiers (lignes ajoutées en vert, supprimées en rouge).', example: 'Astuce : git diff --staged pour voir les fichiers déjà ajoutés avec git add.' },
-        { cmd: 'git remote -v', cat: 'Remote', title: 'Voir les dépôts distants', desc: 'Liste les connexions distantes configurées (origin = GitHub). Affiche les URLs de fetch et push.', example: 'Utile pour vérifier que ton repo local est bien connecté au bon repo GitHub.' },
-        { cmd: 'git stash', cat: 'Avancé', title: 'Mettre de côté des changements', desc: 'Sauvegarde temporairement les modifications en cours sans committer, pour pouvoir changer de branche proprement.', example: 'git stash → changer de branche → git stash pop pour récupérer les modifications.' }
+        {
+          cmd: "git init",
+          cat: "Base",
+          title: "Initialiser un dépôt Git",
+          desc: "Crée un nouveau dépôt Git vide dans le dossier courant. À faire une seule fois au début d'un projet.",
+          example:
+            'Exemple : dans ton dossier "mon-projet/", tu lances git init → le dossier devient un repo Git.',
+        },
+        {
+          cmd: "git clone [url]",
+          cat: "Remote",
+          title: "Copier un repo existant",
+          desc: "Télécharge un repo depuis GitHub (ou tout autre serveur) vers ton ordinateur, avec tout l'historique.",
+          example:
+            "Exemple : git clone https://github.com/toi/ppni-cybersecurite.git",
+        },
+        {
+          cmd: "git status",
+          cat: "Base",
+          title: "Voir l'état du repo",
+          desc: "Affiche les fichiers modifiés, les fichiers prêts à committer (staged) et ceux non suivis (untracked).",
+          example:
+            "Conseil : lance git status avant chaque commit pour vérifier ce qui va être sauvegardé.",
+        },
+        {
+          cmd: "git add .",
+          cat: "Base",
+          title: "Préparer tous les fichiers",
+          desc: 'Ajoute tous les fichiers modifiés dans la "staging area" — la zone de préparation avant le commit.',
+          example:
+            'Le point (.) signifie "tout le répertoire courant". Tu peux aussi faire git add README.md pour un seul fichier.',
+        },
+        {
+          cmd: 'git commit -m "message"',
+          cat: "Base",
+          title: "Sauvegarder un instantané",
+          desc: "Crée un point de sauvegarde permanent avec un message descriptif. L'historique Git garde tous les commits.",
+          example:
+            'Exemple : git commit -m "Ajouter section bonnes pratiques cybersécurité"',
+        },
+        {
+          cmd: "git push",
+          cat: "Remote",
+          title: "Envoyer vers GitHub",
+          desc: "Envoie les commits locaux vers le dépôt distant (GitHub). Rend ton travail visible en ligne.",
+          example:
+            "Conseil : pusher régulièrement = sauvegarde en ligne de ton travail, accessible depuis n'importe où.",
+        },
+        {
+          cmd: "git pull",
+          cat: "Remote",
+          title: "Récupérer les changements",
+          desc: "Télécharge et intègre les dernières modifications depuis le dépôt distant. À faire avant de commencer à travailler en équipe.",
+          example:
+            "Équivalent de : git fetch + git merge en une seule commande.",
+        },
+        {
+          cmd: "git log --oneline",
+          cat: "Base",
+          title: "Voir l'historique compact",
+          desc: "Affiche la liste des commits : identifiant court + message. Chaque ligne est un point de sauvegarde.",
+          example:
+            "Exemple de sortie : a3f8c12 Ajouter README · 8bc2901 Initial commit",
+        },
+        {
+          cmd: "git branch",
+          cat: "Branches",
+          title: "Lister les branches",
+          desc: "Affiche toutes les branches locales. La branche active est marquée d'un astérisque (*).",
+          example: "Exemple : * main — amelioration-readme",
+        },
+        {
+          cmd: "git checkout -b [nom]",
+          cat: "Branches",
+          title: "Créer + basculer sur une branche",
+          desc: "Crée une nouvelle branche et se positionne dessus immédiatement. Raccourci de git branch + git checkout.",
+          example:
+            "Exemple : git checkout -b amelioration-readme — crée et bascule sur la branche.",
+        },
+        {
+          cmd: "git checkout [branche]",
+          cat: "Branches",
+          title: "Basculer sur une branche",
+          desc: "Change de branche de travail. Les fichiers dans ton éditeur reflètent l'état de la branche choisie.",
+          example:
+            "Exemple : git checkout main — pour retourner sur la branche principale.",
+        },
+        {
+          cmd: "git merge [branche]",
+          cat: "Branches",
+          title: "Fusionner une branche",
+          desc: "Intègre les commits d'une autre branche dans la branche courante. Utilisé pour valider une fonctionnalité.",
+          example:
+            "Depuis main : git merge amelioration-readme — fusionne le travail dans main.",
+        },
+        {
+          cmd: "git diff",
+          cat: "Base",
+          title: "Voir les modifications",
+          desc: "Affiche exactement ce qui a changé dans les fichiers (lignes ajoutées en vert, supprimées en rouge).",
+          example:
+            "Astuce : git diff --staged pour voir les fichiers déjà ajoutés avec git add.",
+        },
+        {
+          cmd: "git remote -v",
+          cat: "Remote",
+          title: "Voir les dépôts distants",
+          desc: "Liste les connexions distantes configurées (origin = GitHub). Affiche les URLs de fetch et push.",
+          example:
+            "Utile pour vérifier que ton repo local est bien connecté au bon repo GitHub.",
+        },
+        {
+          cmd: "git stash",
+          cat: "Avancé",
+          title: "Mettre de côté des changements",
+          desc: "Sauvegarde temporairement les modifications en cours sans committer, pour pouvoir changer de branche proprement.",
+          example:
+            "git stash → changer de branche → git stash pop pour récupérer les modifications.",
+        },
       ];
 
       let currentIndex = 0;
@@ -237,42 +494,53 @@
       let evaluations = new Array(cards.length).fill(null); // null = pas encore évalué, true = su, false = pas su
 
       function buildDots() {
-        const container = document.getElementById('progress-dots');
-        container.innerHTML = '';
+        const container = document.getElementById("progress-dots");
+        container.innerHTML = "";
         cards.forEach((_, i) => {
-          const dot = document.createElement('div');
-          dot.className = 'progress-dot' + (i === currentIndex ? ' current' : '') +
-            (evaluations[i] === true ? ' knew' : evaluations[i] === false ? ' didnt' : evaluations[i] === 'seen' ? ' seen' : '');
+          const dot = document.createElement("div");
+          dot.className =
+            "progress-dot" +
+            (i === currentIndex ? " current" : "") +
+            (evaluations[i] === true
+              ? " knew"
+              : evaluations[i] === false
+                ? " didnt"
+                : evaluations[i] === "seen"
+                  ? " seen"
+                  : "");
           container.appendChild(dot);
         });
       }
 
       function updateStats() {
-        const knew = evaluations.filter(e => e === true).length;
-        const didnt = evaluations.filter(e => e === false).length;
-        const remain = evaluations.filter(e => e === null).length;
-        document.getElementById('stat-knew').textContent = knew + ' su(es)';
-        document.getElementById('stat-didnt').textContent = didnt + ' à revoir';
-        document.getElementById('stat-remain').textContent = remain + ' restant(es)';
+        const knew = evaluations.filter((e) => e === true).length;
+        const didnt = evaluations.filter((e) => e === false).length;
+        const remain = evaluations.filter((e) => e === null).length;
+        document.getElementById("stat-knew").textContent = knew + " su(es)";
+        document.getElementById("stat-didnt").textContent = didnt + " à revoir";
+        document.getElementById("stat-remain").textContent =
+          remain + " restant(es)";
       }
 
       function showCard(idx) {
         const card = cards[idx];
-        document.getElementById('card-command').textContent = card.cmd;
-        document.getElementById('card-category').textContent = card.cat;
-        document.getElementById('card-title').textContent = card.title;
-        document.getElementById('card-desc').textContent = card.desc;
-        document.getElementById('card-example').textContent = card.example;
-        document.getElementById('card-counter').textContent = 'Carte ' + (idx + 1) + ' sur ' + cards.length;
+        document.getElementById("card-command").textContent = card.cmd;
+        document.getElementById("card-category").textContent = card.cat;
+        document.getElementById("card-title").textContent = card.title;
+        document.getElementById("card-desc").textContent = card.desc;
+        document.getElementById("card-example").textContent = card.example;
+        document.getElementById("card-counter").textContent =
+          "Carte " + (idx + 1) + " sur " + cards.length;
 
         // Reset flip
         isFlipped = false;
-        document.getElementById('flashcard').classList.remove('flipped');
-        document.getElementById('self-eval').classList.remove('visible');
+        document.getElementById("flashcard").classList.remove("flipped");
+        document.getElementById("self-eval").classList.remove("visible");
 
         // Nav buttons
-        document.getElementById('btn-prev').disabled = idx === 0;
-        document.getElementById('btn-next').disabled = evaluations[idx] === null; // next seulement après évaluation
+        document.getElementById("btn-prev").disabled = idx === 0;
+        document.getElementById("btn-next").disabled =
+          evaluations[idx] === null; // next seulement après évaluation
 
         buildDots();
         updateStats();
@@ -280,26 +548,31 @@
 
       function flipCard() {
         isFlipped = !isFlipped;
-        document.getElementById('flashcard').classList.toggle('flipped', isFlipped);
+        document
+          .getElementById("flashcard")
+          .classList.toggle("flipped", isFlipped);
         if (isFlipped) {
-          document.getElementById('self-eval').classList.add('visible');
-          if (evaluations[currentIndex] === null) evaluations[currentIndex] = 'seen';
+          document.getElementById("self-eval").classList.add("visible");
+          if (evaluations[currentIndex] === null)
+            evaluations[currentIndex] = "seen";
           buildDots();
         }
       }
 
       function evaluate(knew) {
         evaluations[currentIndex] = knew;
-        document.getElementById('btn-next').disabled = false;
+        document.getElementById("btn-next").disabled = false;
         buildDots();
         updateStats();
 
         // Sauvegarder en localStorage
-        const total = evaluations.filter(e => e !== null && e !== 'seen').length;
-        localStorage.setItem('ppni_quiz_git_score', total + ' cartes');
+        const total = evaluations.filter(
+          (e) => e !== null && e !== "seen",
+        ).length;
+        localStorage.setItem("ppni_quiz_git_score", total + " cartes");
 
         // Toutes évaluées ?
-        const done = evaluations.every(e => e === true || e === false);
+        const done = evaluations.every((e) => e === true || e === false);
         if (done) {
           setTimeout(showFinalResult, 400);
         } else {
@@ -323,21 +596,31 @@
       }
 
       function showFinalResult() {
-        const knew = evaluations.filter(e => e === true).length;
+        const knew = evaluations.filter((e) => e === true).length;
         const pct = Math.round((knew / cards.length) * 100);
-        document.getElementById('final-result').style.display = 'block';
-        document.getElementById('final-text').textContent =
-          'Tu as su ' + knew + ' cartes sur ' + cards.length + ' (' + pct + '%). ' +
-          (pct >= 80 ? 'Excellent niveau ! Tu maîtrises bien le flux Git.' :
-          pct >= 50 ? 'Bon début. Recommence en te concentrant sur les cartes en rouge.' :
-          'Continue de pratiquer — lance git status dans un terminal et observe le résultat.');
-        document.getElementById('final-result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        document.getElementById("final-result").style.display = "block";
+        document.getElementById("final-text").textContent =
+          "Tu as su " +
+          knew +
+          " cartes sur " +
+          cards.length +
+          " (" +
+          pct +
+          "%). " +
+          (pct >= 80
+            ? "Excellent niveau ! Tu maîtrises bien le flux Git."
+            : pct >= 50
+              ? "Bon début. Recommence en te concentrant sur les cartes en rouge."
+              : "Continue de pratiquer — lance git status dans un terminal et observe le résultat.");
+        document
+          .getElementById("final-result")
+          .scrollIntoView({ behavior: "smooth", block: "center" });
       }
 
       function restartCards() {
         currentIndex = 0;
         evaluations = new Array(cards.length).fill(null);
-        document.getElementById('final-result').style.display = 'none';
+        document.getElementById("final-result").style.display = "none";
         showCard(0);
       }
 

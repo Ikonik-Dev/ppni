@@ -6,7 +6,10 @@
     <title>Quiz Phishing — PPNI 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../css/shared.css" />
     <style>
       .quiz-card {
@@ -17,8 +20,14 @@
         margin-bottom: 24px;
         transition: border-color 0.2s;
       }
-      .quiz-card.correct { border-color: #27ae60; background: #f0fdf4; }
-      .quiz-card.incorrect { border-color: #e74c3c; background: #fff5f5; }
+      .quiz-card.correct {
+        border-color: #27ae60;
+        background: #f0fdf4;
+      }
+      .quiz-card.incorrect {
+        border-color: #e74c3c;
+        background: #fff5f5;
+      }
       .quiz-number {
         font-size: 11px;
         font-weight: 700;
@@ -37,9 +46,18 @@
         margin: 12px 0;
         font-family: Arial, sans-serif;
       }
-      .email-preview .ef { font-weight: 600; color: #333; }
-      .email-preview .ev { color: #555; }
-      .email-preview .elink { color: #2980b9; text-decoration: underline; word-break: break-all; }
+      .email-preview .ef {
+        font-weight: 600;
+        color: #333;
+      }
+      .email-preview .ev {
+        color: #555;
+      }
+      .email-preview .elink {
+        color: #2980b9;
+        text-decoration: underline;
+        word-break: break-all;
+      }
       .btn-choice {
         display: inline-block;
         padding: 10px 24px;
@@ -51,11 +69,24 @@
         transition: all 0.15s;
         margin: 4px 4px 4px 0;
       }
-      .btn-phishing { background: #e74c3c; color: #fff; }
-      .btn-phishing:hover { background: #c0392b; }
-      .btn-legitime { background: #27ae60; color: #fff; }
-      .btn-legitime:hover { background: #1e8449; }
-      .btn-choice:disabled { opacity: 0.6; cursor: not-allowed; }
+      .btn-phishing {
+        background: #e74c3c;
+        color: #fff;
+      }
+      .btn-phishing:hover {
+        background: #c0392b;
+      }
+      .btn-legitime {
+        background: #27ae60;
+        color: #fff;
+      }
+      .btn-legitime:hover {
+        background: #1e8449;
+      }
+      .btn-choice:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
       .feedback {
         display: none;
         margin-top: 14px;
@@ -64,8 +95,18 @@
         font-size: 13px;
         line-height: 1.6;
       }
-      .feedback.correct { display: block; background: #d5f5e3; border: 1px solid #27ae60; color: #145a32; }
-      .feedback.incorrect { display: block; background: #f8d7da; border: 1px solid #e74c3c; color: #721c24; }
+      .feedback.correct {
+        display: block;
+        background: #d5f5e3;
+        border: 1px solid #27ae60;
+        color: #145a32;
+      }
+      .feedback.incorrect {
+        display: block;
+        background: #f8d7da;
+        border: 1px solid #e74c3c;
+        color: #721c24;
+      }
       .quiz-header {
         display: flex;
         align-items: center;
@@ -91,11 +132,28 @@
         text-align: center;
         margin-top: 24px;
       }
-      .result-box h2 { margin: 0 0 8px; }
-      .result-box p { margin: 0; font-size: 13px; }
-      .result-great { background: #d5f5e3; border: 2px solid #27ae60; color: #145a32; }
-      .result-ok { background: #fdebd0; border: 2px solid #e67e22; color: #784212; }
-      .result-low { background: #f8d7da; border: 2px solid #e74c3c; color: #721c24; }
+      .result-box h2 {
+        margin: 0 0 8px;
+      }
+      .result-box p {
+        margin: 0;
+        font-size: 13px;
+      }
+      .result-great {
+        background: #d5f5e3;
+        border: 2px solid #27ae60;
+        color: #145a32;
+      }
+      .result-ok {
+        background: #fdebd0;
+        border: 2px solid #e67e22;
+        color: #784212;
+      }
+      .result-low {
+        background: #f8d7da;
+        border: 2px solid #e74c3c;
+        color: #721c24;
+      }
     </style>
   </head>
   <body>
@@ -111,22 +169,35 @@
 
     <div class="page-wrapper">
       <div class="quiz-header">
-        <div class="doc-header" style="margin-bottom:0;flex:1;">
+        <div class="doc-header" style="margin-bottom: 0; flex: 1">
           <h1>🎣 Quiz — Phishing ou légitime ?</h1>
-          <div class="meta">10 e-mails à analyser · Résultats sauvegardés · S1 Cybersécurité</div>
+          <div class="meta">
+            10 e-mails à analyser · Résultats sauvegardés · S1 Cybersécurité
+          </div>
         </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+          "
+        >
           <div class="score-display" id="score-display">0 / 10</div>
-          <span style="font-size:11px;color:#888;" id="progress-text">0 répondu(e)s</span>
+          <span style="font-size: 11px; color: #888" id="progress-text"
+            >0 répondu(e)s</span
+          >
         </div>
       </div>
 
       <div class="section-box">
         <div class="falc-intro">
           <strong>📋 Consigne :</strong>
-          Pour chaque e-mail, clique sur <strong style="color:#e74c3c;">🎣 C'est du phishing</strong> ou
-          <strong style="color:#27ae60;">✅ C'est légitime</strong>.
-          Une explication détaillée s'affiche après ta réponse. Score visé : <strong>7/10 minimum</strong>.
+          Pour chaque e-mail, clique sur
+          <strong style="color: #e74c3c">🎣 C'est du phishing</strong> ou
+          <strong style="color: #27ae60">✅ C'est légitime</strong>. Une
+          explication détaillée s'affiche après ta réponse. Score visé :
+          <strong>7/10 minimum</strong>.
         </div>
       </div>
 
@@ -135,15 +206,51 @@
       <div class="result-box" id="result-box">
         <h2 id="result-title"></h2>
         <p id="result-desc"></p>
-        <div style="margin-top:18px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
-          <button onclick="restartQuiz()" style="padding:10px 22px;background:#1a3a5c;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;">↺ Recommencer</button>
-          <a href="../ressources/fiche-phishing.html" style="display:inline-block;padding:10px 22px;background:#e8eef7;color:#1a3a5c;border:1px solid #c5d3e8;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Revoir la fiche phishing →</a>
+        <div
+          style="
+            margin-top: 18px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+          "
+        >
+          <button
+            onclick="restartQuiz()"
+            style="
+              padding: 10px 22px;
+              background: #1a3a5c;
+              color: #fff;
+              border: none;
+              border-radius: 8px;
+              font-size: 13px;
+              font-weight: 700;
+              cursor: pointer;
+            "
+          >
+            ↺ Recommencer
+          </button>
+          <a
+            href="../ressources/fiche-phishing.html"
+            style="
+              display: inline-block;
+              padding: 10px 22px;
+              background: #e8eef7;
+              color: #1a3a5c;
+              border: 1px solid #c5d3e8;
+              border-radius: 8px;
+              font-size: 13px;
+              font-weight: 600;
+              text-decoration: none;
+            "
+            >Revoir la fiche phishing →</a
+          >
         </div>
       </div>
 
       <div class="footer">
         Quiz Phishing · S1-S2 Cybersécurité · PPNI 2026 &nbsp;|&nbsp;
-        <a href="index.html" style="color:inherit;">← Retour aux exercices</a>
+        <a href="index.html" style="color: inherit">← Retour aux exercices</a>
       </div>
     </div>
 
@@ -151,96 +258,106 @@
       const questions = [
         {
           id: 1,
-          from: 'service-client@amaz0n-securite.fr',
-          subject: '⚠️ URGENT — Votre compte Amazon sera suspendu dans 24h',
-          body: 'Cher client, une activité suspecte a été détectée sur votre compte. Cliquez ici pour confirmer votre identité : http://amaz0n-verif.ru/confirm',
+          from: "service-client@amaz0n-securite.fr",
+          subject: "⚠️ URGENT — Votre compte Amazon sera suspendu dans 24h",
+          body: "Cher client, une activité suspecte a été détectée sur votre compte. Cliquez ici pour confirmer votre identité : http://amaz0n-verif.ru/confirm",
           isPhishing: true,
-          explication: '🎣 C\'est du phishing ! Indices : domaine "amaz0n-securite.fr" (0 à la place du o), URL ".ru", urgence artificielle "24h", pas de prénom, lien suspect.'
+          explication:
+            '🎣 C\'est du phishing ! Indices : domaine "amaz0n-securite.fr" (0 à la place du o), URL ".ru", urgence artificielle "24h", pas de prénom, lien suspect.',
         },
         {
           id: 2,
-          from: 'noreply@github.com',
-          subject: '[GitHub] Your SSH key was added',
-          body: 'Hey [votre_pseudo],\n\nA new SSH key was recently added to your account.\n\nIf you did not perform this action, you can remove the key and disable access at:\nhttps://github.com/settings/keys',
+          from: "noreply@github.com",
+          subject: "[GitHub] Your SSH key was added",
+          body: "Hey [votre_pseudo],\n\nA new SSH key was recently added to your account.\n\nIf you did not perform this action, you can remove the key and disable access at:\nhttps://github.com/settings/keys",
           isPhishing: false,
-          explication: '✅ C\'est légitime ! Le domaine est @github.com, l\'URL pointe bien vers github.com/settings, il y a un pseudo personnalisé, et GitHub envoie ce type de notification de sécurité automatiquement.'
+          explication:
+            "✅ C'est légitime ! Le domaine est @github.com, l'URL pointe bien vers github.com/settings, il y a un pseudo personnalisé, et GitHub envoie ce type de notification de sécurité automatiquement.",
         },
         {
           id: 3,
-          from: 'impots-remboursement@dgfip-service.net',
-          subject: 'Votre remboursement fiscal de 347,62€ est disponible',
-          body: 'Madame, Monsieur,\n\nSuite à votre déclaration, un remboursement de 347,62€ vous est dû. Pour recevoir votre virement, confirmez vos coordonnées bancaires via le lien sécurisé ci-dessous.\n\nLien : http://dgfip-remb.xyz/formulaire?ref=FR2026',
+          from: "impots-remboursement@dgfip-service.net",
+          subject: "Votre remboursement fiscal de 347,62€ est disponible",
+          body: "Madame, Monsieur,\n\nSuite à votre déclaration, un remboursement de 347,62€ vous est dû. Pour recevoir votre virement, confirmez vos coordonnées bancaires via le lien sécurisé ci-dessous.\n\nLien : http://dgfip-remb.xyz/formulaire?ref=FR2026",
           isPhishing: true,
-          explication: '🎣 C\'est du phishing ! La DGFIP envoie depuis @dgfip.finances.gouv.fr — jamais depuis ".net". Le domaine ".xyz" est un classique d\'arnaque. L\'administration ne demande jamais de coordonnées bancaires par e-mail.'
+          explication:
+            '🎣 C\'est du phishing ! La DGFIP envoie depuis @dgfip.finances.gouv.fr — jamais depuis ".net". Le domaine ".xyz" est un classique d\'arnaque. L\'administration ne demande jamais de coordonnées bancaires par e-mail.',
         },
         {
           id: 4,
-          from: 'support@slack.com',
-          subject: 'Votre abonnement Slack Pro se renouvelle le 15 mai',
-          body: 'Bonjour,\n\nVotre abonnement Slack Pro sera automatiquement renouvelé le 15 mai 2026 pour un montant de 7,25€/mois.\n\nPour gérer votre abonnement, connectez-vous sur https://app.slack.com/billing\n\nÉquipe Slack',
+          from: "support@slack.com",
+          subject: "Votre abonnement Slack Pro se renouvelle le 15 mai",
+          body: "Bonjour,\n\nVotre abonnement Slack Pro sera automatiquement renouvelé le 15 mai 2026 pour un montant de 7,25€/mois.\n\nPour gérer votre abonnement, connectez-vous sur https://app.slack.com/billing\n\nÉquipe Slack",
           isPhishing: false,
-          explication: '✅ C\'est légitime ! Domaine @slack.com officiel, URL pointe vers app.slack.com, montant précis cohérent, pas d\'urgence, pas de demande de mot de passe. Ce type d\'e-mail de facturation est normal.'
+          explication:
+            "✅ C'est légitime ! Domaine @slack.com officiel, URL pointe vers app.slack.com, montant précis cohérent, pas d'urgence, pas de demande de mot de passe. Ce type d'e-mail de facturation est normal.",
         },
         {
           id: 5,
-          from: 'securite@laposte-colis.fr',
-          subject: 'Votre colis est bloqué en douane — Frais de 1,99€',
-          body: 'Bonjour,\n\nVotre colis N°FR8847261 est bloqué en douane. Des frais de traitement de 1,99€ sont dus.\n\nPayez maintenant pour libérer votre colis : http://laposte-paiement.online/colis\n\nAttention : sans paiement sous 48h, le colis sera retourné.',
+          from: "securite@laposte-colis.fr",
+          subject: "Votre colis est bloqué en douane — Frais de 1,99€",
+          body: "Bonjour,\n\nVotre colis N°FR8847261 est bloqué en douane. Des frais de traitement de 1,99€ sont dus.\n\nPayez maintenant pour libérer votre colis : http://laposte-paiement.online/colis\n\nAttention : sans paiement sous 48h, le colis sera retourné.",
           isPhishing: true,
-          explication: '🎣 Phishing très courant ! La Poste n\'envoie pas depuis ".fr" pour les douanes — le domaine officiel est laposte.fr. L\'URL ".online" est suspecte. C\'est une arnaque "petit montant" pour récupérer tes coordonnées bancaires. En cas de doute : aller directement sur laposte.fr.'
+          explication:
+            '🎣 Phishing très courant ! La Poste n\'envoie pas depuis ".fr" pour les douanes — le domaine officiel est laposte.fr. L\'URL ".online" est suspecte. C\'est une arnaque "petit montant" pour récupérer tes coordonnées bancaires. En cas de doute : aller directement sur laposte.fr.',
         },
         {
           id: 6,
-          from: 'no-reply@accounts.google.com',
-          subject: 'Activité de connexion suspecte sur votre compte Google',
-          body: 'Nous avons détecté une tentative de connexion à votre compte Google depuis un nouvel appareil.\n\nAppareil : Windows 10\nLocalisation : Roumanie\nHeure : 03:14 (heure locale)\n\nSi vous ne reconnaissez pas cette connexion, sécurisez votre compte immédiatement sur myaccount.google.com/security',
+          from: "no-reply@accounts.google.com",
+          subject: "Activité de connexion suspecte sur votre compte Google",
+          body: "Nous avons détecté une tentative de connexion à votre compte Google depuis un nouvel appareil.\n\nAppareil : Windows 10\nLocalisation : Roumanie\nHeure : 03:14 (heure locale)\n\nSi vous ne reconnaissez pas cette connexion, sécurisez votre compte immédiatement sur myaccount.google.com/security",
           isPhishing: false,
-          explication: '✅ C\'est légitime ! Google envoie effectivement depuis @accounts.google.com. L\'URL indiquée est myaccount.google.com (domaine officiel). L\'e-mail ne contient pas de lien cliquable suspect — il te renvoie vers le domaine officiel que tu peux saisir toi-même.'
+          explication:
+            "✅ C'est légitime ! Google envoie effectivement depuis @accounts.google.com. L'URL indiquée est myaccount.google.com (domaine officiel). L'e-mail ne contient pas de lien cliquable suspect — il te renvoie vers le domaine officiel que tu peux saisir toi-même.",
         },
         {
           id: 7,
-          from: 'rh@auxilia-formation.com',
-          subject: 'Documents RH à signer avant le 12 mai',
-          body: 'Bonjour,\n\nMerci de bien vouloir signer les documents RH avant le 12 mai.\nVous trouverez ci-joint votre contrat mis à jour.\n\nPour accéder au portail de signature : https://auxilia-portail-rh.azurewebsites.net/sign?token=hx72\n\nBonne journée,\nService RH Auxilia',
+          from: "rh@auxilia-formation.com",
+          subject: "Documents RH à signer avant le 12 mai",
+          body: "Bonjour,\n\nMerci de bien vouloir signer les documents RH avant le 12 mai.\nVous trouverez ci-joint votre contrat mis à jour.\n\nPour accéder au portail de signature : https://auxilia-portail-rh.azurewebsites.net/sign?token=hx72\n\nBonne journée,\nService RH Auxilia",
           isPhishing: true,
-          explication: '🎣 Phishing ciblé (spear phishing) ! L\'adresse e-mail semble légitime mais l\'URL "azurewebsites.net" n\'est pas un domaine officiel d\'Auxilia — c\'est un hébergement Azure gratuit utilisable par n\'importe qui. En cas de doute : appeler directement le service RH pour confirmer.'
+          explication:
+            "🎣 Phishing ciblé (spear phishing) ! L'adresse e-mail semble légitime mais l'URL \"azurewebsites.net\" n'est pas un domaine officiel d'Auxilia — c'est un hébergement Azure gratuit utilisable par n'importe qui. En cas de doute : appeler directement le service RH pour confirmer.",
         },
         {
           id: 8,
-          from: 'newsletter@netlify.com',
-          subject: 'What\'s new in Netlify — May 2026',
-          body: 'Hi there,\n\nHere\'s what\'s new this month:\n\n• New Edge Functions improvements\n• Faster build times\n• Improved deploy previews\n\nRead more on our blog: https://netlify.com/blog\n\nUnsubscribe: https://netlify.com/unsubscribe?id=xxx',
+          from: "newsletter@netlify.com",
+          subject: "What's new in Netlify — May 2026",
+          body: "Hi there,\n\nHere's what's new this month:\n\n• New Edge Functions improvements\n• Faster build times\n• Improved deploy previews\n\nRead more on our blog: https://netlify.com/blog\n\nUnsubscribe: https://netlify.com/unsubscribe?id=xxx",
           isPhishing: false,
-          explication: '✅ C\'est légitime ! Domaine @netlify.com officiel. Tous les liens pointent vers netlify.com. Le lien de désinscription est sur le même domaine. Le contenu est informatif, sans urgence ni demande de données personnelles.'
+          explication:
+            "✅ C'est légitime ! Domaine @netlify.com officiel. Tous les liens pointent vers netlify.com. Le lien de désinscription est sur le même domaine. Le contenu est informatif, sans urgence ni demande de données personnelles.",
         },
         {
           id: 9,
-          from: 'Microsoft-Security@microsoftonline-alert.com',
-          subject: 'ALERTE : Votre compte Microsoft 365 va être désactivé',
-          body: 'Chèr(e) Utilisateur(trice),\n\nNOTRE SYSTÈME A DÉTECTÉ UNE ACTIVITÉ ANORMALE.\n\nVotre compte sera DÉFINITIVEMENT SUPPRIMÉ dans 12 HEURES si vous ne confirmez pas votre identité.\n\nCLIQUEZ ICI MAINTENANT : http://microsoft-verify-account.ru/login',
+          from: "Microsoft-Security@microsoftonline-alert.com",
+          subject: "ALERTE : Votre compte Microsoft 365 va être désactivé",
+          body: "Chèr(e) Utilisateur(trice),\n\nNOTRE SYSTÈME A DÉTECTÉ UNE ACTIVITÉ ANORMALE.\n\nVotre compte sera DÉFINITIVEMENT SUPPRIMÉ dans 12 HEURES si vous ne confirmez pas votre identité.\n\nCLIQUEZ ICI MAINTENANT : http://microsoft-verify-account.ru/login",
           isPhishing: true,
-          explication: '🎣 Phishing évident ! Domaine "microsoftonline-alert.com" (pas @microsoft.com). URL ".ru". Tout est en majuscules pour créer la peur. Microsoft n\'envoie jamais depuis ce type de domaine. La formule "Chèr(e) Utilisateur(trice)" sans prénom confirme l\'envoi en masse.'
+          explication:
+            '🎣 Phishing évident ! Domaine "microsoftonline-alert.com" (pas @microsoft.com). URL ".ru". Tout est en majuscules pour créer la peur. Microsoft n\'envoie jamais depuis ce type de domaine. La formule "Chèr(e) Utilisateur(trice)" sans prénom confirme l\'envoi en masse.',
         },
         {
           id: 10,
-          from: 'billing@notion.so',
-          subject: 'Invoice for your Notion subscription — May 2026',
-          body: 'Hi,\n\nYour Notion Plus plan has been renewed.\n\nAmount: €9.00\nDate: May 1, 2026\nPlan: Notion Plus\n\nView your invoice at: https://www.notion.so/billing\n\nQuestions? Contact us at help.notion.so\n\nNotion Team',
+          from: "billing@notion.so",
+          subject: "Invoice for your Notion subscription — May 2026",
+          body: "Hi,\n\nYour Notion Plus plan has been renewed.\n\nAmount: €9.00\nDate: May 1, 2026\nPlan: Notion Plus\n\nView your invoice at: https://www.notion.so/billing\n\nQuestions? Contact us at help.notion.so\n\nNotion Team",
           isPhishing: false,
-          explication: '✅ C\'est légitime ! Domaine @notion.so officiel. URL vers notion.so (domaine officiel). Montant précis cohérent avec l\'abonnement Notion Plus. Lien d\'aide vers help.notion.so (même domaine). Aucune urgence ni demande de mot de passe.'
-        }
+          explication:
+            "✅ C'est légitime ! Domaine @notion.so officiel. URL vers notion.so (domaine officiel). Montant précis cohérent avec l'abonnement Notion Plus. Lien d'aide vers help.notion.so (même domaine). Aucune urgence ni demande de mot de passe.",
+        },
       ];
 
       let answered = 0;
       let score = 0;
 
       function buildQuiz() {
-        const container = document.getElementById('quiz-container');
-        container.innerHTML = '';
+        const container = document.getElementById("quiz-container");
+        container.innerHTML = "";
         questions.forEach((q, i) => {
-          const card = document.createElement('div');
-          card.className = 'quiz-card';
-          card.id = 'q' + q.id;
+          const card = document.createElement("div");
+          card.className = "quiz-card";
+          card.id = "q" + q.id;
           card.innerHTML = `
             <div class="quiz-number">Question ${i + 1} sur ${questions.length}</div>
             <strong style="font-size:13px;color:#1a3a5c;">Cet e-mail est-il du phishing ou légitime ?</strong>
@@ -260,20 +377,25 @@
       }
 
       function answer(id, userSaysPhishing, btn) {
-        const q = questions.find(x => x.id === id);
-        const card = document.getElementById('q' + id);
-        const feedback = document.getElementById('feedback-' + id);
+        const q = questions.find((x) => x.id === id);
+        const card = document.getElementById("q" + id);
+        const feedback = document.getElementById("feedback-" + id);
 
         // Désactiver les boutons
-        card.querySelectorAll('.btn-choice').forEach(b => b.disabled = true);
+        card
+          .querySelectorAll(".btn-choice")
+          .forEach((b) => (b.disabled = true));
 
-        const isCorrect = (userSaysPhishing === q.isPhishing);
+        const isCorrect = userSaysPhishing === q.isPhishing;
         if (isCorrect) score++;
         answered++;
 
-        card.classList.add(isCorrect ? 'correct' : 'incorrect');
-        feedback.className = 'feedback ' + (isCorrect ? 'correct' : 'incorrect');
-        feedback.innerHTML = (isCorrect ? '✅ Bonne réponse ! ' : '❌ Pas tout à fait. ') + q.explication;
+        card.classList.add(isCorrect ? "correct" : "incorrect");
+        feedback.className =
+          "feedback " + (isCorrect ? "correct" : "incorrect");
+        feedback.innerHTML =
+          (isCorrect ? "✅ Bonne réponse ! " : "❌ Pas tout à fait. ") +
+          q.explication;
 
         updateScore();
 
@@ -283,42 +405,49 @@
       }
 
       function updateScore() {
-        document.getElementById('score-display').textContent = score + ' / ' + answered;
-        document.getElementById('progress-text').textContent = answered + ' répondu(e)s';
+        document.getElementById("score-display").textContent =
+          score + " / " + answered;
+        document.getElementById("progress-text").textContent =
+          answered + " répondu(e)s";
       }
 
       function showResult() {
         const pct = Math.round((score / questions.length) * 100);
-        const box = document.getElementById('result-box');
-        const title = document.getElementById('result-title');
-        const desc = document.getElementById('result-desc');
+        const box = document.getElementById("result-box");
+        const title = document.getElementById("result-title");
+        const desc = document.getElementById("result-desc");
 
-        localStorage.setItem('ppni_quiz_phishing_score', score);
+        localStorage.setItem("ppni_quiz_phishing_score", score);
 
         if (pct >= 80) {
-          box.className = 'result-box result-great';
-          title.textContent = '🏆 Excellent ! ' + score + '/' + questions.length;
-          desc.textContent = 'Tu as les réflexes d\'un expert en cybersécurité. Partage tes astuces avec le groupe !';
+          box.className = "result-box result-great";
+          title.textContent =
+            "🏆 Excellent ! " + score + "/" + questions.length;
+          desc.textContent =
+            "Tu as les réflexes d'un expert en cybersécurité. Partage tes astuces avec le groupe !";
         } else if (pct >= 50) {
-          box.className = 'result-box result-ok';
-          title.textContent = '👍 Bien ! ' + score + '/' + questions.length;
-          desc.textContent = 'Tu as de bons réflexes mais quelques indices t\'ont échappé. Revois la fiche phishing et recommence.';
+          box.className = "result-box result-ok";
+          title.textContent = "👍 Bien ! " + score + "/" + questions.length;
+          desc.textContent =
+            "Tu as de bons réflexes mais quelques indices t'ont échappé. Revois la fiche phishing et recommence.";
         } else {
-          box.className = 'result-box result-low';
-          title.textContent = '📚 À retravailler — ' + score + '/' + questions.length;
-          desc.textContent = 'Pas d\'inquiétude — c\'est pour ça qu\'on s\'entraîne. Relis la fiche phishing attentivement puis recommence.';
+          box.className = "result-box result-low";
+          title.textContent =
+            "📚 À retravailler — " + score + "/" + questions.length;
+          desc.textContent =
+            "Pas d'inquiétude — c'est pour ça qu'on s'entraîne. Relis la fiche phishing attentivement puis recommence.";
         }
-        box.style.display = 'block';
-        box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        box.style.display = "block";
+        box.scrollIntoView({ behavior: "smooth", block: "center" });
       }
 
       function restartQuiz() {
         answered = 0;
         score = 0;
-        document.getElementById('result-box').style.display = 'none';
+        document.getElementById("result-box").style.display = "none";
         updateScore();
         buildQuiz();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
 
       buildQuiz();

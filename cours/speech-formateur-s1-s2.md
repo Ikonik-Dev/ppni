@@ -1,4 +1,5 @@
 # 🎓 Speech formateur & Déroulé pédagogique — S1-S2
+
 ## PPNI 2026 · Cybersécurité & GitHub · 11 → 22 mai 2026
 
 > **Comment lire ce document ?**
@@ -21,7 +22,9 @@
 ---
 
 # ═══════════════════════════════════════════
+
 # S1 — SEMAINE 1 · 11 mai 2026
+
 # ═══════════════════════════════════════════
 
 ---
@@ -47,6 +50,7 @@
 ⚙️ **ATELIER — Distribuer le quiz papier (ou ouvrir le formulaire en ligne) :**
 
 10 questions simples. Exemples :
+
 1. Avez-vous le même mot de passe sur plusieurs sites ? (oui / non / je sais pas)
 2. Avez-vous déjà reçu un e-mail qui vous semblait suspect ?
 3. Savez-vous ce qu'est un "commit" en informatique ?
@@ -78,6 +82,7 @@ Prendre note des niveaux déclarés, des peurs exprimées, des attentes.
 💬 **FORMATEUR :**
 
 > "Voici les 5 mois qui viennent. Pas besoin de tout retenir maintenant — le programme est affiché et disponible en ligne. Retenez juste ça :
+>
 > - Ces 2 premières semaines : les fondations. Sécurité + GitHub.
 > - Ensuite selon votre axe : développement web OU support numérique.
 > - À la fin : un portfolio, c'est-à-dire des preuves concrètes de ce que vous savez faire.
@@ -117,8 +122,9 @@ En informatique : un mot de passe trop simple, un logiciel non mis à jour, un W
 > "Un cambrioleur qui rôde dans votre quartier est une menace. Il n'a pas encore agi — mais il existe. En informatique, les menaces sont permanentes : virus, hackers, arnaques par e-mail, ransomwares."
 
 Les menaces les plus courantes en 2026 :
-- **Phishing** *(prononcé "fishing")* : e-mail frauduleux qui se fait passer pour une vraie entreprise
-- **Ransomware** *(prononcé "ransom-wère")* : logiciel malveillant qui chiffre vos fichiers et demande une rançon
+
+- **Phishing** _(prononcé "fishing")_ : e-mail frauduleux qui se fait passer pour une vraie entreprise
+- **Ransomware** _(prononcé "ransom-wère")_ : logiciel malveillant qui chiffre vos fichiers et demande une rançon
 - **Brute force** : robot qui teste des milliers de mots de passe à la seconde jusqu'à trouver le bon
 - **Social engineering** (ingénierie sociale) : manipulation psychologique pour vous faire révéler un mot de passe
 
@@ -162,7 +168,7 @@ En sécurité numérique : utiliser "123456" comme mot de passe est un risque **
 >
 > Regardez le résultat. Est-ce que certains d'entre vous ont une barre rouge ou orange ?"
 
-*(Attendre les réactions — ne pas forcer le partage, mais laisser s'exprimer ceux qui veulent)*
+_(Attendre les réactions — ne pas forcer le partage, mais laisser s'exprimer ceux qui veulent)_
 
 ---
 
@@ -170,12 +176,12 @@ En sécurité numérique : utiliser "123456" comme mot de passe est un risque **
 
 📌 **TECHNIQUE — Anatomie d'un mot de passe fort :**
 
-| Critère | Mauvais exemple | Bon exemple |
-|---|---|---|
-| Longueur | `abc` (3 car.) | `Cheval-Lune-Forêt-42` (21 car.) |
-| Variété | `password` | `T@mP0wEr!9x` |
-| Unicité | Même partout | 1 différent par site |
-| Mémorabilité | `x9Qz!#mK` | `Cheval-Lune-Forêt-42` |
+| Critère      | Mauvais exemple | Bon exemple                      |
+| ------------ | --------------- | -------------------------------- |
+| Longueur     | `abc` (3 car.)  | `Cheval-Lune-Forêt-42` (21 car.) |
+| Variété      | `password`      | `T@mP0wEr!9x`                    |
+| Unicité      | Même partout    | 1 différent par site             |
+| Mémorabilité | `x9Qz!#mK`      | `Cheval-Lune-Forêt-42`           |
 
 💬 **FORMATEUR — La méthode des 4 mots aléatoires :**
 
@@ -187,7 +193,7 @@ En sécurité numérique : utiliser "123456" comme mot de passe est un risque **
 >
 > ET vous pouvez le retenir parce que vous avez une image mentale : un cheval qui regarde la lune dans une forêt, en jouant du piano."
 
-*(Faire générer une passphrase dans l'outil password-checker, onglet "Générer")*
+_(Faire générer une passphrase dans l'outil password-checker, onglet "Générer")_
 
 ---
 
@@ -219,9 +225,10 @@ En sécurité numérique : utiliser "123456" comme mot de passe est un risque **
 📌 **TECHNIQUE — Authentification multi-facteurs (MFA / 2FA)**
 
 > **Définition :** Mécanisme de sécurité qui exige **deux preuves d'identité distinctes** pour se connecter :
+>
 > 1. Ce que vous **savez** : votre mot de passe
 > 2. Ce que vous **avez** : votre téléphone (code SMS, application d'authentification)
-> Parfois un 3ème facteur : ce que vous **êtes** (empreinte digitale, reconnaissance faciale).
+>    Parfois un 3ème facteur : ce que vous **êtes** (empreinte digitale, reconnaissance faciale).
 
 💬 **Analogie :**
 
@@ -246,13 +253,13 @@ Option B (GitHub) : github.com → Settings → Password and authentication → 
 
 > "Levez la main si vous utilisez le même mot de passe sur plusieurs sites."
 
-*(Pause — attendre les mains levées, sans pointer quelqu'un du doigt)*
+_(Pause — attendre les mains levées, sans pointer quelqu'un du doigt)_
 
 > "Merci pour votre honnêteté. Regardez autour de vous — vous n'êtes pas seuls. C'est la norme, pas l'exception. C'est pour ça qu'on est là.
 >
 > Questions ouvertes : avez-vous déjà reçu un e-mail qui vous semblait bizarre ? Qu'est-ce que vous avez fait ?"
 
-*(Laisser 3-4 personnes raconter leur expérience — valider, ne jamais dire "vous auriez dû savoir")*
+_(Laisser 3-4 personnes raconter leur expérience — valider, ne jamais dire "vous auriez dû savoir")_
 
 ---
 
@@ -275,7 +282,7 @@ Option B (GitHub) : github.com → Settings → Password and authentication → 
 **Sous-catégories importantes :**
 
 - **Phishing** : e-mail de masse, peu personnalisé ("Cher client")
-- **Spear phishing** *(prononcé "spear fishing")* : phishing ciblé, personnalisé avec votre nom, votre entreprise, un contexte crédible — beaucoup plus dangereux
+- **Spear phishing** _(prononcé "spear fishing")_ : phishing ciblé, personnalisé avec votre nom, votre entreprise, un contexte crédible — beaucoup plus dangereux
 - **Smishing** : phishing par SMS
 - **Vishing** : phishing par téléphone (appel vocal)
 
@@ -309,6 +316,7 @@ Distribuer ou afficher la **fiche-phishing** :
 Mode recommandé : **vidéoprojecteur + réponse collective à main levée** avant de cliquer, puis correction avec explication.
 
 Pour chaque question, demander :
+
 > "Qu'est-ce qui vous a mis la puce à l'oreille ?" / "Pourquoi celui-là vous semblait légitime ?"
 
 ---
@@ -320,6 +328,7 @@ Pour chaque question, demander :
 Distribuer 2 e-mails imprimés par binôme (1 phishing + 1 légitime).
 
 Consigne :
+
 1. Lister 3 indices qui vous ont permis de les distinguer
 2. Écrire en 1 phrase : "Cet e-mail est [phishing/légitime] parce que..."
 3. Partager en 2 min avec le groupe
@@ -495,7 +504,7 @@ Consigne :
 
 ## 🔵 Vendredi 15 mai — 09h00 → 15h00 (3,5h effectives)
 
-*Format demi-journée : 09h00-12h30 puis 13h20-15h00*
+_Format demi-journée : 09h00-12h30 puis 13h20-15h00_
 
 ---
 
@@ -505,7 +514,7 @@ Consigne :
 
 > "Bonjour. Avant de commencer : est-ce que quelqu'un a essayé quelque chose depuis lundi ? Une mise à jour, tester Bitwarden, regarder son compte GitHub ?"
 
-*(Valoriser chaque initiative, même petite)*
+_(Valoriser chaque initiative, même petite)_
 
 > "Est-ce que quelqu'un a eu une question depuis lundi ? Quelque chose qui n'était pas clair ?"
 
@@ -517,7 +526,7 @@ Consigne :
 
 8 questions rapides — format Kahoot ou papier :
 
-1. Quel est le signe qu'un e-mail est peut-être du phishing ? *(réponses attendues : expéditeur bizarre, URL suspecte, urgence, fautes...)*
+1. Quel est le signe qu'un e-mail est peut-être du phishing ? _(réponses attendues : expéditeur bizarre, URL suspecte, urgence, fautes...)_
 2. Que signifie MFA ?
 3. Combien de caractères minimum pour un mot de passe fort ?
 4. Qu'est-ce qu'un gestionnaire de mots de passe ?
@@ -545,6 +554,7 @@ Chaque stagiaire parcourt la checklist interactive (15 items, 4 sections) sur so
 Faire le tour des postes pour aider.
 
 Items à prioriser si le temps manque :
+
 - MFA activé sur au moins 1 compte
 - Bitwarden installé et 1 mot de passe sauvegardé
 - Vérification des e-mails suspects dans la boite de réception
@@ -646,12 +656,15 @@ pas les bons réflexes. Cette fiche partage les 3 pratiques les plus importantes
 ## 3 bonnes pratiques
 
 ### 1. Un mot de passe fort et unique par site
+
 ...
 
 ### 2. Activer l'authentification à deux facteurs (MFA)
+
 ...
 
 ### 3. Reconnaître un e-mail de phishing
+
 ...
 
 ## Ressources utiles
@@ -666,6 +679,7 @@ pas les bons réflexes. Cette fiche partage les 3 pratiques les plus importantes
 > "Vous n'êtes pas obligés d'utiliser exactement ce modèle. C'est une base. L'important : ce que vous écrivez, vous devez le comprendre et pouvoir l'expliquer. Si vous copiez-collez quelque chose sans savoir ce que ça veut dire, ça ne sert à rien."
 
 Faire le tour des postes — vérifier :
+
 - La syntaxe Markdown (les `##` bien placés)
 - Que le contenu est personnel et compris
 - Que l'orthographe est correcte (leur rappeler que c'est un document professionnel public)
@@ -695,6 +709,7 @@ Faire le tour des postes — vérifier :
 Chaque binôme visite le repo GitHub de l'autre.
 
 Grille de retour (orale, 2 min max par personne) :
+
 1. ✅ Ce qui est bien (1 point précis, pas "c'est bien fait")
 2. 💡 Une suggestion (1 chose concrète à améliorer)
 3. ❓ Une question sur le contenu
@@ -734,11 +749,12 @@ https://github.com/[mon-pseudo]/ppni-cybersecurite
 💬 **FORMATEUR :**
 
 > "On fait un rapide tour de table avant de se quitter. Une phrase par personne sur une des ces questions — à vous de choisir :
+>
 > - Qu'est-ce que j'ai appris cette semaine que je ne savais pas lundi ?
 > - Qu'est-ce qui m'a surpris ?
 > - Qu'est-ce que j'ai envie de creuser ?"
 
-*(Ne pas forcer — accepter "je ne sais pas encore" comme réponse valide)*
+_(Ne pas forcer — accepter "je ne sais pas encore" comme réponse valide)_
 
 ---
 
@@ -753,7 +769,9 @@ https://github.com/[mon-pseudo]/ppni-cybersecurite
 ---
 
 # ═══════════════════════════════════════════
+
 # S2 — SEMAINE 2 · 18 mai 2026
+
 # ═══════════════════════════════════════════
 
 ---
@@ -768,11 +786,11 @@ https://github.com/[mon-pseudo]/ppni-cybersecurite
 
 > "Bonjour tout le monde. Avant de commencer, j'ai regardé vos repos ce week-end. Je vais montrer 2 ou 3 exemples anonymisés de ce que j'ai trouvé de bien — et ce que j'aurais amélioré."
 
-*(Projeter 2 READMEs anonymisés — un bon, un à améliorer. Montrer ce qui fait la différence : structure claire, messages de commit explicites, contenu personnel et compris)*
+_(Projeter 2 READMEs anonymisés — un bon, un à améliorer. Montrer ce qui fait la différence : structure claire, messages de commit explicites, contenu personnel et compris)_
 
 > "Quelqu'un a tenté le défi du week-end ?"
 
-*(Valoriser ceux qui l'ont fait, sans stigmatiser ceux qui ne l'ont pas fait)*
+_(Valoriser ceux qui l'ont fait, sans stigmatiser ceux qui ne l'ont pas fait)_
 
 ---
 
@@ -823,18 +841,18 @@ Dessiner ou projeter ce schéma :
 
 📌 **TECHNIQUE — Les commandes Git essentielles (10 commandes à maîtriser) :**
 
-| Commande | Zone | Ce qu'elle fait |
-|---|---|---|
-| `git status` | Workspace | Affiche ce qui a changé |
-| `git add .` | Staging | Prépare tout pour le commit |
-| `git add fichier.md` | Staging | Prépare un seul fichier |
-| `git commit -m "message"` | Local | Crée une sauvegarde commentée |
-| `git push` | Remote | Envoie vers GitHub |
-| `git pull` | Local ← Remote | Récupère les dernières mises à jour |
-| `git log --oneline` | Local | Affiche l'historique compact |
-| `git diff` | Workspace | Montre exactement ce qui a changé |
-| `git clone [url]` | Local | Copie un repo GitHub en local |
-| `git init` | Local | Initialise Git dans un dossier |
+| Commande                  | Zone           | Ce qu'elle fait                     |
+| ------------------------- | -------------- | ----------------------------------- |
+| `git status`              | Workspace      | Affiche ce qui a changé             |
+| `git add .`               | Staging        | Prépare tout pour le commit         |
+| `git add fichier.md`      | Staging        | Prépare un seul fichier             |
+| `git commit -m "message"` | Local          | Crée une sauvegarde commentée       |
+| `git push`                | Remote         | Envoie vers GitHub                  |
+| `git pull`                | Local ← Remote | Récupère les dernières mises à jour |
+| `git log --oneline`       | Local          | Affiche l'historique compact        |
+| `git diff`                | Workspace      | Montre exactement ce qui a changé   |
+| `git clone [url]`         | Local          | Copie un repo GitHub en local       |
+| `git init`                | Local          | Initialise Git dans un dossier      |
 
 > Référence complète : `ressources/fiche-git.html` + `exercices/quiz-git.html` (15 flashcards)
 
@@ -864,7 +882,7 @@ Dessiner ou projeter ce schéma :
 
 > "Je vais montrer 2 historiques de commits. On regarde ensemble : est-ce que les messages sont clairs ? Est-ce qu'on comprend l'évolution du projet ?"
 
-*(Projeter 2 historiques — valoriser les bons messages, corriger les moins bons collectivement)*
+_(Projeter 2 historiques — valoriser les bons messages, corriger les moins bons collectivement)_
 
 ---
 
@@ -1017,19 +1035,20 @@ Ouvrir `ressources/fiche-markdown.html` → onglet Éditeur live.
 
 Notions avancées à introduire :
 
-```markdown
+````markdown
 ## Tableau
 
-| Outil | Usage | Gratuit |
-|-------|-------|---------|
-| Bitwarden | Gestionnaire mots de passe | ✅ |
-| GitHub | Versioning et portfolio | ✅ |
+| Outil     | Usage                      | Gratuit |
+| --------- | -------------------------- | ------- |
+| Bitwarden | Gestionnaire mots de passe | ✅      |
+| GitHub    | Versioning et portfolio    | ✅      |
 
 ## Bloc de code
 
 ```bash
 git commit -m "Mon premier commit"
 ```
+````
 
 ## Lien avec image
 
@@ -1038,6 +1057,7 @@ git commit -m "Mon premier commit"
 ## Citation
 
 > "La sécurité est un processus, pas un produit." — Bruce Schneier
+
 ```
 
 ---
@@ -1181,3 +1201,4 @@ Format :
 ---
 
 *Document PPNI 2026 · Auxilia Formation · Usage interne formateur*
+```
