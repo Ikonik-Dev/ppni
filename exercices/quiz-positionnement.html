@@ -6,8 +6,16 @@
     <title>Quiz de positionnement — PPNI 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <script>(function(){var t=localStorage.getItem('ppni-theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        var t = localStorage.getItem("ppni-theme") || "dark";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
     <link rel="stylesheet" href="../css/shared.css" />
     <style>
       .quiz-header-info {
@@ -20,7 +28,9 @@
         color: var(--text-muted);
         line-height: 1.6;
       }
-      .quiz-header-info strong { color: var(--accent); }
+      .quiz-header-info strong {
+        color: var(--accent);
+      }
 
       .section-label {
         display: inline-block;
@@ -32,12 +42,30 @@
         border-radius: 20px;
         margin-bottom: 16px;
       }
-      .section-label.hab { background: #dbeafe; color: #1e40af; }
-      .section-label.sec { background: #fce7f3; color: #9d174d; }
-      .section-label.git { background: #d1fae5; color: #065f46; }
-      html[data-theme="dark"] .section-label.hab { background: rgba(37,99,235,0.2); color: #93c5fd; }
-      html[data-theme="dark"] .section-label.sec { background: rgba(219,39,119,0.2); color: #f9a8d4; }
-      html[data-theme="dark"] .section-label.git { background: rgba(16,185,129,0.2); color: #6ee7b7; }
+      .section-label.hab {
+        background: #dbeafe;
+        color: #1e40af;
+      }
+      .section-label.sec {
+        background: #fce7f3;
+        color: #9d174d;
+      }
+      .section-label.git {
+        background: #d1fae5;
+        color: #065f46;
+      }
+      html[data-theme="dark"] .section-label.hab {
+        background: rgba(37, 99, 235, 0.2);
+        color: #93c5fd;
+      }
+      html[data-theme="dark"] .section-label.sec {
+        background: rgba(219, 39, 119, 0.2);
+        color: #f9a8d4;
+      }
+      html[data-theme="dark"] .section-label.git {
+        background: rgba(16, 185, 129, 0.2);
+        color: #6ee7b7;
+      }
 
       .q-block {
         background: var(--surface);
@@ -47,7 +75,9 @@
         margin-bottom: 14px;
         transition: border-color 0.2s;
       }
-      .q-block:focus-within { border-color: var(--accent); }
+      .q-block:focus-within {
+        border-color: var(--accent);
+      }
 
       .q-num {
         font-size: 10px;
@@ -82,10 +112,24 @@
         transition: all 0.15s;
         user-select: none;
       }
-      .opt-label:hover { border-color: var(--accent); background: var(--accent-subtle); }
-      .opt-label input[type="radio"] { accent-color: var(--accent); width: 15px; height: 15px; flex-shrink: 0; }
-      .opt-label input[type="radio"]:checked + span { font-weight: 600; color: var(--accent); }
-      .opt-label:has(input:checked) { border-color: var(--accent); background: var(--accent-subtle); }
+      .opt-label:hover {
+        border-color: var(--accent);
+        background: var(--accent-subtle);
+      }
+      .opt-label input[type="radio"] {
+        accent-color: var(--accent);
+        width: 15px;
+        height: 15px;
+        flex-shrink: 0;
+      }
+      .opt-label input[type="radio"]:checked + span {
+        font-weight: 600;
+        color: var(--accent);
+      }
+      .opt-label:has(input:checked) {
+        border-color: var(--accent);
+        background: var(--accent-subtle);
+      }
 
       .progress-bar-wrap {
         background: var(--surface-2);
@@ -121,11 +165,18 @@
         margin-top: 24px;
         transition: background 0.15s;
       }
-      .submit-btn:hover { background: var(--accent-hover); }
-      .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+      .submit-btn:hover {
+        background: var(--accent-hover);
+      }
+      .submit-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
 
       /* Results */
-      #results { display: none; }
+      #results {
+        display: none;
+      }
       .result-hero {
         text-align: center;
         padding: 32px 24px;
@@ -140,7 +191,10 @@
         line-height: 1;
         margin-bottom: 8px;
       }
-      .result-hero .score-sub { font-size: 15px; color: var(--text-muted); }
+      .result-hero .score-sub {
+        font-size: 15px;
+        color: var(--text-muted);
+      }
 
       .section-result {
         background: var(--surface);
@@ -149,7 +203,10 @@
         padding: 18px 22px;
         margin-bottom: 14px;
       }
-      .section-result h3 { margin: 0 0 12px; font-size: 14px; }
+      .section-result h3 {
+        margin: 0 0 12px;
+        font-size: 14px;
+      }
       .stat-row {
         display: flex;
         align-items: center;
@@ -169,7 +226,12 @@
         height: 100%;
         border-radius: 20px;
       }
-      .stat-score { font-weight: 700; font-size: 13px; min-width: 40px; text-align: right; }
+      .stat-score {
+        font-weight: 700;
+        font-size: 13px;
+        min-width: 40px;
+        text-align: right;
+      }
 
       .profile-grid {
         display: grid;
@@ -185,7 +247,11 @@
         color: var(--text-muted);
         line-height: 1.4;
       }
-      .profile-chip strong { color: var(--text); display: block; margin-bottom: 2px; }
+      .profile-chip strong {
+        color: var(--text);
+        display: block;
+        margin-bottom: 2px;
+      }
 
       .actions-bar {
         display: flex;
@@ -203,14 +269,24 @@
         transition: all 0.15s;
         text-decoration: none;
       }
-      .btn-primary { background: var(--accent); color: #fff; }
-      .btn-primary:hover { background: var(--accent-hover); }
-      .btn-ghost { background: var(--surface-2); color: var(--text); }
-      .btn-ghost:hover { background: var(--border); }
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+      }
+      .btn-primary:hover {
+        background: var(--accent-hover);
+      }
+      .btn-ghost {
+        background: var(--surface-2);
+        color: var(--text);
+      }
+      .btn-ghost:hover {
+        background: var(--border);
+      }
 
       .missing-warning {
-        background: rgba(249,115,22,0.12);
-        border: 1px solid rgba(249,115,22,0.35);
+        background: rgba(249, 115, 22, 0.12);
+        border: 1px solid rgba(249, 115, 22, 0.35);
         border-radius: 8px;
         padding: 12px 16px;
         font-size: 13px;
@@ -220,484 +296,1193 @@
       }
 
       @media print {
-        .sidebar, .mobile-topbar, .sidebar-overlay, .submit-btn, .actions-bar, #quiz-form { display: none !important; }
-        body { padding-left: 0 !important; }
-        #results { display: block !important; }
+        .sidebar,
+        .mobile-topbar,
+        .sidebar-overlay,
+        .submit-btn,
+        .actions-bar,
+        #quiz-form {
+          display: none !important;
+        }
+        body {
+          padding-left: 0 !important;
+        }
+        #results {
+          display: block !important;
+        }
       }
     </style>
   </head>
   <body>
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-brand">
-        <div class="brand-logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/></svg></div>
+        <div class="brand-logo">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5" />
+          </svg>
+        </div>
         <span class="brand-text">PPNI 2026</span>
       </div>
       <nav class="sidebar-nav">
         <a href="../index.html" class="nav-item">
-          <span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+          <span class="nav-icon"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" /></svg
+          ></span>
           <span>Accueil</span>
         </a>
         <a href="../planning.html" class="nav-item">
-          <span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+          <span class="nav-icon"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" /></svg
+          ></span>
           <span>Planning</span>
         </a>
         <a href="../previsionnel.html" class="nav-item">
-          <span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></span>
+          <span class="nav-icon"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="18" y1="20" x2="18" y2="10" />
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="14" />
+              <line x1="2" y1="20" x2="22" y2="20" /></svg
+          ></span>
           <span>Pr&#233;visionnel</span>
         </a>
         <a href="../previsionnel_stagiaire.html" class="nav-item">
-          <span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          <span class="nav-icon"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg
+          ></span>
           <span>Stagiaires</span>
         </a>
         <a href="../ressources/index.html" class="nav-item">
-          <span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+          <span class="nav-icon"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+              <path
+                d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+              /></svg
+          ></span>
           <span>Ressources</span>
         </a>
         <a href="index.html" class="nav-item active">
-          <span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span>
+          <span class="nav-icon"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+              />
+              <path
+                d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+              /></svg
+          ></span>
           <span>Exercices</span>
         </a>
       </nav>
       <div class="sidebar-footer">
-        <button class="theme-toggle" onclick="toggleTheme()" title="Changer le th&#232;me">
+        <button
+          class="theme-toggle"
+          onclick="toggleTheme()"
+          title="Changer le th&#232;me"
+        >
           <span class="theme-icon">&#127769;</span>
         </button>
         <span class="sidebar-version">v2026</span>
       </div>
     </aside>
     <main class="main-content">
-    <div class="sidebar-overlay" onclick="closeSidebar()"></div>
-    <header class="mobile-topbar">
-      <button class="hamburger" onclick="toggleSidebar()" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
-      <span class="mobile-brand">PPNI 2026</span>
-    </header>
+      <div class="sidebar-overlay" onclick="closeSidebar()"></div>
+      <header class="mobile-topbar">
+        <button class="hamburger" onclick="toggleSidebar()" aria-label="Menu">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+        <span class="mobile-brand">PPNI 2026</span>
+      </header>
 
-    <div class="page-wrapper">
-      <div class="doc-header">
-        <h1>📋 Quiz de positionnement</h1>
-        <div class="meta">S1 · Lundi 11 mai · 09h20 — Durée estimée : 15 min · Résultats anonymes</div>
+      <div class="page-wrapper">
+        <div class="doc-header">
+          <h1>📋 Quiz de positionnement</h1>
+          <div class="meta">
+            S1 · Lundi 11 mai · 09h20 — Durée estimée : 15 min · Résultats
+            anonymes
+          </div>
+        </div>
+
+        <div class="quiz-header-info">
+          <strong>Ce quiz ne donne pas de note.</strong> Il permet au formateur
+          d'adapter le rythme dès le premier jour. Réponds honnêtement —
+          <em>« je ne sais pas »</em> est toujours une réponse valide. Rien
+          n'est envoyé sur Internet : tout reste sur ton ordinateur.
+        </div>
+
+        <div class="progress-label" id="progress-label">
+          0 / 30 questions répondues
+        </div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" id="progress-fill"></div>
+        </div>
+
+        <form id="quiz-form">
+          <!-- ══════════════════════════════════════════ -->
+          <!-- SECTION A — Habitudes numériques          -->
+          <!-- ══════════════════════════════════════════ -->
+          <div class="section-box">
+            <span class="section-label hab">A — Mes habitudes numériques</span>
+
+            <div class="q-block">
+              <div class="q-num">Question 1 / 30</div>
+              <div class="q-text">
+                J'utilise le même mot de passe sur plusieurs sites.
+              </div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q1" value="a" /><span
+                    >Oui, souvent</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q1" value="b" /><span
+                    >Parfois, pour des sites peu importants</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q1" value="c" /><span
+                    >Non, j'utilise des mots de passe différents</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 2 / 30</div>
+              <div class="q-text">Mon mot de passe principal fait environ…</div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q2" value="a" /><span
+                    >Moins de 8 caractères</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q2" value="b" /><span
+                    >Entre 8 et 11 caractères</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q2" value="c" /><span
+                    >12 caractères ou plus</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q2" value="d" /><span
+                    >Je ne sais pas vraiment</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 3 / 30</div>
+              <div class="q-text">
+                J'utilise un gestionnaire de mots de passe (Bitwarden,
+                1Password, Dashlane…).
+              </div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q3" value="a" /><span
+                    >Oui, au quotidien</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q3" value="b" /><span
+                    >J'en ai entendu parler mais je n'en utilise pas</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q3" value="c" /><span
+                    >Non, je ne savais pas que ça existait</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 4 / 30</div>
+              <div class="q-text">
+                J'ai activé la double authentification (MFA / 2FA) sur au moins
+                un de mes comptes.
+              </div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q4" value="a" /><span
+                    >Oui, sur plusieurs comptes</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q4" value="b" /><span
+                    >Oui, sur un seul</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q4" value="c" /><span
+                    >Non, je ne sais pas ce que c'est</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q4" value="d" /><span
+                    >Non, je sais ce que c'est mais je ne l'ai pas fait</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 5 / 30</div>
+              <div class="q-text">
+                Quand un logiciel me propose une mise à jour, je…
+              </div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q5" value="a" /><span
+                    >L'installe dès que possible</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q5" value="b" /><span
+                    >La reporte, ça prend du temps</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q5" value="c" /><span
+                    >L'ignore généralement</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q5" value="d" /><span
+                    >Je ne sais pas si c'est important</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 6 / 30</div>
+              <div class="q-text">
+                J'ai déjà reçu un e-mail qui me semblait suspect (arnaque,
+                phishing…).
+              </div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q6" value="a" /><span
+                    >Oui, et j'ai su le reconnaître</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q6" value="b" /><span
+                    >Oui, mais je n'étais pas sûr(e) de ce que c'était</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q6" value="c" /><span
+                    >Non, jamais</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 7 / 30</div>
+              <div class="q-text">
+                Je fais attention aux réseaux Wi-Fi publics (café, gare,
+                hôpital…).
+              </div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q7" value="a" /><span
+                    >Oui, je ne saisis jamais de données sensibles dessus</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q7" value="b" /><span
+                    >Je m'y connecte sans y penser vraiment</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q7" value="c" /><span
+                    >Je ne savais pas que c'était risqué</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 8 / 30</div>
+              <div class="q-text">
+                J'ai un antivirus actif et à jour sur mon ordinateur principal.
+              </div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q8" value="a" /><span
+                    >Oui, je suis sûr(e)</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q8" value="b" /><span
+                    >Oui, je crois</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q8" value="c" /><span
+                    >Non ou je ne sais pas</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 9 / 30</div>
+              <div class="q-text">
+                Avant de cliquer sur un lien dans un e-mail, je vérifie
+                l'expéditeur et l'URL.
+              </div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q9" value="a" /><span
+                    >Toujours</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q9" value="b" /><span
+                    >Parfois, quand quelque chose m'intrigue</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q9" value="c" /><span
+                    >Rarement ou jamais</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 10 / 30</div>
+              <div class="q-text">
+                Je sais ce qu'est une sauvegarde (backup) et j'en fais
+                régulièrement.
+              </div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q10" value="a" /><span
+                    >Oui, je sauvegarde régulièrement sur un support externe ou
+                    le cloud</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q10" value="b" /><span
+                    >Je sais ce que c'est mais je n'en fais pas vraiment</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q10" value="c" /><span
+                    >Non, je ne savais pas que c'était important</span
+                  ></label
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- ══════════════════════════════════════════ -->
+          <!-- SECTION B — Cybersécurité & menaces       -->
+          <!-- ══════════════════════════════════════════ -->
+          <div class="section-box">
+            <span class="section-label sec"
+              >B — Cybersécurité &amp; menaces</span
+            >
+
+            <div class="q-block">
+              <div class="q-num">Question 11 / 30</div>
+              <div class="q-text">Le phishing, c'est…</div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q11" value="a" /><span
+                    >Un virus qui ralentit l'ordinateur</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q11" value="b" /><span
+                    >Un e-mail frauduleux imitant une entreprise réelle pour
+                    voler vos données</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q11" value="c" /><span
+                    >Un logiciel de sécurité gratuit</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q11" value="d" /><span
+                    >Je ne sais pas</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 12 / 30</div>
+              <div class="q-text">Un ransomware, c'est…</div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q12" value="a" /><span
+                    >Un logiciel qui chiffre vos fichiers et réclame une
+                    rançon</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q12" value="b" /><span
+                    >Un antivirus payant</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q12" value="c" /><span
+                    >Un type de publicité en ligne</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q12" value="d" /><span
+                    >Je ne sais pas</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 13 / 30</div>
+              <div class="q-text">MFA signifie…</div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q13" value="a" /><span
+                    >Mon Fichier Administratif</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q13" value="b" /><span
+                    >Multi-Factor Authentication (authentification
+                    multi-facteurs)</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q13" value="c" /><span
+                    >Mise à jour Forcée Automatique</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q13" value="d" /><span
+                    >Je ne sais pas</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 14 / 30</div>
+              <div class="q-text">
+                Un mot de passe fort doit avoir au minimum…
+              </div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q14" value="a" /><span
+                    >6 caractères</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q14" value="b" /><span
+                    >8 caractères</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q14" value="c" /><span
+                    >12 caractères ou plus</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q14" value="d" /><span
+                    >Peu importe la longueur si on met des chiffres</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 15 / 30</div>
+              <div class="q-text">
+                Votre banque vous demande votre mot de passe par e-mail. Que
+                faites-vous ?
+              </div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q15" value="a" /><span
+                    >Je le donne, ils en ont le droit</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q15" value="b" /><span
+                    >Je ne le donne jamais — c'est forcément du phishing</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q15" value="c" /><span
+                    >Ça dépend de comment l'e-mail est rédigé</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q15" value="d" /><span
+                    >Je ne sais pas quoi faire</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 16 / 30</div>
+              <div class="q-text">Un VPN permet de…</div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q16" value="a" /><span
+                    >Accélérer sa connexion Internet</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q16" value="b" /><span
+                    >Chiffrer son trafic Internet, notamment sur Wi-Fi
+                    public</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q16" value="c" /><span
+                    >Bloquer les publicités</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q16" value="d" /><span
+                    >Je ne sais pas</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 17 / 30</div>
+              <div class="q-text">
+                Si vous cliquez sur un lien suspect, la première chose à faire
+                est…
+              </div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q17" value="a" /><span
+                    >Ne rien faire, c'est probablement sans danger</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q17" value="b" /><span
+                    >Changer le mot de passe du compte concerné et alerter si
+                    nécessaire</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q17" value="c" /><span
+                    >Éteindre l'ordinateur définitivement</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q17" value="d" /><span
+                    >Je ne sais pas</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 18 / 30</div>
+              <div class="q-text">
+                Parmi ces indices, lequel révèle le plus souvent un e-mail de
+                phishing ?
+              </div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q18" value="a" /><span
+                    >L'e-mail contient un logo d'entreprise</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q18" value="b" /><span
+                    >L'adresse de l'expéditeur contient une légère variante du
+                    domaine officiel</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q18" value="c" /><span
+                    >L'e-mail est en français</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q18" value="d" /><span
+                    >Je ne sais pas</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 19 / 30</div>
+              <div class="q-text">L'ANSSI, c'est…</div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q19" value="a" /><span
+                    >Un antivirus gratuit</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q19" value="b" /><span
+                    >L'autorité française en cybersécurité (agence
+                    gouvernementale)</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q19" value="c" /><span
+                    >Un opérateur téléphonique</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q19" value="d" /><span
+                    >Je ne sais pas</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 20 / 30</div>
+              <div class="q-text">
+                Une "passphrase" (phrase de passe), c'est…
+              </div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q20" value="a" /><span
+                    >Un code PIN à 4 chiffres</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q20" value="b" /><span
+                    >Plusieurs mots aléatoires assemblés pour former un mot de
+                    passe long et mémorisable</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q20" value="c" /><span
+                    >Une phrase de récupération à communiquer au service
+                    client</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q20" value="d" /><span
+                    >Je ne sais pas</span
+                  ></label
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- ══════════════════════════════════════════ -->
+          <!-- SECTION C — Git & GitHub                  -->
+          <!-- ══════════════════════════════════════════ -->
+          <div class="section-box">
+            <span class="section-label git">C — Git &amp; GitHub</span>
+
+            <div class="q-block">
+              <div class="q-num">Question 21 / 30</div>
+              <div class="q-text">J'ai déjà un compte GitHub.</div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q21" value="a" /><span
+                    >Oui, et je l'utilise régulièrement</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q21" value="b" /><span
+                    >Oui, mais je ne sais pas vraiment m'en servir</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q21" value="c" /><span
+                    >Non, jamais créé</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 22 / 30</div>
+              <div class="q-text">
+                La différence entre Git et GitHub, c'est…
+              </div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q22" value="a" /><span
+                    >Git est un logiciel local, GitHub est la plateforme en
+                    ligne</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q22" value="b" /><span
+                    >Git est en ligne, GitHub est installé sur
+                    l'ordinateur</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q22" value="c" /><span
+                    >C'est exactement la même chose</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q22" value="d" /><span
+                    >Je ne sais pas</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 23 / 30</div>
+              <div class="q-text">Un "commit" en Git, c'est…</div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q23" value="a" /><span
+                    >Un message d'erreur du programme</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q23" value="b" /><span
+                    >Une sauvegarde commentée de l'état du projet à un instant
+                    T</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q23" value="c" /><span
+                    >Une commande pour supprimer des fichiers</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q23" value="d" /><span
+                    >Je ne sais pas</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 24 / 30</div>
+              <div class="q-text">"git push" permet de…</div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q24" value="a" /><span
+                    >Supprimer le projet en ligne</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q24" value="b" /><span
+                    >Envoyer ses commits locaux vers GitHub</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q24" value="c" /><span
+                    >Télécharger un projet depuis GitHub</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q24" value="d" /><span
+                    >Je ne sais pas</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 25 / 30</div>
+              <div class="q-text">
+                À quoi sert le fichier README.md sur GitHub ?
+              </div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q25" value="a" /><span
+                    >Stocker les mots de passe du projet</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q25" value="b" /><span
+                    >Présenter le projet : il s'affiche sur la page d'accueil du
+                    repository</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q25" value="c" /><span
+                    >Configurer le serveur</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q25" value="d" /><span
+                    >Je ne sais pas</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 26 / 30</div>
+              <div class="q-text">Une "branche" Git, c'est…</div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q26" value="a" /><span
+                    >Un dossier de sauvegarde automatique</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q26" value="b" /><span
+                    >Une ligne de développement parallèle et isolée du projet
+                    principal</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q26" value="c" /><span
+                    >Un autre nom pour "commit"</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q26" value="d" /><span
+                    >Je ne sais pas</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 27 / 30</div>
+              <div class="q-text">Markdown est…</div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q27" value="a" /><span
+                    >Un langage de programmation comme Python</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q27" value="b" /><span
+                    >Un langage de mise en forme léger (# Titre, **gras**, -
+                    liste…)</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q27" value="c" /><span
+                    >Un logiciel de traitement de texte</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q27" value="d" /><span
+                    >Je ne sais pas</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 28 / 30</div>
+              <div class="q-text">
+                J'ai déjà utilisé le terminal / la ligne de commande.
+              </div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q28" value="a" /><span
+                    >Oui, régulièrement</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q28" value="b" /><span
+                    >Oui, quelques fois</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q28" value="c" /><span
+                    >Non, jamais</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 29 / 30</div>
+              <div class="q-text">Une "Pull Request" sur GitHub, c'est…</div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q29" value="a" /><span
+                    >Une demande de téléchargement d'un fichier</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q29" value="b" /><span
+                    >Une demande formelle de fusionner une branche dans une
+                    autre</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q29" value="c" /><span
+                    >Un ticket de bug à résoudre</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q29" value="d" /><span
+                    >Je ne sais pas</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="q-block">
+              <div class="q-num">Question 30 / 30</div>
+              <div class="q-text">GitHub Pages permet de…</div>
+              <div class="options">
+                <label class="opt-label"
+                  ><input type="radio" name="q30" value="a" /><span
+                    >Écrire du code directement dans le navigateur</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q30" value="b" /><span
+                    >Transformer un repository en site web accessible
+                    publiquement</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q30" value="c" /><span
+                    >Gérer les bugs d'un projet</span
+                  ></label
+                >
+                <label class="opt-label"
+                  ><input type="radio" name="q30" value="d" /><span
+                    >Je ne sais pas</span
+                  ></label
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="missing-warning" id="missing-warning">
+            ⚠️ Merci de répondre à toutes les questions avant de valider.
+          </div>
+          <button type="submit" class="submit-btn" id="submit-btn">
+            Voir mes résultats →
+          </button>
+        </form>
+
+        <!-- ════════════════════════════ -->
+        <!-- RESULTS PANEL              -->
+        <!-- ════════════════════════════ -->
+        <div id="results">
+          <div class="result-hero">
+            <div class="big-score" id="res-score-display">—</div>
+            <div class="score-sub" id="res-score-sub"></div>
+            <div
+              style="
+                margin-top: 12px;
+                font-size: 13px;
+                color: var(--text-muted);
+              "
+            >
+              Ce score est un point de départ, pas une note. La formation est là
+              pour progresser.
+            </div>
+          </div>
+
+          <div class="section-result">
+            <h3>
+              A — Habitudes numériques
+              <span
+                style="
+                  font-weight: 400;
+                  color: var(--text-muted);
+                  font-size: 13px;
+                "
+                >(diagnostic — pas de bonne/mauvaise réponse)</span
+              >
+            </h3>
+            <div id="res-habits"></div>
+          </div>
+
+          <div class="section-result">
+            <h3>B — Cybersécurité &amp; menaces</h3>
+            <div class="stat-row">
+              <span style="min-width: 120px">Score</span>
+              <div class="stat-bar-wrap">
+                <div
+                  class="stat-bar-fill"
+                  id="bar-sec"
+                  style="background: var(--accent)"
+                ></div>
+              </div>
+              <span class="stat-score" id="score-sec">—</span>
+            </div>
+            <div
+              id="res-sec-detail"
+              style="font-size: 12px; color: var(--text-muted); margin-top: 8px"
+            ></div>
+          </div>
+
+          <div class="section-result">
+            <h3>C — Git &amp; GitHub</h3>
+            <div class="stat-row">
+              <span style="min-width: 120px">Score</span>
+              <div class="stat-bar-wrap">
+                <div
+                  class="stat-bar-fill"
+                  id="bar-git"
+                  style="background: var(--green)"
+                ></div>
+              </div>
+              <span class="stat-score" id="score-git">—</span>
+            </div>
+            <div
+              id="res-git-detail"
+              style="font-size: 12px; color: var(--text-muted); margin-top: 8px"
+            ></div>
+          </div>
+
+          <div class="section-result">
+            <h3>💡 Que retenir ?</h3>
+            <div
+              id="res-advice"
+              style="
+                font-size: 13px;
+                color: var(--text-muted);
+                line-height: 1.7;
+              "
+            ></div>
+          </div>
+
+          <div class="actions-bar">
+            <button class="btn-action btn-ghost" onclick="window.print()">
+              🖨️ Imprimer / Sauvegarder
+            </button>
+            <button class="btn-action btn-ghost" onclick="resetQuiz()">
+              ↩️ Recommencer
+            </button>
+            <a href="index.html" class="btn-action btn-primary"
+              >Voir les exercices →</a
+            >
+          </div>
+        </div>
       </div>
-
-      <div class="quiz-header-info">
-        <strong>Ce quiz ne donne pas de note.</strong> Il permet au formateur d'adapter le rythme dès le premier jour.
-        Réponds honnêtement — <em>« je ne sais pas »</em> est toujours une réponse valide.
-        Rien n'est envoyé sur Internet : tout reste sur ton ordinateur.
-      </div>
-
-      <div class="progress-label" id="progress-label">0 / 30 questions répondues</div>
-      <div class="progress-bar-wrap">
-        <div class="progress-bar-fill" id="progress-fill"></div>
-      </div>
-
-      <form id="quiz-form">
-
-        <!-- ══════════════════════════════════════════ -->
-        <!-- SECTION A — Habitudes numériques          -->
-        <!-- ══════════════════════════════════════════ -->
-        <div class="section-box">
-          <span class="section-label hab">A — Mes habitudes numériques</span>
-
-          <div class="q-block">
-            <div class="q-num">Question 1 / 30</div>
-            <div class="q-text">J'utilise le même mot de passe sur plusieurs sites.</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q1" value="a" /><span>Oui, souvent</span></label>
-              <label class="opt-label"><input type="radio" name="q1" value="b" /><span>Parfois, pour des sites peu importants</span></label>
-              <label class="opt-label"><input type="radio" name="q1" value="c" /><span>Non, j'utilise des mots de passe différents</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 2 / 30</div>
-            <div class="q-text">Mon mot de passe principal fait environ…</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q2" value="a" /><span>Moins de 8 caractères</span></label>
-              <label class="opt-label"><input type="radio" name="q2" value="b" /><span>Entre 8 et 11 caractères</span></label>
-              <label class="opt-label"><input type="radio" name="q2" value="c" /><span>12 caractères ou plus</span></label>
-              <label class="opt-label"><input type="radio" name="q2" value="d" /><span>Je ne sais pas vraiment</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 3 / 30</div>
-            <div class="q-text">J'utilise un gestionnaire de mots de passe (Bitwarden, 1Password, Dashlane…).</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q3" value="a" /><span>Oui, au quotidien</span></label>
-              <label class="opt-label"><input type="radio" name="q3" value="b" /><span>J'en ai entendu parler mais je n'en utilise pas</span></label>
-              <label class="opt-label"><input type="radio" name="q3" value="c" /><span>Non, je ne savais pas que ça existait</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 4 / 30</div>
-            <div class="q-text">J'ai activé la double authentification (MFA / 2FA) sur au moins un de mes comptes.</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q4" value="a" /><span>Oui, sur plusieurs comptes</span></label>
-              <label class="opt-label"><input type="radio" name="q4" value="b" /><span>Oui, sur un seul</span></label>
-              <label class="opt-label"><input type="radio" name="q4" value="c" /><span>Non, je ne sais pas ce que c'est</span></label>
-              <label class="opt-label"><input type="radio" name="q4" value="d" /><span>Non, je sais ce que c'est mais je ne l'ai pas fait</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 5 / 30</div>
-            <div class="q-text">Quand un logiciel me propose une mise à jour, je…</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q5" value="a" /><span>L'installe dès que possible</span></label>
-              <label class="opt-label"><input type="radio" name="q5" value="b" /><span>La reporte, ça prend du temps</span></label>
-              <label class="opt-label"><input type="radio" name="q5" value="c" /><span>L'ignore généralement</span></label>
-              <label class="opt-label"><input type="radio" name="q5" value="d" /><span>Je ne sais pas si c'est important</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 6 / 30</div>
-            <div class="q-text">J'ai déjà reçu un e-mail qui me semblait suspect (arnaque, phishing…).</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q6" value="a" /><span>Oui, et j'ai su le reconnaître</span></label>
-              <label class="opt-label"><input type="radio" name="q6" value="b" /><span>Oui, mais je n'étais pas sûr(e) de ce que c'était</span></label>
-              <label class="opt-label"><input type="radio" name="q6" value="c" /><span>Non, jamais</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 7 / 30</div>
-            <div class="q-text">Je fais attention aux réseaux Wi-Fi publics (café, gare, hôpital…).</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q7" value="a" /><span>Oui, je ne saisis jamais de données sensibles dessus</span></label>
-              <label class="opt-label"><input type="radio" name="q7" value="b" /><span>Je m'y connecte sans y penser vraiment</span></label>
-              <label class="opt-label"><input type="radio" name="q7" value="c" /><span>Je ne savais pas que c'était risqué</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 8 / 30</div>
-            <div class="q-text">J'ai un antivirus actif et à jour sur mon ordinateur principal.</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q8" value="a" /><span>Oui, je suis sûr(e)</span></label>
-              <label class="opt-label"><input type="radio" name="q8" value="b" /><span>Oui, je crois</span></label>
-              <label class="opt-label"><input type="radio" name="q8" value="c" /><span>Non ou je ne sais pas</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 9 / 30</div>
-            <div class="q-text">Avant de cliquer sur un lien dans un e-mail, je vérifie l'expéditeur et l'URL.</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q9" value="a" /><span>Toujours</span></label>
-              <label class="opt-label"><input type="radio" name="q9" value="b" /><span>Parfois, quand quelque chose m'intrigue</span></label>
-              <label class="opt-label"><input type="radio" name="q9" value="c" /><span>Rarement ou jamais</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 10 / 30</div>
-            <div class="q-text">Je sais ce qu'est une sauvegarde (backup) et j'en fais régulièrement.</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q10" value="a" /><span>Oui, je sauvegarde régulièrement sur un support externe ou le cloud</span></label>
-              <label class="opt-label"><input type="radio" name="q10" value="b" /><span>Je sais ce que c'est mais je n'en fais pas vraiment</span></label>
-              <label class="opt-label"><input type="radio" name="q10" value="c" /><span>Non, je ne savais pas que c'était important</span></label>
-            </div>
-          </div>
-        </div>
-
-        <!-- ══════════════════════════════════════════ -->
-        <!-- SECTION B — Cybersécurité & menaces       -->
-        <!-- ══════════════════════════════════════════ -->
-        <div class="section-box">
-          <span class="section-label sec">B — Cybersécurité &amp; menaces</span>
-
-          <div class="q-block">
-            <div class="q-num">Question 11 / 30</div>
-            <div class="q-text">Le phishing, c'est…</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q11" value="a" /><span>Un virus qui ralentit l'ordinateur</span></label>
-              <label class="opt-label"><input type="radio" name="q11" value="b" /><span>Un e-mail frauduleux imitant une entreprise réelle pour voler vos données</span></label>
-              <label class="opt-label"><input type="radio" name="q11" value="c" /><span>Un logiciel de sécurité gratuit</span></label>
-              <label class="opt-label"><input type="radio" name="q11" value="d" /><span>Je ne sais pas</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 12 / 30</div>
-            <div class="q-text">Un ransomware, c'est…</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q12" value="a" /><span>Un logiciel qui chiffre vos fichiers et réclame une rançon</span></label>
-              <label class="opt-label"><input type="radio" name="q12" value="b" /><span>Un antivirus payant</span></label>
-              <label class="opt-label"><input type="radio" name="q12" value="c" /><span>Un type de publicité en ligne</span></label>
-              <label class="opt-label"><input type="radio" name="q12" value="d" /><span>Je ne sais pas</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 13 / 30</div>
-            <div class="q-text">MFA signifie…</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q13" value="a" /><span>Mon Fichier Administratif</span></label>
-              <label class="opt-label"><input type="radio" name="q13" value="b" /><span>Multi-Factor Authentication (authentification multi-facteurs)</span></label>
-              <label class="opt-label"><input type="radio" name="q13" value="c" /><span>Mise à jour Forcée Automatique</span></label>
-              <label class="opt-label"><input type="radio" name="q13" value="d" /><span>Je ne sais pas</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 14 / 30</div>
-            <div class="q-text">Un mot de passe fort doit avoir au minimum…</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q14" value="a" /><span>6 caractères</span></label>
-              <label class="opt-label"><input type="radio" name="q14" value="b" /><span>8 caractères</span></label>
-              <label class="opt-label"><input type="radio" name="q14" value="c" /><span>12 caractères ou plus</span></label>
-              <label class="opt-label"><input type="radio" name="q14" value="d" /><span>Peu importe la longueur si on met des chiffres</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 15 / 30</div>
-            <div class="q-text">Votre banque vous demande votre mot de passe par e-mail. Que faites-vous ?</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q15" value="a" /><span>Je le donne, ils en ont le droit</span></label>
-              <label class="opt-label"><input type="radio" name="q15" value="b" /><span>Je ne le donne jamais — c'est forcément du phishing</span></label>
-              <label class="opt-label"><input type="radio" name="q15" value="c" /><span>Ça dépend de comment l'e-mail est rédigé</span></label>
-              <label class="opt-label"><input type="radio" name="q15" value="d" /><span>Je ne sais pas quoi faire</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 16 / 30</div>
-            <div class="q-text">Un VPN permet de…</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q16" value="a" /><span>Accélérer sa connexion Internet</span></label>
-              <label class="opt-label"><input type="radio" name="q16" value="b" /><span>Chiffrer son trafic Internet, notamment sur Wi-Fi public</span></label>
-              <label class="opt-label"><input type="radio" name="q16" value="c" /><span>Bloquer les publicités</span></label>
-              <label class="opt-label"><input type="radio" name="q16" value="d" /><span>Je ne sais pas</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 17 / 30</div>
-            <div class="q-text">Si vous cliquez sur un lien suspect, la première chose à faire est…</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q17" value="a" /><span>Ne rien faire, c'est probablement sans danger</span></label>
-              <label class="opt-label"><input type="radio" name="q17" value="b" /><span>Changer le mot de passe du compte concerné et alerter si nécessaire</span></label>
-              <label class="opt-label"><input type="radio" name="q17" value="c" /><span>Éteindre l'ordinateur définitivement</span></label>
-              <label class="opt-label"><input type="radio" name="q17" value="d" /><span>Je ne sais pas</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 18 / 30</div>
-            <div class="q-text">Parmi ces indices, lequel révèle le plus souvent un e-mail de phishing ?</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q18" value="a" /><span>L'e-mail contient un logo d'entreprise</span></label>
-              <label class="opt-label"><input type="radio" name="q18" value="b" /><span>L'adresse de l'expéditeur contient une légère variante du domaine officiel</span></label>
-              <label class="opt-label"><input type="radio" name="q18" value="c" /><span>L'e-mail est en français</span></label>
-              <label class="opt-label"><input type="radio" name="q18" value="d" /><span>Je ne sais pas</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 19 / 30</div>
-            <div class="q-text">L'ANSSI, c'est…</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q19" value="a" /><span>Un antivirus gratuit</span></label>
-              <label class="opt-label"><input type="radio" name="q19" value="b" /><span>L'autorité française en cybersécurité (agence gouvernementale)</span></label>
-              <label class="opt-label"><input type="radio" name="q19" value="c" /><span>Un opérateur téléphonique</span></label>
-              <label class="opt-label"><input type="radio" name="q19" value="d" /><span>Je ne sais pas</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 20 / 30</div>
-            <div class="q-text">Une "passphrase" (phrase de passe), c'est…</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q20" value="a" /><span>Un code PIN à 4 chiffres</span></label>
-              <label class="opt-label"><input type="radio" name="q20" value="b" /><span>Plusieurs mots aléatoires assemblés pour former un mot de passe long et mémorisable</span></label>
-              <label class="opt-label"><input type="radio" name="q20" value="c" /><span>Une phrase de récupération à communiquer au service client</span></label>
-              <label class="opt-label"><input type="radio" name="q20" value="d" /><span>Je ne sais pas</span></label>
-            </div>
-          </div>
-        </div>
-
-        <!-- ══════════════════════════════════════════ -->
-        <!-- SECTION C — Git & GitHub                  -->
-        <!-- ══════════════════════════════════════════ -->
-        <div class="section-box">
-          <span class="section-label git">C — Git &amp; GitHub</span>
-
-          <div class="q-block">
-            <div class="q-num">Question 21 / 30</div>
-            <div class="q-text">J'ai déjà un compte GitHub.</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q21" value="a" /><span>Oui, et je l'utilise régulièrement</span></label>
-              <label class="opt-label"><input type="radio" name="q21" value="b" /><span>Oui, mais je ne sais pas vraiment m'en servir</span></label>
-              <label class="opt-label"><input type="radio" name="q21" value="c" /><span>Non, jamais créé</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 22 / 30</div>
-            <div class="q-text">La différence entre Git et GitHub, c'est…</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q22" value="a" /><span>Git est un logiciel local, GitHub est la plateforme en ligne</span></label>
-              <label class="opt-label"><input type="radio" name="q22" value="b" /><span>Git est en ligne, GitHub est installé sur l'ordinateur</span></label>
-              <label class="opt-label"><input type="radio" name="q22" value="c" /><span>C'est exactement la même chose</span></label>
-              <label class="opt-label"><input type="radio" name="q22" value="d" /><span>Je ne sais pas</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 23 / 30</div>
-            <div class="q-text">Un "commit" en Git, c'est…</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q23" value="a" /><span>Un message d'erreur du programme</span></label>
-              <label class="opt-label"><input type="radio" name="q23" value="b" /><span>Une sauvegarde commentée de l'état du projet à un instant T</span></label>
-              <label class="opt-label"><input type="radio" name="q23" value="c" /><span>Une commande pour supprimer des fichiers</span></label>
-              <label class="opt-label"><input type="radio" name="q23" value="d" /><span>Je ne sais pas</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 24 / 30</div>
-            <div class="q-text">"git push" permet de…</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q24" value="a" /><span>Supprimer le projet en ligne</span></label>
-              <label class="opt-label"><input type="radio" name="q24" value="b" /><span>Envoyer ses commits locaux vers GitHub</span></label>
-              <label class="opt-label"><input type="radio" name="q24" value="c" /><span>Télécharger un projet depuis GitHub</span></label>
-              <label class="opt-label"><input type="radio" name="q24" value="d" /><span>Je ne sais pas</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 25 / 30</div>
-            <div class="q-text">À quoi sert le fichier README.md sur GitHub ?</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q25" value="a" /><span>Stocker les mots de passe du projet</span></label>
-              <label class="opt-label"><input type="radio" name="q25" value="b" /><span>Présenter le projet : il s'affiche sur la page d'accueil du repository</span></label>
-              <label class="opt-label"><input type="radio" name="q25" value="c" /><span>Configurer le serveur</span></label>
-              <label class="opt-label"><input type="radio" name="q25" value="d" /><span>Je ne sais pas</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 26 / 30</div>
-            <div class="q-text">Une "branche" Git, c'est…</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q26" value="a" /><span>Un dossier de sauvegarde automatique</span></label>
-              <label class="opt-label"><input type="radio" name="q26" value="b" /><span>Une ligne de développement parallèle et isolée du projet principal</span></label>
-              <label class="opt-label"><input type="radio" name="q26" value="c" /><span>Un autre nom pour "commit"</span></label>
-              <label class="opt-label"><input type="radio" name="q26" value="d" /><span>Je ne sais pas</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 27 / 30</div>
-            <div class="q-text">Markdown est…</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q27" value="a" /><span>Un langage de programmation comme Python</span></label>
-              <label class="opt-label"><input type="radio" name="q27" value="b" /><span>Un langage de mise en forme léger (# Titre, **gras**, - liste…)</span></label>
-              <label class="opt-label"><input type="radio" name="q27" value="c" /><span>Un logiciel de traitement de texte</span></label>
-              <label class="opt-label"><input type="radio" name="q27" value="d" /><span>Je ne sais pas</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 28 / 30</div>
-            <div class="q-text">J'ai déjà utilisé le terminal / la ligne de commande.</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q28" value="a" /><span>Oui, régulièrement</span></label>
-              <label class="opt-label"><input type="radio" name="q28" value="b" /><span>Oui, quelques fois</span></label>
-              <label class="opt-label"><input type="radio" name="q28" value="c" /><span>Non, jamais</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 29 / 30</div>
-            <div class="q-text">Une "Pull Request" sur GitHub, c'est…</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q29" value="a" /><span>Une demande de téléchargement d'un fichier</span></label>
-              <label class="opt-label"><input type="radio" name="q29" value="b" /><span>Une demande formelle de fusionner une branche dans une autre</span></label>
-              <label class="opt-label"><input type="radio" name="q29" value="c" /><span>Un ticket de bug à résoudre</span></label>
-              <label class="opt-label"><input type="radio" name="q29" value="d" /><span>Je ne sais pas</span></label>
-            </div>
-          </div>
-
-          <div class="q-block">
-            <div class="q-num">Question 30 / 30</div>
-            <div class="q-text">GitHub Pages permet de…</div>
-            <div class="options">
-              <label class="opt-label"><input type="radio" name="q30" value="a" /><span>Écrire du code directement dans le navigateur</span></label>
-              <label class="opt-label"><input type="radio" name="q30" value="b" /><span>Transformer un repository en site web accessible publiquement</span></label>
-              <label class="opt-label"><input type="radio" name="q30" value="c" /><span>Gérer les bugs d'un projet</span></label>
-              <label class="opt-label"><input type="radio" name="q30" value="d" /><span>Je ne sais pas</span></label>
-            </div>
-          </div>
-        </div>
-
-        <div class="missing-warning" id="missing-warning">
-          ⚠️ Merci de répondre à toutes les questions avant de valider.
-        </div>
-        <button type="submit" class="submit-btn" id="submit-btn">Voir mes résultats →</button>
-      </form>
-
-      <!-- ════════════════════════════ -->
-      <!-- RESULTS PANEL              -->
-      <!-- ════════════════════════════ -->
-      <div id="results">
-        <div class="result-hero">
-          <div class="big-score" id="res-score-display">—</div>
-          <div class="score-sub" id="res-score-sub"></div>
-          <div style="margin-top:12px;font-size:13px;color:var(--text-muted);">
-            Ce score est un point de départ, pas une note. La formation est là pour progresser.
-          </div>
-        </div>
-
-        <div class="section-result">
-          <h3>A — Habitudes numériques <span style="font-weight:400;color:var(--text-muted);font-size:13px;">(diagnostic — pas de bonne/mauvaise réponse)</span></h3>
-          <div id="res-habits"></div>
-        </div>
-
-        <div class="section-result">
-          <h3>B — Cybersécurité &amp; menaces</h3>
-          <div class="stat-row">
-            <span style="min-width:120px">Score</span>
-            <div class="stat-bar-wrap"><div class="stat-bar-fill" id="bar-sec" style="background:var(--accent)"></div></div>
-            <span class="stat-score" id="score-sec">—</span>
-          </div>
-          <div id="res-sec-detail" style="font-size:12px;color:var(--text-muted);margin-top:8px;"></div>
-        </div>
-
-        <div class="section-result">
-          <h3>C — Git &amp; GitHub</h3>
-          <div class="stat-row">
-            <span style="min-width:120px">Score</span>
-            <div class="stat-bar-wrap"><div class="stat-bar-fill" id="bar-git" style="background:var(--green)"></div></div>
-            <span class="stat-score" id="score-git">—</span>
-          </div>
-          <div id="res-git-detail" style="font-size:12px;color:var(--text-muted);margin-top:8px;"></div>
-        </div>
-
-        <div class="section-result">
-          <h3>💡 Que retenir ?</h3>
-          <div id="res-advice" style="font-size:13px;color:var(--text-muted);line-height:1.7;"></div>
-        </div>
-
-        <div class="actions-bar">
-          <button class="btn-action btn-ghost" onclick="window.print()">🖨️ Imprimer / Sauvegarder</button>
-          <button class="btn-action btn-ghost" onclick="resetQuiz()">↩️ Recommencer</button>
-          <a href="index.html" class="btn-action btn-primary">Voir les exercices →</a>
-        </div>
-      </div>
-
-    </div><!-- /page-wrapper -->
+      <!-- /page-wrapper -->
     </main>
     <script src="../js/app.js"></script>
     <script>
       // ── Correct answers for sections B (q11-q20) and C (q21-q30) ──
       const ANSWERS = {
-        q11:'b', q12:'a', q13:'b', q14:'c', q15:'b',
-        q16:'b', q17:'b', q18:'b', q19:'b', q20:'b',
-        q22:'a', q23:'b', q24:'b', q25:'b', q26:'b',
-        q27:'b', q29:'b', q30:'b'
+        q11: "b",
+        q12: "a",
+        q13: "b",
+        q14: "c",
+        q15: "b",
+        q16: "b",
+        q17: "b",
+        q18: "b",
+        q19: "b",
+        q20: "b",
+        q22: "a",
+        q23: "b",
+        q24: "b",
+        q25: "b",
+        q26: "b",
+        q27: "b",
+        q29: "b",
+        q30: "b",
         // q21 and q28 are descriptive (no right/wrong)
       };
 
@@ -705,148 +1490,281 @@
       let answered = 0;
 
       // Progress tracking
-      document.querySelectorAll('input[type="radio"]').forEach(function(radio) {
-        radio.addEventListener('change', function() {
-          answered = document.querySelectorAll('input[type="radio"]:checked').length;
-          var pct = Math.round((answered / TOTAL) * 100);
-          document.getElementById('progress-fill').style.width = pct + '%';
-          document.getElementById('progress-label').textContent = answered + ' / ' + TOTAL + ' questions répondues';
+      document
+        .querySelectorAll('input[type="radio"]')
+        .forEach(function (radio) {
+          radio.addEventListener("change", function () {
+            answered = document.querySelectorAll(
+              'input[type="radio"]:checked',
+            ).length;
+            var pct = Math.round((answered / TOTAL) * 100);
+            document.getElementById("progress-fill").style.width = pct + "%";
+            document.getElementById("progress-label").textContent =
+              answered + " / " + TOTAL + " questions répondues";
+          });
         });
-      });
 
       // Form submission
-      document.getElementById('quiz-form').addEventListener('submit', function(e) {
-        e.preventDefault();
+      document
+        .getElementById("quiz-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
 
-        // Check all answered
-        var missing = [];
-        for (var i = 1; i <= TOTAL; i++) {
-          if (!document.querySelector('input[name="q'+i+'"]:checked')) missing.push(i);
-        }
-        if (missing.length > 0) {
-          var w = document.getElementById('missing-warning');
-          w.style.display = 'block';
-          w.textContent = '⚠️ Questions non répondues : ' + missing.join(', ') + '. Merci de compléter avant de valider.';
-          document.querySelector('.q-block:nth-child(' + missing[0] + ')').scrollIntoView({behavior:'smooth',block:'center'});
-          return;
-        }
+          // Check all answered
+          var missing = [];
+          for (var i = 1; i <= TOTAL; i++) {
+            if (!document.querySelector('input[name="q' + i + '"]:checked'))
+              missing.push(i);
+          }
+          if (missing.length > 0) {
+            var w = document.getElementById("missing-warning");
+            w.style.display = "block";
+            w.textContent =
+              "⚠️ Questions non répondues : " +
+              missing.join(", ") +
+              ". Merci de compléter avant de valider.";
+            document
+              .querySelector(".q-block:nth-child(" + missing[0] + ")")
+              .scrollIntoView({ behavior: "smooth", block: "center" });
+            return;
+          }
 
-        // Collect answers
-        var ans = {};
-        for (var i = 1; i <= TOTAL; i++) {
-          ans['q'+i] = document.querySelector('input[name="q'+i+'"]:checked').value;
-        }
+          // Collect answers
+          var ans = {};
+          for (var i = 1; i <= TOTAL; i++) {
+            ans["q" + i] = document.querySelector(
+              'input[name="q' + i + '"]:checked',
+            ).value;
+          }
 
-        // Score Section B (q11-q20) — 10 questions
-        var scoreB = 0;
-        var wrongB = [];
-        ['q11','q12','q13','q14','q15','q16','q17','q18','q19','q20'].forEach(function(q) {
-          if (ans[q] === ANSWERS[q]) scoreB++;
-          else wrongB.push(parseInt(q.replace('q','')) - 10);
+          // Score Section B (q11-q20) — 10 questions
+          var scoreB = 0;
+          var wrongB = [];
+          [
+            "q11",
+            "q12",
+            "q13",
+            "q14",
+            "q15",
+            "q16",
+            "q17",
+            "q18",
+            "q19",
+            "q20",
+          ].forEach(function (q) {
+            if (ans[q] === ANSWERS[q]) scoreB++;
+            else wrongB.push(parseInt(q.replace("q", "")) - 10);
+          });
+
+          // Score Section C (q21-q30) — 8 questions with right answers
+          var scoreC = 0;
+          var wrongC = [];
+          ["q22", "q23", "q24", "q25", "q26", "q27", "q29", "q30"].forEach(
+            function (q) {
+              if (ans[q] === ANSWERS[q]) scoreC++;
+              else wrongC.push(q);
+            },
+          );
+          var scoreC10 = Math.round((scoreC / 8) * 10);
+
+          // Combined knowledge score (B + C)
+          var totalKnow = scoreB + scoreC;
+          var totalKnowMax = 18;
+          var pctKnow = Math.round((totalKnow / totalKnowMax) * 100);
+
+          // Display
+          document.getElementById("quiz-form").style.display = "none";
+          var resDiv = document.getElementById("results");
+          resDiv.style.display = "block";
+
+          // Hero score
+          document.getElementById("res-score-display").textContent =
+            totalKnow + " / " + totalKnowMax;
+          var sub = "";
+          if (pctKnow >= 80)
+            sub =
+              "🟢 Très bon niveau de départ — formation pour approfondir et structurer.";
+          else if (pctKnow >= 55)
+            sub = "🟡 Niveau intermédiaire — bonnes bases à consolider.";
+          else
+            sub =
+              "🔵 Niveau débutant — c'est exactement pour ça qu'on est là. Tout s'apprend.";
+          document.getElementById("res-score-sub").textContent = sub;
+
+          // Section A — habit profile
+          var habitsHtml = '<div class="profile-grid">';
+          var habLabels = [
+            "Réutilisation mot de passe",
+            "Longueur du mot de passe",
+            "Gestionnaire de mots de passe",
+            "MFA activé",
+            "Comportement face aux mises à jour",
+            "Expérience phishing reçu",
+            "Prudence Wi-Fi public",
+            "Antivirus",
+            "Vérification avant clic",
+            "Habitude de sauvegarde",
+          ];
+          var habVals = [
+            ans.q1,
+            ans.q2,
+            ans.q3,
+            ans.q4,
+            ans.q5,
+            ans.q6,
+            ans.q7,
+            ans.q8,
+            ans.q9,
+            ans.q10,
+          ];
+          var habTexts = {
+            q1: {
+              a: "⚠️ Même mdp partout",
+              b: "⚡ Parfois réutilisé",
+              c: "✅ Mdp uniques",
+            },
+            q2: {
+              a: "⚠️ Court (< 8 car.)",
+              b: "⚡ Moyen (8-11 car.)",
+              c: "✅ Long (12+ car.)",
+              d: "❓ Non mesuré",
+            },
+            q3: {
+              a: "✅ Utilise un gestionnaire",
+              b: "⚡ Connaît sans utiliser",
+              c: "🆕 Découverte à faire",
+            },
+            q4: {
+              a: "✅ MFA actif plusieurs comptes",
+              b: "⚡ MFA actif 1 compte",
+              c: "🆕 MFA à découvrir",
+              d: "⚡ MFA connu, non activé",
+            },
+            q5: {
+              a: "✅ Installe dès que possible",
+              b: "⚡ Reporte les mises à jour",
+              c: "⚠️ Ignore les mises à jour",
+              d: "🆕 Importance à comprendre",
+            },
+            q6: {
+              a: "✅ A reconnu le phishing",
+              b: "⚡ A reçu, n'était pas sûr",
+              c: "🆕 Pas encore confronté",
+            },
+            q7: {
+              a: "✅ Prudent sur Wi-Fi public",
+              b: "⚡ S'y connecte sans y penser",
+              c: "🆕 Risque à apprendre",
+            },
+            q8: {
+              a: "✅ Antivirus actif",
+              b: "⚡ Antivirus probable",
+              c: "⚠️ Pas d'antivirus ou incertain",
+            },
+            q9: {
+              a: "✅ Vérifie toujours",
+              b: "⚡ Vérifie parfois",
+              c: "⚠️ Clique sans vérifier",
+            },
+            q10: {
+              a: "✅ Sauvegarde régulière",
+              b: "⚡ Sait mais ne fait pas",
+              c: "🆕 Importance à découvrir",
+            },
+          };
+          for (var i = 0; i < 10; i++) {
+            var qkey = "q" + (i + 1);
+            var val = habVals[i];
+            var txt =
+              habTexts[qkey] && habTexts[qkey][val]
+                ? habTexts[qkey][val]
+                : "— Non répondu";
+            habitsHtml +=
+              '<div class="profile-chip"><strong>' +
+              habLabels[i] +
+              "</strong>" +
+              txt +
+              "</div>";
+          }
+          habitsHtml += "</div>";
+          document.getElementById("res-habits").innerHTML = habitsHtml;
+
+          // Section B score bar
+          document.getElementById("bar-sec").style.width = scoreB * 10 + "%";
+          document.getElementById("score-sec").textContent = scoreB + "/10";
+          var detailB =
+            scoreB >= 8
+              ? "✅ Excellente maîtrise des menaces numériques."
+              : scoreB >= 6
+                ? "⚡ Bonnes bases. Quelques points à consolider."
+                : "🆕 Notions à construire — c'est l'objectif de S1.";
+          document.getElementById("res-sec-detail").textContent = detailB;
+
+          // Section C score bar
+          document.getElementById("bar-git").style.width = scoreC10 * 10 + "%";
+          document.getElementById("score-git").textContent = scoreC + "/8";
+          var detailC =
+            scoreC >= 7
+              ? "✅ Très bonne maîtrise de Git/GitHub."
+              : scoreC >= 4
+                ? "⚡ Connaissances partielles. S2 va beaucoup aider."
+                : "🆕 Git à découvrir de zéro — c'est prévu dans le programme.";
+          document.getElementById("res-git-detail").textContent = detailC;
+
+          // Advice
+          var adviceHtml = "";
+          if (scoreB < 5)
+            adviceHtml +=
+              "🔐 <strong>Cybersécurité :</strong> plusieurs concepts clés à acquérir — phishing, MFA, mots de passe forts. On démarre par là dès aujourd'hui.<br>";
+          else
+            adviceHtml +=
+              "🔐 <strong>Cybersécurité :</strong> bonnes bases ! On va les consolider et les approfondir.<br>";
+          if (scoreC < 4)
+            adviceHtml +=
+              "🐙 <strong>Git/GitHub :</strong> découverte complète à faire — premier repo, commits, README. Tout ça en S1-S2.<br>";
+          else if (scoreC < 7)
+            adviceHtml +=
+              "🐙 <strong>Git/GitHub :</strong> bases connues. On va structurer et professionnaliser tes pratiques.<br>";
+          else
+            adviceHtml +=
+              "🐙 <strong>Git/GitHub :</strong> très bonne maîtrise. Tu pourras aider tes camarades et aller plus loin (branches, PR).<br>";
+
+          var q1v = ans.q1,
+            q3v = ans.q3,
+            q4v = ans.q4;
+          if (q1v === "a" || q3v === "c")
+            adviceHtml +=
+              "🔑 <strong>Mots de passe :</strong> on installe Bitwarden ce matin — ce sera un changement concret dès aujourd'hui.<br>";
+          if (q4v === "c" || q4v === "d")
+            adviceHtml +=
+              "🛡️ <strong>MFA :</strong> on active la double authentification cet après-midi — 5 minutes, impact maximal.<br>";
+
+          document.getElementById("res-advice").innerHTML =
+            adviceHtml ||
+            "Profil déjà solide. La formation va te permettre de structurer et approfondir tout ça.";
+
+          // Save to localStorage
+          localStorage.setItem(
+            "ppni-positionnement",
+            JSON.stringify({
+              date: new Date().toISOString(),
+              scoreB: scoreB,
+              scoreC: scoreC,
+            }),
+          );
+
+          resDiv.scrollIntoView({ behavior: "smooth" });
         });
-
-        // Score Section C (q21-q30) — 8 questions with right answers
-        var scoreC = 0;
-        var wrongC = [];
-        ['q22','q23','q24','q25','q26','q27','q29','q30'].forEach(function(q) {
-          if (ans[q] === ANSWERS[q]) scoreC++;
-          else wrongC.push(q);
-        });
-        var scoreC10 = Math.round((scoreC / 8) * 10);
-
-        // Combined knowledge score (B + C)
-        var totalKnow = scoreB + scoreC;
-        var totalKnowMax = 18;
-        var pctKnow = Math.round((totalKnow / totalKnowMax) * 100);
-
-        // Display
-        document.getElementById('quiz-form').style.display = 'none';
-        var resDiv = document.getElementById('results');
-        resDiv.style.display = 'block';
-
-        // Hero score
-        document.getElementById('res-score-display').textContent = totalKnow + ' / ' + totalKnowMax;
-        var sub = '';
-        if (pctKnow >= 80) sub = '🟢 Très bon niveau de départ — formation pour approfondir et structurer.';
-        else if (pctKnow >= 55) sub = '🟡 Niveau intermédiaire — bonnes bases à consolider.';
-        else sub = '🔵 Niveau débutant — c\'est exactement pour ça qu\'on est là. Tout s\'apprend.';
-        document.getElementById('res-score-sub').textContent = sub;
-
-        // Section A — habit profile
-        var habitsHtml = '<div class="profile-grid">';
-        var habLabels = [
-          'Réutilisation mot de passe', 'Longueur du mot de passe',
-          'Gestionnaire de mots de passe', 'MFA activé',
-          'Comportement face aux mises à jour', 'Expérience phishing reçu',
-          'Prudence Wi-Fi public', 'Antivirus',
-          'Vérification avant clic', 'Habitude de sauvegarde'
-        ];
-        var habVals = [ans.q1,ans.q2,ans.q3,ans.q4,ans.q5,ans.q6,ans.q7,ans.q8,ans.q9,ans.q10];
-        var habTexts = {
-          q1: {a:'⚠️ Même mdp partout',b:'⚡ Parfois réutilisé',c:'✅ Mdp uniques'},
-          q2: {a:'⚠️ Court (< 8 car.)',b:'⚡ Moyen (8-11 car.)',c:'✅ Long (12+ car.)',d:'❓ Non mesuré'},
-          q3: {a:'✅ Utilise un gestionnaire',b:'⚡ Connaît sans utiliser',c:'🆕 Découverte à faire'},
-          q4: {a:'✅ MFA actif plusieurs comptes',b:'⚡ MFA actif 1 compte',c:'🆕 MFA à découvrir',d:'⚡ MFA connu, non activé'},
-          q5: {a:'✅ Installe dès que possible',b:'⚡ Reporte les mises à jour',c:'⚠️ Ignore les mises à jour',d:'🆕 Importance à comprendre'},
-          q6: {a:'✅ A reconnu le phishing',b:'⚡ A reçu, n\'était pas sûr',c:'🆕 Pas encore confronté'},
-          q7: {a:'✅ Prudent sur Wi-Fi public',b:'⚡ S\'y connecte sans y penser',c:'🆕 Risque à apprendre'},
-          q8: {a:'✅ Antivirus actif',b:'⚡ Antivirus probable',c:'⚠️ Pas d\'antivirus ou incertain'},
-          q9: {a:'✅ Vérifie toujours',b:'⚡ Vérifie parfois',c:'⚠️ Clique sans vérifier'},
-          q10: {a:'✅ Sauvegarde régulière',b:'⚡ Sait mais ne fait pas',c:'🆕 Importance à découvrir'}
-        };
-        for (var i = 0; i < 10; i++) {
-          var qkey = 'q'+(i+1);
-          var val = habVals[i];
-          var txt = (habTexts[qkey] && habTexts[qkey][val]) ? habTexts[qkey][val] : '— Non répondu';
-          habitsHtml += '<div class="profile-chip"><strong>' + habLabels[i] + '</strong>' + txt + '</div>';
-        }
-        habitsHtml += '</div>';
-        document.getElementById('res-habits').innerHTML = habitsHtml;
-
-        // Section B score bar
-        document.getElementById('bar-sec').style.width = (scoreB * 10) + '%';
-        document.getElementById('score-sec').textContent = scoreB + '/10';
-        var detailB = scoreB >= 8 ? '✅ Excellente maîtrise des menaces numériques.' :
-                      scoreB >= 6 ? '⚡ Bonnes bases. Quelques points à consolider.' :
-                      '🆕 Notions à construire — c\'est l\'objectif de S1.';
-        document.getElementById('res-sec-detail').textContent = detailB;
-
-        // Section C score bar
-        document.getElementById('bar-git').style.width = (scoreC10 * 10) + '%';
-        document.getElementById('score-git').textContent = scoreC + '/8';
-        var detailC = scoreC >= 7 ? '✅ Très bonne maîtrise de Git/GitHub.' :
-                      scoreC >= 4 ? '⚡ Connaissances partielles. S2 va beaucoup aider.' :
-                      '🆕 Git à découvrir de zéro — c\'est prévu dans le programme.';
-        document.getElementById('res-git-detail').textContent = detailC;
-
-        // Advice
-        var adviceHtml = '';
-        if (scoreB < 5) adviceHtml += '🔐 <strong>Cybersécurité :</strong> plusieurs concepts clés à acquérir — phishing, MFA, mots de passe forts. On démarre par là dès aujourd\'hui.<br>';
-        else adviceHtml += '🔐 <strong>Cybersécurité :</strong> bonnes bases ! On va les consolider et les approfondir.<br>';
-        if (scoreC < 4) adviceHtml += '🐙 <strong>Git/GitHub :</strong> découverte complète à faire — premier repo, commits, README. Tout ça en S1-S2.<br>';
-        else if (scoreC < 7) adviceHtml += '🐙 <strong>Git/GitHub :</strong> bases connues. On va structurer et professionnaliser tes pratiques.<br>';
-        else adviceHtml += '🐙 <strong>Git/GitHub :</strong> très bonne maîtrise. Tu pourras aider tes camarades et aller plus loin (branches, PR).<br>';
-
-        var q1v = ans.q1, q3v = ans.q3, q4v = ans.q4;
-        if (q1v === 'a' || q3v === 'c') adviceHtml += '🔑 <strong>Mots de passe :</strong> on installe Bitwarden ce matin — ce sera un changement concret dès aujourd\'hui.<br>';
-        if (q4v === 'c' || q4v === 'd') adviceHtml += '🛡️ <strong>MFA :</strong> on active la double authentification cet après-midi — 5 minutes, impact maximal.<br>';
-
-        document.getElementById('res-advice').innerHTML = adviceHtml || 'Profil déjà solide. La formation va te permettre de structurer et approfondir tout ça.';
-
-        // Save to localStorage
-        localStorage.setItem('ppni-positionnement', JSON.stringify({date: new Date().toISOString(), scoreB: scoreB, scoreC: scoreC}));
-
-        resDiv.scrollIntoView({behavior:'smooth'});
-      });
 
       function resetQuiz() {
-        document.getElementById('quiz-form').reset();
-        document.getElementById('quiz-form').style.display = 'block';
-        document.getElementById('results').style.display = 'none';
-        document.getElementById('progress-fill').style.width = '0%';
-        document.getElementById('progress-label').textContent = '0 / 30 questions répondues';
-        document.getElementById('missing-warning').style.display = 'none';
-        window.scrollTo({top:0,behavior:'smooth'});
+        document.getElementById("quiz-form").reset();
+        document.getElementById("quiz-form").style.display = "block";
+        document.getElementById("results").style.display = "none";
+        document.getElementById("progress-fill").style.width = "0%";
+        document.getElementById("progress-label").textContent =
+          "0 / 30 questions répondues";
+        document.getElementById("missing-warning").style.display = "none";
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
     </script>
   </body>
