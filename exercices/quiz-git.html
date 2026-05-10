@@ -353,7 +353,6 @@
               class="btn-nav btn-next"
               id="btn-next"
               onclick="nextCard()"
-              disabled
             >
               Suivante →
             </button>
@@ -575,8 +574,7 @@
 
         // Nav buttons
         document.getElementById("btn-prev").disabled = idx === 0;
-        document.getElementById("btn-next").disabled =
-          evaluations[idx] === null; // next seulement après évaluation
+        document.getElementById("btn-next").disabled = idx === cards.length - 1;
 
         buildDots();
         updateStats();
@@ -592,12 +590,13 @@
           if (evaluations[currentIndex] === null)
             evaluations[currentIndex] = "seen";
           buildDots();
+        } else {
+          document.getElementById("self-eval").classList.remove("visible");
         }
       }
 
       function evaluate(knew) {
         evaluations[currentIndex] = knew;
-        document.getElementById("btn-next").disabled = false;
         buildDots();
         updateStats();
 
@@ -607,13 +606,10 @@
         ).length;
         localStorage.setItem("ppni_quiz_git_score", total + " cartes");
 
-        // Toutes évaluées ?
+        // Toutes évaluées ? Afficher le bilan final
         const done = evaluations.every((e) => e === true || e === false);
         if (done) {
-          setTimeout(showFinalResult, 400);
-        } else {
-          // Auto-next
-          setTimeout(nextCard, 400);
+          setTimeout(showFinalResult, 600);
         }
       }
 
